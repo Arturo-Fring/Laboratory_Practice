@@ -4,7 +4,7 @@
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceFolder}",
-            "executable": "./Build/LABORATORY_PRACTICE.elf",
+            "executable": "./build_F429ZI/STM32F429ZI.elf",
             "request": "launch",
             "type": "cortex-debug",
             "runToEntryPoint": "main",
@@ -14,7 +14,7 @@
                 "interface/stlink.cfg",
                 "target/stm32f4x.cfg"
             ],
-            "svdFile": "./STM32F429.svd"
+            "svdFile": "./STMDevices/STM32F429ZI/STM32F429.svd"
         }
     ]
 }

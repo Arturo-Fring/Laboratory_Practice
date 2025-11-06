@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBZA9AN.s 			page 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc7MvHVb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,42 +27,178 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccBZA9AN.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	main:
-  28              	.LFB0:
-   1:Core/Src/main.c **** int main(void)
-   2:Core/Src/main.c **** {
-  29              		.loc 1 2 1 view -0
+  28              	.LFB130:
+   1:Core/Src/main.c **** #include <stdint.h>
+   2:Core/Src/main.c **** #include "init.h"
+   3:Core/Src/main.c **** #include "Interrupt.h"
+   4:Core/Src/main.c **** 
+   5:Core/Src/main.c **** volatile uint8_t btnCount = 0;
+   6:Core/Src/main.c **** volatile uint8_t flag = 0;
+   7:Core/Src/main.c **** 
+   8:Core/Src/main.c **** int main(void)
+   9:Core/Src/main.c **** {
+  29              		.loc 1 9 1 view -0
   30              		.cfi_startproc
   31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		@ link register save eliminated.
-  35              	.L2:
-   3:Core/Src/main.c **** 
-   4:Core/Src/main.c ****     while (1)
-  36              		.loc 1 4 5 view .LVU1
-   5:Core/Src/main.c ****     {
-   6:Core/Src/main.c ****     }
-  37              		.loc 1 6 5 view .LVU2
-   4:Core/Src/main.c **** int main(void)
-{
-
-    while (1)
-    {
-    }
-}
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  10:Core/Src/main.c ****     RCC_INIT();
+  39              		.loc 1 10 5 view .LVU1
+  40 0002 FFF7FEFF 		bl	RCC_INIT
+  41              	.LVL0:
+  11:Core/Src/main.c ****     ITR_Init();
+  42              		.loc 1 11 5 view .LVU2
+  43 0006 FFF7FEFF 		bl	ITR_Init
+  44              	.LVL1:
+  12:Core/Src/main.c **** 
+  13:Core/Src/main.c ****     /*Настройка тактирования, светодиода */
+  14:Core/Src/main.c ****     SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN | RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIOAEN);
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc7MvHVb.s 			page 2
 
-  38              		.loc 1 4 11 view .LVU3
-  39 0000 FEE7     		b	.L2
-  40              		.cfi_endproc
-  41              	.LFE0:
-  43              		.text
-  44              	.Letext0:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBZA9AN.s 			page 2
+
+  45              		.loc 1 14 5 view .LVU3
+  46 000a 1C4B     		ldr	r3, .L7
+  47 000c 1A6B     		ldr	r2, [r3, #48]
+  48 000e 42F00702 		orr	r2, r2, #7
+  49 0012 1A63     		str	r2, [r3, #48]
+  15:Core/Src/main.c **** 
+  16:Core/Src/main.c ****     SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN);
+  50              		.loc 1 16 5 view .LVU4
+  51 0014 1A6B     		ldr	r2, [r3, #48]
+  52 0016 42F00202 		orr	r2, r2, #2
+  53 001a 1A63     		str	r2, [r3, #48]
+  17:Core/Src/main.c ****     SET_BIT(GPIOB->MODER, GPIO_MODER_MODE7_0); /* 01 */
+  54              		.loc 1 17 5 view .LVU5
+  55 001c 184A     		ldr	r2, .L7+4
+  56 001e 1368     		ldr	r3, [r2]
+  57 0020 43F48043 		orr	r3, r3, #16384
+  58 0024 1360     		str	r3, [r2]
+  18:Core/Src/main.c **** 
+  19:Core/Src/main.c ****     /*-----------MCO2------------------------*/
+  20:Core/Src/main.c ****     // Необхоидимо настроить пины на выход
+  21:Core/Src/main.c ****     SET_BIT(GPIOC->MODER, GPIO_MODER_MODER9_1); // Alt. func
+  59              		.loc 1 21 5 view .LVU6
+  60 0026 174B     		ldr	r3, .L7+8
+  61 0028 1A68     		ldr	r2, [r3]
+  62 002a 42F40022 		orr	r2, r2, #524288
+  63 002e 1A60     		str	r2, [r3]
+  22:Core/Src/main.c **** 
+  23:Core/Src/main.c ****     SET_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk); // Нужна высокая ск., 11.
+  64              		.loc 1 23 5 view .LVU7
+  65 0030 9A68     		ldr	r2, [r3, #8]
+  66 0032 42F44022 		orr	r2, r2, #786432
+  67 0036 9A60     		str	r2, [r3, #8]
+  24:Core/Src/main.c ****     // CLEAR_BIT(GPIOC->AFR[1], GPIO_AFRH_AFSEL9);
+  25:Core/Src/main.c ****     MODIFY_REG(GPIOC->AFR[1], GPIO_AFRH_AFSEL9_Msk, 0x0); // выход MCO2.
+  68              		.loc 1 25 5 view .LVU8
+  69 0038 5A6A     		ldr	r2, [r3, #36]
+  70 003a 22F0F002 		bic	r2, r2, #240
+  71 003e 5A62     		str	r2, [r3, #36]
+  26:Core/Src/main.c **** 
+  27:Core/Src/main.c ****     /*-------------MCO1--------------------*/
+  28:Core/Src/main.c ****     // PA8, AF0 (0000)
+  29:Core/Src/main.c **** 
+  30:Core/Src/main.c ****     SET_BIT(GPIOA->MODER, GPIO_MODER_MODE8_1);
+  72              		.loc 1 30 5 view .LVU9
+  73 0040 A3F50063 		sub	r3, r3, #2048
+  74 0044 1A68     		ldr	r2, [r3]
+  75 0046 42F40032 		orr	r2, r2, #131072
+  76 004a 1A60     		str	r2, [r3]
+  31:Core/Src/main.c ****     SET_BIT(GPIOA->OSPEEDR, GPIO_OSPEEDR_OSPEED8);
+  77              		.loc 1 31 5 view .LVU10
+  78 004c 9A68     		ldr	r2, [r3, #8]
+  79 004e 42F44032 		orr	r2, r2, #196608
+  80 0052 9A60     		str	r2, [r3, #8]
+  32:Core/Src/main.c ****     CLEAR_BIT(GPIOA->AFR[1], GPIO_AFRH_AFSEL8);
+  81              		.loc 1 32 5 view .LVU11
+  82 0054 5A6A     		ldr	r2, [r3, #36]
+  83 0056 22F00F02 		bic	r2, r2, #15
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc7MvHVb.s 			page 3
+
+
+  84 005a 5A62     		str	r2, [r3, #36]
+  85 005c 04E0     		b	.L2
+  86              	.L6:
+  33:Core/Src/main.c **** 
+  34:Core/Src/main.c ****     while (1)
+  35:Core/Src/main.c ****     {
+  36:Core/Src/main.c ****         if (flag)
+  37:Core/Src/main.c ****         {
+  38:Core/Src/main.c ****             SET_BIT(GPIOB->BSRR, GPIO_BSRR_BS7);
+  87              		.loc 1 38 13 view .LVU12
+  88 005e 084A     		ldr	r2, .L7+4
+  89 0060 9369     		ldr	r3, [r2, #24]
+  90 0062 43F08003 		orr	r3, r3, #128
+  91 0066 9361     		str	r3, [r2, #24]
+  92              	.L2:
+  34:Core/Src/main.c ****     {
+  93              		.loc 1 34 5 view .LVU13
+  36:Core/Src/main.c ****         {
+  94              		.loc 1 36 9 view .LVU14
+  36:Core/Src/main.c ****         {
+  95              		.loc 1 36 13 is_stmt 0 view .LVU15
+  96 0068 074B     		ldr	r3, .L7+12
+  97 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  36:Core/Src/main.c ****         {
+  98              		.loc 1 36 12 view .LVU16
+  99 006c 002B     		cmp	r3, #0
+ 100 006e F6D1     		bne	.L6
+  39:Core/Src/main.c ****         }
+  40:Core/Src/main.c **** 
+  41:Core/Src/main.c ****         else
+  42:Core/Src/main.c ****         {
+  43:Core/Src/main.c ****             SET_BIT(GPIOB->BSRR, GPIO_BSRR_BR7);
+ 101              		.loc 1 43 13 is_stmt 1 view .LVU17
+ 102 0070 034A     		ldr	r2, .L7+4
+ 103 0072 9369     		ldr	r3, [r2, #24]
+ 104 0074 43F40003 		orr	r3, r3, #8388608
+ 105 0078 9361     		str	r3, [r2, #24]
+ 106 007a F5E7     		b	.L2
+ 107              	.L8:
+ 108              		.align	2
+ 109              	.L7:
+ 110 007c 00380240 		.word	1073887232
+ 111 0080 00040240 		.word	1073873920
+ 112 0084 00080240 		.word	1073874944
+ 113 0088 00000000 		.word	flag
+ 114              		.cfi_endproc
+ 115              	.LFE130:
+ 117              		.global	flag
+ 118              		.section	.bss.flag,"aw",%nobits
+ 121              	flag:
+ 122 0000 00       		.space	1
+ 123              		.global	btnCount
+ 124              		.section	.bss.btnCount,"aw",%nobits
+ 127              	btnCount:
+ 128 0000 00       		.space	1
+ 129              		.text
+ 130              	.Letext0:
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc7MvHVb.s 			page 4
+
+
+ 131              		.file 2 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
+ 132              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
+ 133              		.file 4 "Core/Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
+ 134              		.file 5 "Core/Inc/Interrupt.h"
+ 135              		.file 6 "Core/Inc/init.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc7MvHVb.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\user\AppData\Local\Temp\ccBZA9AN.s:21     .text.main:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccBZA9AN.s:27     .text.main:00000000 main
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:21     .text.main:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:27     .text.main:00000000 main
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:110    .text.main:0000007c $d
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:121    .bss.flag:00000000 flag
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:122    .bss.flag:00000000 $d
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:127    .bss.btnCount:00000000 btnCount
+C:\Users\user\AppData\Local\Temp\cc7MvHVb.s:128    .bss.btnCount:00000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+RCC_INIT
+ITR_Init
