@@ -1,6 +1,6 @@
 #include "Interrupt.h"
 
-void EXTI15_10_IRQHandler()
+void EXTI15_10_IRQHandler(void) //no n
 {
     // Мы должны обязательно отключать pending бит после того, как прерыв. выполнено
     // 1 чтобы сбросит в 0

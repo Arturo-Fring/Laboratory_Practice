@@ -47,7 +47,7 @@ void RCC_INIT(void)
     // SET_BIT(RCC->CFGR, RCC_CFGR_SW_1);
 
     /* while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS_1) == RESET); */  // не запустится pll
-    SET_BIT(RCC->CFGR, RCC_CFGR_SW_PLL);                        // В качестве системного тактирования выбран PLL
+    SET_BIT(RCC->CFGR, RCC_CFGR_SW_PLL);                         // В качестве системного тактирования выбран PLL
     SET_BIT(RCC->CFGR, RCC_CFGR_HPRE_DIV1);                      // предделитель шины AHB1 настроен на 1 без деления
     SET_BIT(RCC->CFGR, RCC_CFGR_PPRE1_DIV4);                     // предделитель шины AHB1 настроен на 4 ОНА от 45
     SET_BIT(RCC->CFGR, RCC_CFGR_PPRE2_DIV2);                     // предделитель шины APB2 настроен на 2 ОНА от 90
@@ -81,19 +81,15 @@ void ITR_Init(void)
     // Не хотим маскировать
     SET_BIT(EXTI->IMR, EXTI_IMR_MR13);
     // EMR пропускаем
-
+    
     // Rising cl. rising trigger selection reg. по фронту, з. на RT 1
     SET_BIT(EXTI->RTSR, EXTI_RTSR_TR13);
-    
+
     // Теперь спад.
     CLEAR_BIT(EXTI->FTSR, EXTI_FTSR_TR13);
 
-    //Нужно настроить NVIC
-    //см. programming manual 4.3, 
-    NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0,0));
-    NVIC_EnableIRQ(EXTI15_10_IRQn); //вкючаем по вектору. Все вектора в ассемблерном файле  (ext interrupts)
-
-    
-
-
+    // Нужно настроить NVIC
+    // см. programming manual 4.3,
+    NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
+    NVIC_EnableIRQ(EXTI15_10_IRQn); // вкючаем по вектору. Все вектора в ассемблерном файле  (ext interrupts)
 }

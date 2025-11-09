@@ -1,16 +1,15 @@
 #include <stdint.h>
 #include "init.h"
 #include "Interrupt.h"
-
+// Посылаю всем привет из второй лабораторной!
 volatile uint8_t btnCount = 0;
 volatile uint8_t flag = 0;
 
-// Привет всем из первой лабораторной работы!
 int main(void)
 {
     RCC_INIT();
     ITR_Init();
-
+    
     /*Настройка тактирования, светодиода */
     SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN | RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIOAEN);
 
