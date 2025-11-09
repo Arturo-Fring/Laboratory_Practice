@@ -1,69 +1,51 @@
 #include <stdint.h>
-#include "../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
+//#include "../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
 #include "stm32f4xx.h"
 
-void GPIO_init__Memory(void);
-void GPIO_init_With_Myself_Macros(void);
-void GPIO_init_With_Myself_Macros2(void);
-void GPIO_init_With_Myself_Macros3(void);
-void GPIO_init_CMSIS(void);
+/* -------- простые макросы -------- */
+#define BIT_SET(REG, BITMASK) ((REG) |= (uint32_t)(BITMASK))
+#define BIT_CLEAR(REG, BITMASK) ((REG) &= ~(uint32_t)(BITMASK))
+#define BIT_READ(REG, BITMASK) ((REG) & (uint32_t)(BITMASK))
 
-#define RCC_AHB1ENR *(uint32_t *)(0x40023800UL + 0x30UL)
-#define RCC_GPIOA_EN 0x01UL
-#define RCC_GPIOB_EN 0x03UL
-#define RCC_GPIOC_EN 0x07UL
+/* -------- RCC -------- */
+#define RCC_AHB1ENR_REG (*(volatile uint32_t *)(0x40023800UL + 0x30UL))
 
-#define GPIOA_IDR *(uint32_t *)(0x40020000UL + 0x10UL)
-#define GPIOA_MODER *(uint32_t *)(0x40020000UL + 0x00UL)
-#define GPIOA_OTYPER *(uint32_t *)(0x40020000UL + 0x04UL)
-#define GPIOA_OSPEEDR *(uint32_t *)(0x40020000UL + 0x08UL)
-#define GPIOA_BSRR *(uint32_t *)(0x40020000UL + 0x18UL)
+/* -------- GPIOC (кнопка PC13) -------- */
+#define GPIOC_MODER_REG (*(volatile uint32_t *)(0x40020800UL + 0x00UL))
+#define GPIOC_PUPDR_REG (*(volatile uint32_t *)(0x40020800UL + 0x0CUL))
+#define GPIOC_IDR_REG (*(volatile uint32_t *)(0x40020800UL + 0x10UL))
 
-#define GPIOB_MODER *(uint32_t *)(0x40020400UL + 0x00UL)
-#define GPIOB_OTYPER *(uint32_t *)(0x40020400UL + 0x04UL)
-#define GPIOB_OSPEEDR *(uint32_t *)(0x40020400UL + 0x08UL)
-#define GPIOB_BSRR *(uint32_t *)(0x40020400UL + 0x18UL)
+/* PC13 поля */
+#define PC13_MODER_MASK 0x0C000000UL /* MODER13 (27:26) */
+#define PC13_PUPDR_MASK 0x0C000000UL /* PUPDR13 (27:26) */
+#define PC13_IDR_BIT 0x00002000UL    /* IDR13 */
 
-#define GPIOC_IDR *(uint32_t *)(0x40020800UL + 0x10UL)
-#define GPIOC_MODER *(uint32_t *)(0x40020800UL + 0x00UL)
-#define GPIOC_OTYPER *(uint32_t *)(0x40020800UL + 0x04UL)
-#define GPIOC_OSPEEDR *(uint32_t *)(0x40020800UL + 0x08UL)
-#define GPIOC_BSRR *(uint32_t *)(0x40020800UL + 0x18UL)
+/* -------- GPIOE (LED на PE0) -------- */
+#define GPIOE_MODER_REG (*(volatile uint32_t *)(0x40021000UL + 0x00UL))
+#define GPIOE_OTYPER_REG (*(volatile uint32_t *)(0x40021000UL + 0x04UL))
+#define GPIOE_OSPEEDR_REG (*(volatile uint32_t *)(0x40021000UL + 0x08UL))
+#define GPIOE_PUPDR_REG (*(volatile uint32_t *)(0x40021000UL + 0x0CUL))
+#define GPIOE_BSRR_REG (*(volatile uint32_t *)(0x40021000UL + 0x18UL))
 
-#define GPIO_PIN_MED_14 0x10000000UL
-#define GPIO_PIN_OUT_14 0x10000000UL
-#define GPIO_PIN_RESET_14 0x40000000UL
-#define GPIO_PIN_SET_14 0x4000UL
+/* PE0 поля */
+#define PE0_MODER_CLR 0x00000003UL     /* MODER0 clear */
+#define PE0_MODER_OUT01 0x00000001UL   /* MODER0=01 */
+#define PE0_OTYPER_BIT 0x00000001UL    /* OT0 */
+#define PE0_OSPEEDR_CLR 0x00000003UL   /* OSPEED0 clear */
+#define PE0_OSPEEDR_MED01 0x00000001UL /* OSPEED0=01 (Medium) */
+#define PE0_PUPDR_CLR 0x00000003UL     /* PUPDR0=00 */
+#define PE0_BSRR_SET 0x00000001UL      /* BS0 */
+#define PE0_BSRR_RESET 0x00010000UL    /* BR0 */
 
-#define GPIO_PIN_MED_7 0x4000UL
-#define GPIO_PIN_OUT_7 0x4000UL
-#define GPIO_OFF 0x00UL
-#define GPIO_PIN_RESET_7 0x800000UL
-#define GPIO_PIN_SET_7 0x80UL
-#define GPIO_PIN_IDR_13 0x2000UL
+/* --- Инициализация портов --- */
+/* PA: PA0 (Input Pull-Up), PA5 (LED) — вручную по адресам (без локальных переменных) */
+void GPIO_Init_PortA_Manual(void);
 
-// Для пина PA3(A0) и PC3(A2)
-#define GPIO_PIN_MED_3 0x4000UL
-#define GPIO_PIN_IN_3 0x00UL
-#define GPIO_PIN_OUT_3 0x40UL
-#define GPIO_OFF 0x00UL
-#define GPIO_PIN_RESET_3 0x80000UL
-#define GPIO_PIN_SET_3 0x08UL
-#define GPIO_PIN_IDR_3 0x08UL
+/* PC: PC13 (Input, no pull) — через простые макросы */
+void GPIO_Init_PortC_Macros(void);
 
-// Для пина PC0(A1)
-#define GPIO_PIN_MED_0 0x01UL
-#define GPIO_PIN_OUT_0 0x01UL
-#define GPIO_PIN_IN_0 0x00UL
-#define GPIO_OFF 0x00UL
-#define GPIO_PIN_RESET_0 0x10000UL
-#define GPIO_PIN_SET_0 0x01UL
-#define GPIO_PIN_IDR_0 0x01UL
+/* PE: PE0 (LED) — через простые макросы */
+void GPIO_Init_PortE_Macros(void);
 
-#define BIT_SET(REG, BIT) ((REG) |= (BIT))
-#define BIT_READ(REG, BIT) ((REG) & (BIT))
-
-// LB 2
-
-void RCC_INIT(void);
-void ITR_Init(void);
+/* PD: PD12 (LED) — через CMSIS */
+void GPIO_Init_PortD_CMSIS(void);
