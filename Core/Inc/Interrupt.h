@@ -2,10 +2,6 @@
 #define INTERRUPT_H
 
 #include "init.h"
-#define BTN1_PIN 0U // PA0 → EXTI0
-#define BTN2_PIN 5U // PA5 → EXTI5
-
-extern volatile uint32_t g_msTicks; // Счётчик мс
 
 /*
 ----------------------------
@@ -13,8 +9,6 @@ extern volatile uint32_t g_msTicks; // Счётчик мс
 -----------------------------
 */
 // длительное удержание и антидребезг
-#define DEBOUNCE_MS 300U
-#define LONG_PRESS_MS 1000U
 
 // вспомогательные переменные
 static volatile uint32_t g_btn1_last_time = 0;

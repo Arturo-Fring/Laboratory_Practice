@@ -1,6 +1,5 @@
 #include "../Inc/init.h"
 #include "init.h"
-
 /*
 HSI = 16 MHz
 Хотим SYSCLCK = 168 MHz
@@ -12,7 +11,6 @@ PLLP = 2 -> SYSCLK = 336/2 = 168
 PLLQ = 7 -> 336/7 = 48 MHz --
 
 */
-
 #include "stm32f4xx.h"
 void Clock_Init_HSE_PLL_168MHz(void)
 {
@@ -83,7 +81,6 @@ void Clock_Init_HSE_PLL_168MHz(void)
     /* 9. Обновляем глобальную переменную SystemCoreClock */
     SystemCoreClock = 168000000U;
 }
-
 void Clock_Init_HSI_PLL_168MHz(void)
 {
     /* 1. Включаем тактирование PWR и ставим режим питания Scale1 (нужен для 168 МГц) */
@@ -189,7 +186,6 @@ void Clock_Init_HSI_PLL_168MHz(void)
     /* 11. Обновляем переменную SystemCoreClock для дальнейших расчётов (SysTick и т.п.) */
     SystemCoreClock = 168000000U;
 }
-
 void SysTick_Init_1ms(void)
 {
     /* Останавливаем SysTick на время настройки */
@@ -197,7 +193,7 @@ void SysTick_Init_1ms(void)
 
     /* Счётчик перезагрузки:
        частота / 1000 - 1  → период 1 мс */
-    uint32_t reload = SystemCoreClock / 1000U - 1U;
+    uint32_t reload = 168000000U / 1000U - 1U;
 
     // CLEAR_REG(SysTick->)
     WRITE_REG(SysTick->LOAD, reload); // значение перезагрузки
@@ -214,66 +210,6 @@ void SysTick_Init_1ms(void)
                 SysTick_CTRL_TICKINT_Msk | // разрешить прерывания
                 SysTick_CTRL_ENABLE_Msk);  // включить счётчик
 }
-
-// Прерывания от HSE
-void RCC_INIT(void)
-{
-
-    /* 1) Включаем тактирование блока питания (PWR) и выставляем масштаб питания Scale1 */
-    SET_BIT(RCC->APB1ENR, RCC_APB1ENR_PWREN);
-    /* VOS = 11: Scale 1 mode (максимальная частота ядра) */
-    SET_BIT(PWR->CR, PWR_CR_VOS);
-
-    /* 2) Настраиваем FLASH: кеши + задержки (5 тактов ожидания для 168 МГц) */
-    // Сначала сбросим латентность
-    MODIFY_REG(FLASH->ACR, FLASH_ACR_LATENCY, FLASH_ACR_LATENCY_5WS);
-
-    MODIFY_REG(RCC->CR, RCC_CR_HSITRIM, 0x80UL);
-    CLEAR_REG(RCC->CFGR);
-    while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RESET)
-        ;
-    CLEAR_BIT(RCC->CR, RCC_CR_PLLON);
-    while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) != RESET)
-        ;
-    CLEAR_BIT(RCC->CR, RCC_CR_HSEON | RCC_CR_CSSON);
-    while (READ_BIT(RCC->CR, RCC_CR_HSERDY) != RESET)
-        ;
-    CLEAR_BIT(RCC->CR, RCC_CR_HSEBYP);
-
-    CLEAR_BIT(RCC->CR, RCC_CR_HSION);
-
-    SET_BIT(RCC->CR, RCC_CR_HSEON); // Включение внешнего источника тактирования
-    while (READ_BIT(RCC->CR, RCC_CR_HSERDY) == RESET)
-        ;
-    SET_BIT(RCC->CR, RCC_CR_CSSON); // Включение Clock Security
-
-    // PLL configurator
-    CLEAR_REG(RCC->PLLCFGR);
-    SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLSRC_HSE);                                                            // Источник тактирования HSE
-    SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLM_2);                                                                // деление тактирования на 4
-    SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLN_3 | RCC_PLLCFGR_PLLN_5 | RCC_PLLCFGR_PLLN_6 | RCC_PLLCFGR_PLLN_8); // число 360 в  bin
-    SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLP_0);                                                                // Деление после умножения на 4 (PLLP). теперь нужно делить на 4. Для этого передать 01
-    SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLQ_0 | RCC_PLLCFGR_PLLQ_1 | RCC_PLLCFGR_PLLQ_2 | RCC_PLLCFGR_PLLQ_3); // Настроили PLLQ (деление после умножения на 15)
-
-    // tact configurator
-    // SET_BIT(RCC->CFGR, RCC_CFGR_SW_1);
-
-    /* while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS_1) == RESET); */  // не запустится pll
-    SET_BIT(RCC->CFGR, RCC_CFGR_SW_PLL);                         // В качестве системного тактирования выбран PLL
-    SET_BIT(RCC->CFGR, RCC_CFGR_HPRE_DIV1);                      // предделитель шины AHB1 настроен на 1 без деления
-    SET_BIT(RCC->CFGR, RCC_CFGR_PPRE1_DIV4);                     // предделитель шины AHB1 настроен на 4 ОНА от 45
-    SET_BIT(RCC->CFGR, RCC_CFGR_PPRE2_DIV2);                     // предделитель шины APB2 настроен на 2 ОНА от 90
-    SET_BIT(RCC->CFGR, RCC_CFGR_MCO1);                           // настройка вывода на MCO1
-    CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2);                         // Настройка вывода частоты SYSCLOCK на MSO2
-    SET_BIT(RCC->CFGR, RCC_CFGR_MCO1PRE_2 | RCC_CFGR_MCO1PRE_1); // Предделитель 2 для вывода на MCO1
-    SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_2 | RCC_CFGR_MCO2PRE_1); //
-
-    SET_BIT(FLASH->ACR, FLASH_ACR_LATENCY_5WS); // Утановка 5 циклов ожидания для FLASH памяти
-    SET_BIT(RCC->CR, RCC_CR_PLLON);             // Включение PLL (?)
-    while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) == RESET)
-        ;
-}
-
 // Прерывания на PC13
 void ITR_Init(void)
 
@@ -307,67 +243,75 @@ void ITR_Init(void)
     NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
     NVIC_EnableIRQ(EXTI15_10_IRQn); // вкючаем по вектору. Все вектора в ассемблерном файле  (ext interrupts)
 }
-
-// Включение тактирования на портах
-#define BTN_PORT GPIOA
-#define BTN_PORT_CLK_EN() SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN)
-
-#define BTN1_PIN 0U // PA0 → EXTI0
-#define BTN2_PIN 5U // PA5 → EXTI5
-
+// PA0, PA5, срабатывание по спаду 1->0
 void Buttons_GPIO_Init(void)
 {
-    BTN_PORT_CLK_EN(); // Вкл. тактирования
-
+    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOAEN);
     /* MODER: вход (00) */
-    CLEAR_BIT(BTN_PORT->MODER,
-              (3U << (BTN1_PIN * 2U)) |
-                  (3U << (BTN2_PIN * 2U)));
-
+    CLEAR_BIT(GPIOA->MODER, GPIO_MODER_MODE0_Msk);
+    CLEAR_BIT(GPIOA->MODER, GPIO_MODER_MODE5_Msk);
     /* OTYPER — сброс */
-    CLEAR_BIT(BTN_PORT->OTYPER,
-              (1U << BTN1_PIN) | (1U << BTN2_PIN));
-
+    CLEAR_BIT(GPIOA->OTYPER, GPIO_OTYPER_OT0_Msk);
+    CLEAR_BIT(GPIOA->OTYPER, GPIO_OTYPER_OT5_Msk);
     /* PUPDR: 01 = pull-up */
-    CLEAR_BIT(BTN_PORT->PUPDR,
-              (3U << (BTN1_PIN * 2U)) |
-                  (3U << (BTN2_PIN * 2U)));
-    SET_BIT(BTN_PORT->PUPDR,
-            (1U << (BTN1_PIN * 2U)) |
-                (1U << (BTN2_PIN * 2U)));
+    SET_BIT(GPIOA->PUPDR, GPIO_PUPDR_PUPD0_0);
+    SET_BIT(GPIOA->PUPDR, GPIO_PUPDR_PUPD5_0);
 }
-
 // Настройка прерываний кнопки: назначение EXTI на линии, прерывание по спаду 1->0. Приоритет у PA0 выше чем PA5
 void Buttons_EXTI_Init(void)
 {
-    /* 1. Тактирование SYSCFG */
+    /* 1. Включаем тактирование блока SYSCFG
+     *    Он связывает линии EXTI с конкретными портами (PA, PB, ...).
+     */
     SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SYSCFGEN);
 
-    /* EXTI0 (PA0): очистить в EXTICR[0] */
-    CLEAR_BIT(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI0); // 0000: PA[x] pin
-    /* 0000 = порт A — ничего не ставим */
+    /* 2. Привязываем линии EXTI к ножкам порта A
+     *  EXTI0  → PA0 (кнопка 1)
+     *  EXTI5  → PA5 (кнопка 2)
+     *  Для порта A код источника = 0000, поэтому достаточно очистить эти биты.
+     */
 
-    /* EXTI5 (PA5): очистить в EXTICR[1], тоже порт A */
-    CLEAR_BIT(SYSCFG->EXTICR[1], SYSCFG_EXTICR2_EXTI5); // 0000: PA[x] pin
-    /* тоже ничего не ставим, 0000 = PAx */
+    /* EXTI0: EXTICR[0], биты EXTI0[3:0] */
+    CLEAR_BIT(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI0);
+    /* здесь 0000 = PA0, ничего больше ставить не нужно */
+    /* EXTI5: EXTICR[1], биты EXTI5[3:0] */
+    CLEAR_BIT(SYSCFG->EXTICR[1], SYSCFG_EXTICR2_EXTI5);
+    /* здесь 0000 = PA5 */
 
-    /* 2. Настроим триггеры */
-    CLEAR_BIT(EXTI->RTSR, (1U << BTN1_PIN) | (1U << BTN2_PIN));
-    CLEAR_BIT(EXTI->FTSR, (1U << BTN1_PIN) | (1U << BTN2_PIN));
+    /* 3. Настройка срабатывания по фронтам
+     *  Кнопка 1 (PA0):
+     *      вход на pull-up, в покое = 1
+     *      при нажатии → 0, делаем прерывание только по спаду.
+     *
+     *  Кнопка 2 (PA5):
+     *      — нужно различать короткое и длинное нажатие
+     *      — значит, нужно знать:когда НАЖАЛИ  (спад 1→0) когда ОТПУСТИЛИ (фронт 0→1)
+     */
 
-    SET_BIT(EXTI->FTSR, (1U << BTN1_PIN) | (1U << BTN2_PIN)); // По спаду
+    /* Настройка тригеров */
+    CLEAR_BIT(EXTI->RTSR, EXTI_RTSR_TR0 | EXTI_RTSR_TR5);
+    CLEAR_BIT(EXTI->FTSR, EXTI_FTSR_TR0 | EXTI_FTSR_TR5);
 
-    /* 3. Разрешим линии в IMR */
-    SET_BIT(EXTI->IMR, (1U << BTN1_PIN) | (1U << BTN2_PIN));
+    // Кнопка 1 (PA0) - только спад
+    SET_BIT(EXTI->FTSR, EXTI_FTSR_TR0);
 
-    /* 4. NVIC — у EXTI5 свой вектор */
-    NVIC_SetPriority(EXTI0_IRQn, 5);
+    // Кнопка 2 (PA5) - оба фронта
+    SET_BIT(EXTI->FTSR, EXTI_FTSR_TR5);
+    SET_BIT(EXTI->RTSR, EXTI_RTSR_TR5);
+
+    /* 4. Разрешаем прерывания */
+    SET_BIT(EXTI->IMR, EXTI_IMR_MR0 | EXTI_IMR_MR5);
+
+    /* 5. Очищаем флаги (запись 1 очищает флаг) */
+    WRITE_REG(EXTI->PR, EXTI_PR_PR0 | EXTI_PR_PR5);
+
+    /* 5. NVIC: включаем прерывания и задаём приоритет */
+    NVIC_SetPriority(EXTI0_IRQn, 5); // Кнопка 1
     NVIC_EnableIRQ(EXTI0_IRQn);
 
-    NVIC_SetPriority(EXTI9_5_IRQn, 6); // общий обработчик для EXTI5–9
+    NVIC_SetPriority(EXTI9_5_IRQn, 6); // Кнопка 2 (линия 5)
     NVIC_EnableIRQ(EXTI9_5_IRQn);
 }
-
 // Настройка GPIO портов. PD1, PD2, PD3, PD4, PD6, PD7
 void LEDs_GPIO_Init(void)
 {
@@ -425,4 +369,102 @@ void LEDs_GPIO_Init(void)
     SET_BIT(GPIOD->OSPEEDR, GPIO_OSPEEDER_OSPEEDR7_1); // 10. High speed
     CLEAR_BIT(GPIOD->PUPDR, GPIO_PUPDR_PUPD7_Msk);
     SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR7);
+}
+
+void MCO_init(void)
+{
+
+    // Для PC9
+    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOCEN);
+    /* MODER: сначала очищаем, потом ставим 10b (AF) */
+    CLEAR_BIT(GPIOC->MODER, GPIO_MODER_MODE9_Msk);
+    SET_BIT(GPIOC->MODER, GPIO_MODER_MODE9_1); // бит MODE9_1 = 1, MODE9_0 = 0 → 10b
+
+    CLEAR_BIT(GPIOC->OTYPER, GPIO_OTYPER_OT9_Msk);
+    /* OSPEEDR: 11b = very high speed */
+    CLEAR_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
+    SET_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
+    CLEAR_BIT(GPIOC->PUPDR, GPIO_PUPDR_PUPD9_Msk);
+    CLEAR_BIT(GPIOC->AFR[1], 0xFU << ((9U - 8U) * 4U)); // (9-8)*4 = 4, поле для PC9
+    /* Сначала очищаем поля MCO2 и MCO2PRE */
+
+    CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2 | RCC_CFGR_MCO2PRE);
+    /* Источник MCO2 = PLLCLK (MCO2[1:0] = 11b) */
+    SET_BIT(RCC->CFGR, RCC_CFGR_MCO2_0 | RCC_CFGR_MCO2_1);
+    /* Предделитель MCO2PRE = /5 → 111b: ставим все три бита */
+    SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_0 |
+                           RCC_CFGR_MCO2PRE_1 |
+                           RCC_CFGR_MCO2PRE_2);
+}
+
+// Выключить все 6 светодиодов
+void LED_AllOff(void)
+{
+    SET_BIT(GPIOD->BSRR,
+            GPIO_BSRR_BR1 |
+                GPIO_BSRR_BR2 |
+                GPIO_BSRR_BR3 |
+                GPIO_BSRR_BR4 |
+                GPIO_BSRR_BR6 |
+                GPIO_BSRR_BR7);
+}
+// Включить нужный светодиод (остальные остаются как были)
+void LED_On_Index(uint8_t index)
+{
+    switch (index)
+    {
+    case 0:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS1);
+        break;
+    case 1:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS2);
+        break;
+    case 2:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS3);
+        break;
+    case 3:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS4);
+        break;
+    case 4:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS6);
+        break;
+    case 5:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS7);
+        break;
+    default:
+        break;
+    }
+}
+// Выключить конкретный светодиод по индексу
+void LED_Off_Index(uint8_t index)
+{
+    switch (index)
+    {
+    case 0:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR1);
+        break;
+    case 1:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR2);
+        break;
+    case 2:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR3);
+        break;
+    case 3:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR4);
+        break;
+    case 4:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR6);
+        break;
+    case 5:
+        SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR7);
+        break;
+    default:
+        break;
+    }
+}
+// Включаем только один активный светодиод, остальные гасим
+void LED_SetActive(uint8_t index)
+{
+    LED_AllOff();
+    LED_On_Index(index);
 }

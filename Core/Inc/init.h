@@ -6,16 +6,24 @@
 #include "../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
 #include "stm32f4xx.h"
 
+#define BTN_DEBOUNCE_MS 200U
+#define BTN2_LONG_MS 2000U
 // LB2
 
 void RCC_INIT(void);                  // Для HSE 180 MHz
 void ITR_Init(void);                  // Для прерывания PC13 (for test)
 void Clock_Init_HSI_PLL_168MHz(void); // Тактирование на 168Mhz от HSI. См. предделители
 void SysTick_Init_1ms(void);          // Настройка SysTick на 1мс
-
-void Buttons_GPIO_Init(void); //
+void Clock_Init_HSE_PLL_168MHz(void); // Для HSE 168 Mhz
+void Buttons_GPIO_Init(void);         //
 void Buttons_EXTI_Init(void);
 void LEDs_GPIO_Init(void);
+void MCO_init(void);
+
+void LED_AllOff(void);
+void LED_On_Index(uint8_t index);
+void LED_Off_Index(uint8_t index);
+void LED_SetActive(uint8_t index);
 
 #endif
 

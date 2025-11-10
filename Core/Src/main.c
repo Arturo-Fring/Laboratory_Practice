@@ -5,64 +5,192 @@
 extern uint32_t SystemCoreClock;
 volatile uint32_t g_msTicks = 0U; // глобальный счётчик миллисекунд
 
-uint32_t millis(void)
+#define LED_COUNT 6U
+
+/* Режимы работы светодиодов */
+#define LED_MODE_BLINK 0U
+#define LED_MODE_ON 1U
+
+/* Частоты мигания: 0.2 Гц, 0.8 Гц, 1.3 Гц
+ * Храним "половину периода" в мс (интервал между переключениями состояния)
+ * 0.2 Гц → T = 5000 мс, T/2 = 2500
+ * 0.8 Гц → T = 1250 мс, T/2 = 625
+ * 1.3 Гц → T ≈ 770 мс, T/2 ≈ 385
+ */
+#define BLINK_MODE_COUNT 3U
+static const uint32_t g_blinkIntervals[BLINK_MODE_COUNT] = {
+    2500U, 625U, 385U};
+
+// Общее время от SysTick (мс)
+volatile uint32_t system_time_ms = 0U;
+
+/* --- Кнопка 1 (PA0) --- */
+volatile uint8_t button1_pressed_flag = 0U;
+volatile uint32_t button1_last_irq_time_ms = 0U;
+
+/* --- Кнопка 2 (PA5) --- */
+volatile uint8_t button2_press_event_flag = 0U;   // фронт нажатия (PA5=0)
+volatile uint8_t button2_release_event_flag = 0U; // фронт отпускания (PA5=1)
+volatile uint32_t button2_last_irq_time_ms = 0U;
+
+volatile uint8_t button2_is_pressed = 0U;      // сейчас реально зажата (после дебаунса)
+volatile uint32_t button2_press_start_ms = 0U; // когда нажали (для измерения длительности)
+
+/* --- Светодиоды --- */
+volatile uint8_t led_mode = LED_MODE_BLINK;
+volatile uint8_t blink_mode_index = 0U; // 0..2
+volatile uint32_t last_blink_time_ms = 0U;
+volatile uint8_t blink_led_is_on = 0U; // 0 = выкл, 1 = горит
+
+#define LED_INDEX_NONE 255U
+volatile uint8_t current_led_index = LED_INDEX_NONE; // 0..5
+
+void Button1_Task(void)
 {
-    return g_msTicks;
+    if (button1_pressed_flag == 0U)
+        return;
+
+    button1_pressed_flag = 0U;
+
+    if (current_led_index == LED_INDEX_NONE)
+    {
+        current_led_index = 0U;
+    }
+    else
+    {
+        current_led_index++;
+        if (current_led_index >= LED_COUNT)
+            current_led_index = 0U;
+    }
+
+    if (led_mode == LED_MODE_ON)
+    {
+        LED_AllOff();
+        LED_On_Index(current_led_index);
+    }
 }
 
-void delay_ms(uint32_t ms)
+void Button2_Task(void)
 {
-    uint32_t start = millis();
-    while ((millis() - start) < ms)
+    uint32_t now = system_time_ms;
+
+    // Нажали
+    if (button2_press_event_flag != 0U)
     {
-        /* просто ждём */
+        button2_press_event_flag = 0U;
+
+        button2_is_pressed = 1U;
+        button2_press_start_ms = now;
+    }
+
+    // Отпустили
+    if (button2_release_event_flag != 0U)
+    {
+        button2_release_event_flag = 0U;
+
+        if (button2_is_pressed != 0U)
+        {
+            button2_is_pressed = 0U;
+
+            uint32_t press_time = now - button2_press_start_ms;
+
+            if (press_time >= BTN2_LONG_MS)
+            {
+                // Долгое нажатие — смена режима
+                if (led_mode == LED_MODE_BLINK)
+                {
+                    led_mode = LED_MODE_ON;
+
+                    // В режиме "светится":
+                    LED_AllOff();
+
+                    if (current_led_index != LED_INDEX_NONE)
+                    {
+                        // Если активный LED уже выбран — зажечь только его
+                        LED_On_Index(current_led_index);
+                        blink_led_is_on = 1U;
+                    }
+                    else
+                    {
+                        // Активный ещё не выбран — просто ничего не светим
+                        blink_led_is_on = 0U;
+                    }
+                }
+                else
+                {
+                    // Переход в режим мигания
+                    led_mode = LED_MODE_BLINK;
+
+                    LED_AllOff();
+                    blink_led_is_on = 0U;
+                    last_blink_time_ms = now;
+                }
+            }
+            else
+            {
+                // Короткое нажатие — смена частоты мигания
+                blink_mode_index++;
+                if (blink_mode_index >= BLINK_MODE_COUNT)
+                {
+                    blink_mode_index = 0U;
+                }
+            }
+        }
+    }
+}
+
+void Blink_Task(void)
+{
+    // Если режим не "мигание" — ничего не делаем
+    if (led_mode != LED_MODE_BLINK)
+    {
+        return;
+    }
+
+    // Если ещё не выбрали активный светодиод — тоже ничего не делаем
+    if (current_led_index == LED_INDEX_NONE)
+    {
+        return;
+    }
+
+    uint32_t now = system_time_ms;
+    uint32_t interval = g_blinkIntervals[blink_mode_index];
+
+    if ((now - last_blink_time_ms) >= interval)
+    {
+        last_blink_time_ms = now;
+
+        if (blink_led_is_on == 0U)
+        {
+            LED_AllOff();
+            LED_On_Index(current_led_index);
+            blink_led_is_on = 1U;
+        }
+        else
+        {
+            LED_AllOff();
+            blink_led_is_on = 0U;
+        }
     }
 }
 
 int main(void)
 {
-    Clock_Init_HSE_PLL_168MHz(); // настраиваем PLL от HSE → 168 МГц
-    SysTick_Init_1ms();          // заводим системный таймер на 1 мс
-    LEDs_GPIO_Init();            // твоя инициализация PD1,2,3,4,6,7
-    Buttons_GPIO_Init();         // PA0, PA5 как входы с pull-up
-    Buttons_EXTI_Init();         // EXTI0 и EXTI9_5
-    Interrupts_InitState();      // начальное состояние логики
-    //__enable_irq(); // глобально включим прерывания
+    Clock_Init_HSE_PLL_168MHz();
+    SysTick_Init_1ms();
 
-    /*Настройка тактирования, светодиода */
-    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN | RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIOAEN);
+    LEDs_GPIO_Init();
+    Buttons_GPIO_Init();
+    Buttons_EXTI_Init();
 
-    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN);
-    SET_BIT(GPIOB->MODER, GPIO_MODER_MODE7_0); /* 01 */
+    LED_AllOff();
 
-    /*-----------MCO2------------------------*/
-
-    // Необхоидимо настроить пины на выход
-
-    // Для PC9
-    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOCEN);
-    /* MODER: сначала очищаем, потом ставим 10b (AF) */
-    CLEAR_BIT(GPIOC->MODER, GPIO_MODER_MODE9_Msk);
-    SET_BIT(GPIOC->MODER, GPIO_MODER_MODE9_1); // бит MODE9_1 = 1, MODE9_0 = 0 → 10b
-
-    CLEAR_BIT(GPIOC->OTYPER, GPIO_OTYPER_OT9_Msk);
-    /* OSPEEDR: 11b = very high speed */
-    CLEAR_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
-    SET_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
-    CLEAR_BIT(GPIOC->PUPDR, GPIO_PUPDR_PUPD9_Msk);
-    CLEAR_BIT(GPIOC->AFR[1], 0xFU << ((9U - 8U) * 4U)); // (9-8)*4 = 4, поле для PC9
-    /* Сначала очищаем поля MCO2 и MCO2PRE */
-
-    CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2 | RCC_CFGR_MCO2PRE);
-    /* Источник MCO2 = PLLCLK (MCO2[1:0] = 11b) */
-    SET_BIT(RCC->CFGR, RCC_CFGR_MCO2_0 | RCC_CFGR_MCO2_1);
-    /* Предделитель MCO2PRE = /5 → 111b: ставим все три бита */
-    SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_0 |
-                           RCC_CFGR_MCO2PRE_1 |
-                           RCC_CFGR_MCO2PRE_2);
+    SET_BIT(EXTI->PR, (1U << 0) | (1U << 5));
 
     while (1)
     {
-        __WFI(); // просто ждём прерываний
+        Button1_Task(); // переключение активного светодиода
+        Button2_Task(); // смена частоты / режима
+        Blink_Task();   // мигаем в нужном режиме
     }
 }
