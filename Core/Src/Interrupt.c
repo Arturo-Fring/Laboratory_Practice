@@ -1,81 +1,104 @@
 #include "Interrupt.h"
 
+/* Глобальные переменные, определены в main.c */
 extern volatile uint32_t system_time_ms;
 extern volatile uint32_t seconds;
 
-extern volatile uint8_t button1_pressed_flag;
-extern volatile uint32_t button1_last_irq_time_ms;
-extern volatile uint8_t button2_press_event_flag;
-extern volatile uint8_t button2_release_event_flag;
-extern volatile uint32_t button2_last_irq_time_ms;
+extern volatile uint8_t  button1_press_flag;
+extern volatile uint8_t  button2_press_flag;
+extern volatile uint8_t  button3_press_flag;
 
-volatile uint16_t tectonics = 0;
-// volatile uint8_t seconds = 0;
-//  Обработчик таймера
+extern volatile uint32_t button1_last_irq_time_ms;
+extern volatile uint32_t button2_last_irq_time_ms;
+extern volatile uint32_t button3_last_irq_time_ms;
+
+/* Локальный счётчик для перевода миллисекунд → секунды */
+static volatile uint16_t systick_sub_ms = 0;
+
+/* ============================================================
+   SysTick: вызывается каждый 1 мс (настроен в SysTick_Init_1ms)
+   ============================================================ */
 void SysTick_Handler(void)
 {
     system_time_ms++;
-    tectonics++;
-    if (tectonics >= 1000)
+
+    systick_sub_ms++;
+    if (systick_sub_ms >= 1000U)
     {
-        seconds += 1;
-        tectonics = 0;
+        systick_sub_ms = 0U;
+        seconds++;
     }
 }
 
-// Обработчик кнопки PA0
+/* ============================================================
+   EXTI0: Кнопка 1 (PA0)
+   - прерывание по спаду (нажали кнопку)
+   - в ISR только ставим флаг + антидребезг
+   ============================================================ */
 void EXTI0_IRQHandler(void)
 {
-    /* Проверяем, есть ли запрос по линии 0 (PA0) */
+    /* Проверяем, есть ли запрос по линии 0 */
     if (READ_BIT(EXTI->PR, EXTI_PR_PR0) != 0U)
     {
         uint32_t now = system_time_ms;
 
-        /* Антидребезг BTN_DEBOUNCE_MS */
+        /* Антидребезг – не чаще, чем раз в BTN_DEBOUNCE_MS */
         if ((now - button1_last_irq_time_ms) >= BTN_DEBOUNCE_MS)
         {
             button1_last_irq_time_ms = now;
 
-            /* Сообщаем main(), что кнопку 1 нажали */
-            button1_pressed_flag = 1U;
+            /* Кнопка 1 — считаем событие нажатия */
+            button1_press_flag = 1U;
         }
 
-        /* Сбрасываем флаг прерывания по линии 0 */
+        /* Сбрасываем флаг прерывания по линии 0 (записью 1) */
         SET_BIT(EXTI->PR, EXTI_PR_PR0);
     }
 }
 
-// Обработчик кнопки PA5
+/* ============================================================
+   EXTI9_5: Кнопка 2 (PA5) и Кнопка 3 (PA6)
+   - PA5: настроена на оба фронта, но реагируем только когда уровень = 0 (нажатие)
+   - PA6: настроена только на спад (нажатие)
+   ============================================================ */
 void EXTI9_5_IRQHandler(void)
 {
-    /* Проверяем, есть ли запрос по линии 5 (PA5) */
+    uint32_t now = system_time_ms;
+
+    /* ---------- Кнопка 2: PA5 / EXTI5 ---------- */
     if (READ_BIT(EXTI->PR, EXTI_PR_PR5) != 0U)
     {
-        uint32_t now = system_time_ms;
-
-        /* Антидребезг: не чаще, чем BTN_DEBOUNCE_MS */
         if ((now - button2_last_irq_time_ms) >= BTN_DEBOUNCE_MS)
         {
             button2_last_irq_time_ms = now;
 
-            /* Читаем текущее состояние PA5.
-             * Кнопка с подтяжкой к +3.3В:
-             *   - в покое: GPIOA->IDR бит 5 = 1
-             *   - при нажатии: бит 5 = 0
-             */
-            if (READ_BIT(GPIOA->IDR, GPIO_IDR_ID5) == 0U)
+            /* Смотрим текущее состояние пина PA5:
+               - pull-up, в покое = 1
+               - при нажатии = 0
+               Реагируем только на "нажатие" (уровень 0). */
+            if ((GPIOA->IDR & GPIO_IDR_ID5) == 0U)
             {
-                /* Вход стал 0 → НАЖАЛИ кнопку 2 (спадающий фронт) */
-                button2_press_event_flag = 1U;
-            }
-            else
-            {
-                /* Вход стал 1 → ОТПУСТИЛИ кнопку 2 (нарастающий фронт) */
-                button2_release_event_flag = 1U;
+                button2_press_flag = 1U;
             }
         }
 
         /* Сбрасываем флаг прерывания по линии 5 */
         SET_BIT(EXTI->PR, EXTI_PR_PR5);
+    }
+
+    /* ---------- Кнопка 3: PA6 / EXTI6 ---------- */
+    if (READ_BIT(EXTI->PR, EXTI_PR_PR6) != 0U)
+    {
+        if ((now - button3_last_irq_time_ms) >= BTN_DEBOUNCE_MS)
+        {
+            button3_last_irq_time_ms = now;
+
+            /* Кнопка 3 реагирует только на "нажатие" (у нас триггер по спаду),
+               поэтому просто ставим флаг события. */
+            button3_press_flag = 1U;
+        }
+
+        /* Сбрасываем флаг прерывания по линии 6 */
+        SET_BIT(EXTI->PR, EXTI_PR_PR6);
     }
 }
