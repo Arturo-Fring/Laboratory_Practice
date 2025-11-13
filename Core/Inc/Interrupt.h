@@ -3,7 +3,4 @@
 
 #include "init.h"
 
-extern volatile uint8_t btnCount;
-extern volatile uint8_t flag;
-
 #endif

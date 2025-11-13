@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
   27:CMSIS/Include/../include/core_cm4.h **** #elif defined (__clang__)
   28:CMSIS/Include/../include/core_cm4.h ****   #pragma clang system_header   /* treat file as system include file */
   29:CMSIS/Include/../include/core_cm4.h **** #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 2
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 2
 
 
   30:CMSIS/Include/../include/core_cm4.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
   84:CMSIS/Include/../include/core_cm4.h ****   #else
   85:CMSIS/Include/../include/core_cm4.h ****     #define __FPU_USED         0U
   86:CMSIS/Include/../include/core_cm4.h ****   #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 3
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 3
 
 
   87:CMSIS/Include/../include/core_cm4.h **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  141:CMSIS/Include/../include/core_cm4.h ****       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
  142:CMSIS/Include/../include/core_cm4.h ****       #define __FPU_USED       0U
  143:CMSIS/Include/../include/core_cm4.h ****     #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 4
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 4
 
 
  144:CMSIS/Include/../include/core_cm4.h ****   #else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  198:CMSIS/Include/../include/core_cm4.h ****     #define __NVIC_PRIO_BITS          3U
  199:CMSIS/Include/../include/core_cm4.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
  200:CMSIS/Include/../include/core_cm4.h ****   #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 5
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 5
 
 
  201:CMSIS/Include/../include/core_cm4.h **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  255:CMSIS/Include/../include/core_cm4.h **** 
  256:CMSIS/Include/../include/core_cm4.h **** /**
  257:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Application Program Status Register (APSR).
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 6
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 6
 
 
  258:CMSIS/Include/../include/core_cm4.h ****  */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  312:CMSIS/Include/../include/core_cm4.h **** 
  313:CMSIS/Include/../include/core_cm4.h **** /**
  314:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 7
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 7
 
 
  315:CMSIS/Include/../include/core_cm4.h ****  */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  369:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Control Registers (CONTROL).
  370:CMSIS/Include/../include/core_cm4.h ****  */
  371:CMSIS/Include/../include/core_cm4.h **** typedef union
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 8
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 8
 
 
  372:CMSIS/Include/../include/core_cm4.h **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  426:CMSIS/Include/../include/core_cm4.h **** 
  427:CMSIS/Include/../include/core_cm4.h **** /*@} end of group CMSIS_NVIC */
  428:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 9
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 9
 
 
  429:CMSIS/Include/../include/core_cm4.h **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  483:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
  484:CMSIS/Include/../include/core_cm4.h **** 
  485:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 10
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 10
 
 
  486:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  540:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
  541:CMSIS/Include/../include/core_cm4.h **** 
  542:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 11
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 11
 
 
  543:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  597:CMSIS/Include/../include/core_cm4.h **** 
  598:CMSIS/Include/../include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Pos             7U                                            /*!< SCB 
  599:CMSIS/Include/../include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Msk            (1UL << SCB_SHCSR_SVCALLACT_Pos)               /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 12
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 12
 
 
  600:CMSIS/Include/../include/core_cm4.h **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  654:CMSIS/Include/../include/core_cm4.h **** 
  655:CMSIS/Include/../include/core_cm4.h **** #define SCB_CFSR_PRECISERR_Pos            (SCB_CFSR_BUSFAULTSR_Pos + 1U)                  /*!< SCB 
  656:CMSIS/Include/../include/core_cm4.h **** #define SCB_CFSR_PRECISERR_Msk            (1UL << SCB_CFSR_PRECISERR_Pos)                 /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 13
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 13
 
 
  657:CMSIS/Include/../include/core_cm4.h **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  711:CMSIS/Include/../include/core_cm4.h ****   \defgroup CMSIS_SCnSCB System Controls not in SCB (SCnSCB)
  712:CMSIS/Include/../include/core_cm4.h ****   \brief    Type definitions for the System Control and ID Register not in the SCB
  713:CMSIS/Include/../include/core_cm4.h ****   @{
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 14
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 14
 
 
  714:CMSIS/Include/../include/core_cm4.h ****  */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  768:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysT
  769:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
  770:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 15
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 15
 
 
  771:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysT
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  825:CMSIS/Include/../include/core_cm4.h ****         uint32_t RESERVED3[29U];
  826:CMSIS/Include/../include/core_cm4.h ****   __OM  uint32_t IWR;                    /*!< Offset: 0xEF8 ( /W)  ITM Integration Write Register *
  827:CMSIS/Include/../include/core_cm4.h ****   __IM  uint32_t IRR;                    /*!< Offset: 0xEFC (R/ )  ITM Integration Read Register */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 16
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 16
 
 
  828:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t IMCR;                   /*!< Offset: 0xF00 (R/W)  ITM Integration Mode Control Reg
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  882:CMSIS/Include/../include/core_cm4.h **** 
  883:CMSIS/Include/../include/core_cm4.h **** /* ITM Integration Read Register Definitions */
  884:CMSIS/Include/../include/core_cm4.h **** #define ITM_IRR_ATREADYM_Pos                0U                                            /*!< ITM 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 17
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 17
 
 
  885:CMSIS/Include/../include/core_cm4.h **** #define ITM_IRR_ATREADYM_Msk               (1UL /*<< ITM_IRR_ATREADYM_Pos*/)              /*!< ITM 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  939:CMSIS/Include/../include/core_cm4.h **** } DWT_Type;
  940:CMSIS/Include/../include/core_cm4.h **** 
  941:CMSIS/Include/../include/core_cm4.h **** /* DWT Control Register Definitions */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 18
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 18
 
 
  942:CMSIS/Include/../include/core_cm4.h **** #define DWT_CTRL_NUMCOMP_Pos               28U                                         /*!< DWT CTR
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
  996:CMSIS/Include/../include/core_cm4.h **** /* DWT CPI Count Register Definitions */
  997:CMSIS/Include/../include/core_cm4.h **** #define DWT_CPICNT_CPICNT_Pos               0U                                         /*!< DWT CPI
  998:CMSIS/Include/../include/core_cm4.h **** #define DWT_CPICNT_CPICNT_Msk              (0xFFUL /*<< DWT_CPICNT_CPICNT_Pos*/)       /*!< DWT CPI
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 19
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 19
 
 
  999:CMSIS/Include/../include/core_cm4.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1053:CMSIS/Include/../include/core_cm4.h ****   \defgroup CMSIS_TPI     Trace Port Interface (TPI)
 1054:CMSIS/Include/../include/core_cm4.h ****   \brief    Type definitions for the Trace Port Interface (TPI)
 1055:CMSIS/Include/../include/core_cm4.h ****   @{
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 20
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 20
 
 
 1056:CMSIS/Include/../include/core_cm4.h ****  */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1110:CMSIS/Include/../include/core_cm4.h **** /* TPI Formatter and Flush Control Register Definitions */
 1111:CMSIS/Include/../include/core_cm4.h **** #define TPI_FFCR_TrigIn_Pos                 8U                                         /*!< TPI FFC
 1112:CMSIS/Include/../include/core_cm4.h **** #define TPI_FFCR_TrigIn_Msk                (0x1UL << TPI_FFCR_TrigIn_Pos)              /*!< TPI FFC
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 21
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 21
 
 
 1113:CMSIS/Include/../include/core_cm4.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1167:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM1_Msk                 (0xFFUL << TPI_FIFO1_ITM1_Pos)              /*!< TPI FIF
 1168:CMSIS/Include/../include/core_cm4.h **** 
 1169:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM0_Pos                  0U                                         /*!< TPI FIF
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 22
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 22
 
 
 1170:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM0_Msk                 (0xFFUL /*<< TPI_FIFO1_ITM0_Pos*/)          /*!< TPI FIF
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1224:CMSIS/Include/../include/core_cm4.h **** {
 1225:CMSIS/Include/../include/core_cm4.h ****   __IM  uint32_t TYPE;                   /*!< Offset: 0x000 (R/ )  MPU Type Register */
 1226:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t CTRL;                   /*!< Offset: 0x004 (R/W)  MPU Control Register */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 23
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 23
 
 
 1227:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t RNR;                    /*!< Offset: 0x008 (R/W)  MPU Region RNRber Register */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1281:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_AP_Pos                    24U                                            /*!< MPU 
 1282:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_AP_Msk                    (0x7UL << MPU_RASR_AP_Pos)                     /*!< MPU 
 1283:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 24
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 24
 
 
 1284:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_TEX_Pos                   19U                                            /*!< MPU 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1338:CMSIS/Include/../include/core_cm4.h **** 
 1339:CMSIS/Include/../include/core_cm4.h **** #define FPU_FPCCR_BFRDY_Pos                 6U                                            /*!< FPCC
 1340:CMSIS/Include/../include/core_cm4.h **** #define FPU_FPCCR_BFRDY_Msk                (1UL << FPU_FPCCR_BFRDY_Pos)                   /*!< FPCC
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 25
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 25
 
 
 1341:CMSIS/Include/../include/core_cm4.h **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1395:CMSIS/Include/../include/core_cm4.h **** 
 1396:CMSIS/Include/../include/core_cm4.h **** #define FPU_MVFR0_A_SIMD_registers_Pos      0U                                            /*!< MVFR
 1397:CMSIS/Include/../include/core_cm4.h **** #define FPU_MVFR0_A_SIMD_registers_Msk     (0xFUL /*<< FPU_MVFR0_A_SIMD_registers_Pos*/)  /*!< MVFR
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 26
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 26
 
 
 1398:CMSIS/Include/../include/core_cm4.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1452:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_S_REGRDY_Pos       16U                                            /*!< Core
 1453:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_S_REGRDY_Msk       (1UL << CoreDebug_DHCSR_S_REGRDY_Pos)          /*!< Core
 1454:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 27
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 27
 
 
 1455:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Pos     5U                                            /*!< Core
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1509:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Msk     (1UL << CoreDebug_DEMCR_VC_NOCPERR_Pos)        /*!< Core
 1510:CMSIS/Include/../include/core_cm4.h **** 
 1511:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_MMERR_Pos        4U                                            /*!< Core
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 28
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 28
 
 
 1512:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_MMERR_Msk       (1UL << CoreDebug_DEMCR_VC_MMERR_Pos)          /*!< Core
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1566:CMSIS/Include/../include/core_cm4.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
 1567:CMSIS/Include/../include/core_cm4.h **** #define ITM                 ((ITM_Type       *)     ITM_BASE      )   /*!< ITM configuration struct
 1568:CMSIS/Include/../include/core_cm4.h **** #define DWT                 ((DWT_Type       *)     DWT_BASE      )   /*!< DWT configuration struct
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 29
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 29
 
 
 1569:CMSIS/Include/../include/core_cm4.h **** #define TPI                 ((TPI_Type       *)     TPI_BASE      )   /*!< TPI configuration struct
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1623:CMSIS/Include/../include/core_cm4.h ****   #define NVIC_SystemReset            __NVIC_SystemReset
 1624:CMSIS/Include/../include/core_cm4.h **** #endif /* CMSIS_NVIC_VIRTUAL */
 1625:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 30
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 30
 
 
 1626:CMSIS/Include/../include/core_cm4.h **** #ifdef CMSIS_VECTAB_VIRTUAL
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1680:CMSIS/Include/../include/core_cm4.h **** 
 1681:CMSIS/Include/../include/core_cm4.h **** 
 1682:CMSIS/Include/../include/core_cm4.h **** /**
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 31
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 31
 
 
 1683:CMSIS/Include/../include/core_cm4.h ****   \brief   Enable Interrupt
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1737:CMSIS/Include/../include/core_cm4.h ****   \details Reads the NVIC pending register and returns the pending bit for the specified device spe
 1738:CMSIS/Include/../include/core_cm4.h ****   \param [in]      IRQn  Device specific interrupt number.
 1739:CMSIS/Include/../include/core_cm4.h ****   \return             0  Interrupt status is not pending.
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 32
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 32
 
 
 1740:CMSIS/Include/../include/core_cm4.h ****   \return             1  Interrupt status is pending.
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1794:CMSIS/Include/../include/core_cm4.h **** __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
 1795:CMSIS/Include/../include/core_cm4.h **** {
 1796:CMSIS/Include/../include/core_cm4.h ****   if ((int32_t)(IRQn) >= 0)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 33
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 33
 
 
 1797:CMSIS/Include/../include/core_cm4.h ****   {
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
 1851:CMSIS/Include/../include/core_cm4.h **** 
 1852:CMSIS/Include/../include/core_cm4.h **** /**
 1853:CMSIS/Include/../include/core_cm4.h ****   \brief   Encode Priority
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 34
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 34
 
 
 1854:CMSIS/Include/../include/core_cm4.h ****   \details Encodes the priority for an interrupt with the given priority group,
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
   64              		.loc 2 1873 30 is_stmt 0 view .LVU14
   65 001c 4FF0FF3E 		mov	lr, #-1
   66 0020 0EFA0CF0 		lsl	r0, lr, ip
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 35
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 35
 
 
   67              	.LVL4:
@@ -2065,440 +2065,663 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 1
   84 003c EEE7     		b	.L2
   85              		.cfi_endproc
   86              	.LFE113:
-  88              		.section	.text.RCC_INIT,"ax",%progbits
+  88              		.section	.text.ITR_Init,"ax",%progbits
   89              		.align	1
-  90              		.global	RCC_INIT
+  90              		.global	ITR_Init
   91              		.syntax unified
   92              		.thumb
   93              		.thumb_func
-  95              	RCC_INIT:
+  95              	ITR_Init:
   96              	.LFB130:
    1:Core/Src/init.c **** #include "../Inc/init.h"
    2:Core/Src/init.c **** #include "init.h"
    3:Core/Src/init.c **** 
-   4:Core/Src/init.c **** void RCC_INIT(void)
+   4:Core/Src/init.c **** void ITR_Init(void)
    5:Core/Src/init.c **** {
   97              		.loc 1 5 1 is_stmt 1 view -0
   98              		.cfi_startproc
   99              		@ args = 0, pretend = 0, frame = 0
  100              		@ frame_needed = 0, uses_anonymous_args = 0
- 101              		@ link register save eliminated.
-   6:Core/Src/init.c **** 
-   7:Core/Src/init.c ****     // // GPIO INIT
-   8:Core/Src/init.c ****     // RCC_AHB1ENR |= RCC_GPIOA_EN | RCC_GPIOB_EN | RCC_GPIOC_EN; // светодиод, выход
-   9:Core/Src/init.c **** 
-  10:Core/Src/init.c ****     // BIT_SET(GPIOB_MODER, GPIO_PIN_OUT_7);
-  11:Core/Src/init.c ****     // BIT_SET(GPIOB_OTYPER, GPIO_OFF);
-  12:Core/Src/init.c ****     // BIT_SET(GPIOB_OSPEEDR, GPIO_PIN_MED_7);
-  13:Core/Src/init.c ****     // BIT_SET(GPIOB_BSRR, GPIO_PIN_RESET_7);
-  14:Core/Src/init.c **** 
-  15:Core/Src/init.c ****     SET_BIT(GPIOC->MODER, GPIO_MODER_MODER9_1);           // Настраиваем пин на а�
- 102              		.loc 1 15 5 view .LVU21
- 103 0000 444B     		ldr	r3, .L11
- 104 0002 1A68     		ldr	r2, [r3]
- 105 0004 42F40022 		orr	r2, r2, #524288
- 106 0008 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 36
+ 101 0000 08B5     		push	{r3, lr}
+ 102              	.LCFI1:
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 3, -8
+ 105              		.cfi_offset 14, -4
+   6:Core/Src/init.c ****     SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SYSCFGEN);
+ 106              		.loc 1 6 5 view .LVU21
+ 107 0002 144A     		ldr	r2, .L7
+ 108 0004 536C     		ldr	r3, [r2, #68]
+ 109 0006 43F48043 		orr	r3, r3, #16384
+ 110 000a 5364     		str	r3, [r2, #68]
+   7:Core/Src/init.c ****     /*//Это шутка, которая позволяет настроить мультипле�
+   8:Core/Src/init.c ****     регистры: SYSCFG. Объединение нулевой линии (нулевые по
+   9:Core/Src/init.c ****     EXTI1 - первая линия и т.д.
+  10:Core/Src/init.c ****     Мы подключаем кнопку на PC13, на уроке PC12. Настраиваем 
+  11:Core/Src/init.c ****     SYSCFG разделили на 2 области, 16 битов старш другому, 16 б
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 36
 
 
-  16:Core/Src/init.c ****     SET_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);    // Настраиваем пин на м�
- 107              		.loc 1 16 5 view .LVU22
- 108 000a 9A68     		ldr	r2, [r3, #8]
- 109 000c 42F44022 		orr	r2, r2, #786432
- 110 0010 9A60     		str	r2, [r3, #8]
-  17:Core/Src/init.c ****     MODIFY_REG(GPIOC->AFR[1], GPIO_AFRH_AFSEL9_Msk, 0x0); // Выбираем тип альтерн
- 111              		.loc 1 17 5 view .LVU23
- 112 0012 5A6A     		ldr	r2, [r3, #36]
- 113 0014 22F0F002 		bic	r2, r2, #240
- 114 0018 5A62     		str	r2, [r3, #36]
+  12:Core/Src/init.c ****     Там разделение на 4 линии. Во второй от 4 до 7, в третье
+  13:Core/Src/init.c ****     Мы будем брать PC12, следовательно значение для PC12.
+  14:Core/Src/init.c ****     APB2ENR (записали 1 для тактирвоания)
+  15:Core/Src/init.c ****     */
+  16:Core/Src/init.c ****     SET_BIT(SYSCFG->EXTICR[3], SYSCFG_EXTICR4_EXTI13_PC);
+ 111              		.loc 1 16 5 view .LVU22
+ 112 000c A2F58032 		sub	r2, r2, #65536
+ 113 0010 5369     		ldr	r3, [r2, #20]
+ 114 0012 43F02003 		orr	r3, r3, #32
+ 115 0016 5361     		str	r3, [r2, #20]
+  17:Core/Src/init.c ****     /*то что на 13pc, будет выходить на контроллер прерыван
   18:Core/Src/init.c **** 
-  19:Core/Src/init.c ****     MODIFY_REG(RCC->CR, RCC_CR_HSITRIM, 0x80UL);
- 115              		.loc 1 19 5 view .LVU24
- 116 001a 3F4A     		ldr	r2, .L11+4
- 117 001c 1368     		ldr	r3, [r2]
- 118 001e 23F0F803 		bic	r3, r3, #248
- 119 0022 43F08003 		orr	r3, r3, #128
- 120 0026 1360     		str	r3, [r2]
-  20:Core/Src/init.c ****     CLEAR_REG(RCC->CFGR);
- 121              		.loc 1 20 5 view .LVU25
- 122 0028 0023     		movs	r3, #0
- 123 002a 9360     		str	r3, [r2, #8]
-  21:Core/Src/init.c ****     while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RESET)
- 124              		.loc 1 21 5 view .LVU26
- 125              	.L6:
- 126              		.loc 1 21 46 discriminator 1 view .LVU27
- 127              		.loc 1 21 12 is_stmt 0 discriminator 1 view .LVU28
- 128 002c 3A4B     		ldr	r3, .L11+4
- 129 002e 9B68     		ldr	r3, [r3, #8]
- 130              		.loc 1 21 46 discriminator 1 view .LVU29
- 131 0030 13F00C0F 		tst	r3, #12
- 132 0034 FAD1     		bne	.L6
-  22:Core/Src/init.c ****         ;
-  23:Core/Src/init.c ****     CLEAR_BIT(RCC->CR, RCC_CR_PLLON);
- 133              		.loc 1 23 5 is_stmt 1 view .LVU30
- 134 0036 384A     		ldr	r2, .L11+4
- 135 0038 1368     		ldr	r3, [r2]
- 136 003a 23F08073 		bic	r3, r3, #16777216
- 137 003e 1360     		str	r3, [r2]
-  24:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) != RESET)
- 138              		.loc 1 24 5 view .LVU31
- 139              	.L7:
- 140              		.loc 1 24 45 discriminator 1 view .LVU32
- 141              		.loc 1 24 12 is_stmt 0 discriminator 1 view .LVU33
- 142 0040 354B     		ldr	r3, .L11+4
- 143 0042 1B68     		ldr	r3, [r3]
- 144              		.loc 1 24 45 discriminator 1 view .LVU34
- 145 0044 13F0007F 		tst	r3, #33554432
- 146 0048 FAD1     		bne	.L7
-  25:Core/Src/init.c ****         ;
-  26:Core/Src/init.c ****     CLEAR_BIT(RCC->CR, RCC_CR_HSEON | RCC_CR_CSSON);
- 147              		.loc 1 26 5 is_stmt 1 view .LVU35
- 148 004a 334A     		ldr	r2, .L11+4
- 149 004c 1368     		ldr	r3, [r2]
- 150 004e 23F41023 		bic	r3, r3, #589824
- 151 0052 1360     		str	r3, [r2]
-  27:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_HSERDY) != RESET)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 37
-
-
- 152              		.loc 1 27 5 view .LVU36
- 153              	.L8:
- 154              		.loc 1 27 45 discriminator 1 view .LVU37
- 155              		.loc 1 27 12 is_stmt 0 discriminator 1 view .LVU38
- 156 0054 304B     		ldr	r3, .L11+4
- 157 0056 1B68     		ldr	r3, [r3]
- 158              		.loc 1 27 45 discriminator 1 view .LVU39
- 159 0058 13F4003F 		tst	r3, #131072
- 160 005c FAD1     		bne	.L8
-  28:Core/Src/init.c ****         ;
-  29:Core/Src/init.c ****     CLEAR_BIT(RCC->CR, RCC_CR_HSEBYP);
- 161              		.loc 1 29 5 is_stmt 1 view .LVU40
- 162 005e 2E4B     		ldr	r3, .L11+4
- 163 0060 1A68     		ldr	r2, [r3]
- 164 0062 22F48022 		bic	r2, r2, #262144
- 165 0066 1A60     		str	r2, [r3]
-  30:Core/Src/init.c **** 
-  31:Core/Src/init.c ****     CLEAR_BIT(RCC->CR, RCC_CR_HSION);
- 166              		.loc 1 31 5 view .LVU41
- 167 0068 1A68     		ldr	r2, [r3]
- 168 006a 22F00102 		bic	r2, r2, #1
- 169 006e 1A60     		str	r2, [r3]
-  32:Core/Src/init.c **** 
-  33:Core/Src/init.c ****     SET_BIT(RCC->CR, RCC_CR_HSEON); // Включение внешнего источника та�
- 170              		.loc 1 33 5 view .LVU42
- 171 0070 1A68     		ldr	r2, [r3]
- 172 0072 42F48032 		orr	r2, r2, #65536
- 173 0076 1A60     		str	r2, [r3]
-  34:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_HSERDY) == RESET)
- 174              		.loc 1 34 5 view .LVU43
- 175              	.L9:
- 176              		.loc 1 34 45 discriminator 1 view .LVU44
- 177              		.loc 1 34 12 is_stmt 0 discriminator 1 view .LVU45
- 178 0078 274B     		ldr	r3, .L11+4
- 179 007a 1B68     		ldr	r3, [r3]
- 180              		.loc 1 34 45 discriminator 1 view .LVU46
- 181 007c 13F4003F 		tst	r3, #131072
- 182 0080 FAD0     		beq	.L9
-  35:Core/Src/init.c ****         ;
-  36:Core/Src/init.c ****     SET_BIT(RCC->CR, RCC_CR_CSSON); // Включение Clock Security
- 183              		.loc 1 36 5 is_stmt 1 view .LVU47
- 184 0082 254B     		ldr	r3, .L11+4
- 185 0084 1A68     		ldr	r2, [r3]
- 186 0086 42F40022 		orr	r2, r2, #524288
- 187 008a 1A60     		str	r2, [r3]
-  37:Core/Src/init.c **** 
-  38:Core/Src/init.c ****     // PLL configurator
-  39:Core/Src/init.c ****     CLEAR_REG(RCC->PLLCFGR);
- 188              		.loc 1 39 5 view .LVU48
- 189 008c 0022     		movs	r2, #0
- 190 008e 5A60     		str	r2, [r3, #4]
-  40:Core/Src/init.c ****     SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLSRC_HSE);                                                 
- 191              		.loc 1 40 5 view .LVU49
- 192 0090 5A68     		ldr	r2, [r3, #4]
- 193 0092 42F48002 		orr	r2, r2, #4194304
- 194 0096 5A60     		str	r2, [r3, #4]
-  41:Core/Src/init.c ****     SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLM_2);                                                     
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 38
-
-
- 195              		.loc 1 41 5 view .LVU50
- 196 0098 5A68     		ldr	r2, [r3, #4]
- 197 009a 42F00402 		orr	r2, r2, #4
- 198 009e 5A60     		str	r2, [r3, #4]
-  42:Core/Src/init.c ****     SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLN_3 | RCC_PLLCFGR_PLLN_5 | RCC_PLLCFGR_PLLN_6 | RCC_PLLCFG
- 199              		.loc 1 42 5 view .LVU51
- 200 00a0 5A68     		ldr	r2, [r3, #4]
- 201 00a2 42F4B442 		orr	r2, r2, #23040
- 202 00a6 5A60     		str	r2, [r3, #4]
-  43:Core/Src/init.c ****     SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLP_0);                                                     
- 203              		.loc 1 43 5 view .LVU52
- 204 00a8 5A68     		ldr	r2, [r3, #4]
- 205 00aa 42F48032 		orr	r2, r2, #65536
- 206 00ae 5A60     		str	r2, [r3, #4]
-  44:Core/Src/init.c ****     SET_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLQ_0 | RCC_PLLCFGR_PLLQ_1 | RCC_PLLCFGR_PLLQ_2 | RCC_PLLCFG
- 207              		.loc 1 44 5 view .LVU53
- 208 00b0 5A68     		ldr	r2, [r3, #4]
- 209 00b2 42F07062 		orr	r2, r2, #251658240
- 210 00b6 5A60     		str	r2, [r3, #4]
-  45:Core/Src/init.c **** 
-  46:Core/Src/init.c ****     // tact configurator
-  47:Core/Src/init.c ****     // SET_BIT(RCC->CFGR, RCC_CFGR_SW_1);
-  48:Core/Src/init.c **** 
-  49:Core/Src/init.c ****     /* while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS_1) == RESET); */  // не запустится pll
-  50:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_SW_PLL);                         // В качестве систе�
- 211              		.loc 1 50 5 view .LVU54
- 212 00b8 9A68     		ldr	r2, [r3, #8]
- 213 00ba 42F00202 		orr	r2, r2, #2
- 214 00be 9A60     		str	r2, [r3, #8]
-  51:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_HPRE_DIV1);                      // предделитель шин
- 215              		.loc 1 51 5 view .LVU55
- 216 00c0 9A68     		ldr	r2, [r3, #8]
- 217 00c2 9A60     		str	r2, [r3, #8]
-  52:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_PPRE1_DIV4);                     // предделитель шин
- 218              		.loc 1 52 5 view .LVU56
- 219 00c4 9A68     		ldr	r2, [r3, #8]
- 220 00c6 42F4A052 		orr	r2, r2, #5120
- 221 00ca 9A60     		str	r2, [r3, #8]
-  53:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_PPRE2_DIV2);                     // предделитель шин
- 222              		.loc 1 53 5 view .LVU57
- 223 00cc 9A68     		ldr	r2, [r3, #8]
- 224 00ce 42F40042 		orr	r2, r2, #32768
- 225 00d2 9A60     		str	r2, [r3, #8]
-  54:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO1);                           // настройка вывода
- 226              		.loc 1 54 5 view .LVU58
- 227 00d4 9A68     		ldr	r2, [r3, #8]
- 228 00d6 42F4C002 		orr	r2, r2, #6291456
- 229 00da 9A60     		str	r2, [r3, #8]
-  55:Core/Src/init.c ****     CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2);                         // Настройка вывода
- 230              		.loc 1 55 5 view .LVU59
- 231 00dc 9A68     		ldr	r2, [r3, #8]
- 232 00de 22F04042 		bic	r2, r2, #-1073741824
- 233 00e2 9A60     		str	r2, [r3, #8]
-  56:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO1PRE_2 | RCC_CFGR_MCO1PRE_1); // Предделитель 2 дл
- 234              		.loc 1 56 5 view .LVU60
- 235 00e4 9A68     		ldr	r2, [r3, #8]
- 236 00e6 42F0C062 		orr	r2, r2, #100663296
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 39
-
-
- 237 00ea 9A60     		str	r2, [r3, #8]
-  57:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_2 | RCC_CFGR_MCO2PRE_1); //
- 238              		.loc 1 57 5 view .LVU61
- 239 00ec 9A68     		ldr	r2, [r3, #8]
- 240 00ee 42F04052 		orr	r2, r2, #805306368
- 241 00f2 9A60     		str	r2, [r3, #8]
-  58:Core/Src/init.c **** 
-  59:Core/Src/init.c ****     SET_BIT(FLASH->ACR, FLASH_ACR_LATENCY_5WS); // Утановка 5 циклов ожидания
- 242              		.loc 1 59 5 view .LVU62
- 243 00f4 0949     		ldr	r1, .L11+8
- 244 00f6 0A68     		ldr	r2, [r1]
- 245 00f8 42F00502 		orr	r2, r2, #5
- 246 00fc 0A60     		str	r2, [r1]
-  60:Core/Src/init.c ****     SET_BIT(RCC->CR, RCC_CR_PLLON);             // Включение PLL (?)
- 247              		.loc 1 60 5 view .LVU63
- 248 00fe 1A68     		ldr	r2, [r3]
- 249 0100 42F08072 		orr	r2, r2, #16777216
- 250 0104 1A60     		str	r2, [r3]
-  61:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) == RESET)
- 251              		.loc 1 61 5 view .LVU64
- 252              	.L10:
- 253              		.loc 1 61 45 discriminator 1 view .LVU65
- 254              		.loc 1 61 12 is_stmt 0 discriminator 1 view .LVU66
- 255 0106 044B     		ldr	r3, .L11+4
- 256 0108 1B68     		ldr	r3, [r3]
- 257              		.loc 1 61 45 discriminator 1 view .LVU67
- 258 010a 13F0007F 		tst	r3, #33554432
- 259 010e FAD0     		beq	.L10
-  62:Core/Src/init.c ****         ;
-  63:Core/Src/init.c **** }
- 260              		.loc 1 63 1 view .LVU68
- 261 0110 7047     		bx	lr
- 262              	.L12:
- 263 0112 00BF     		.align	2
- 264              	.L11:
- 265 0114 00080240 		.word	1073874944
- 266 0118 00380240 		.word	1073887232
- 267 011c 003C0240 		.word	1073888256
- 268              		.cfi_endproc
- 269              	.LFE130:
- 271              		.section	.text.ITR_Init,"ax",%progbits
- 272              		.align	1
- 273              		.global	ITR_Init
- 274              		.syntax unified
- 275              		.thumb
- 276              		.thumb_func
- 278              	ITR_Init:
- 279              	.LFB131:
-  64:Core/Src/init.c **** 
-  65:Core/Src/init.c **** void ITR_Init(void)
-  66:Core/Src/init.c **** {
- 280              		.loc 1 66 1 is_stmt 1 view -0
- 281              		.cfi_startproc
- 282              		@ args = 0, pretend = 0, frame = 0
- 283              		@ frame_needed = 0, uses_anonymous_args = 0
- 284 0000 08B5     		push	{r3, lr}
- 285              	.LCFI1:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 40
-
-
- 286              		.cfi_def_cfa_offset 8
- 287              		.cfi_offset 3, -8
- 288              		.cfi_offset 14, -4
-  67:Core/Src/init.c ****     SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SYSCFGEN);
- 289              		.loc 1 67 5 view .LVU70
- 290 0002 144A     		ldr	r2, .L15
- 291 0004 536C     		ldr	r3, [r2, #68]
- 292 0006 43F48043 		orr	r3, r3, #16384
- 293 000a 5364     		str	r3, [r2, #68]
-  68:Core/Src/init.c ****     /*//Это шутка, которая позволяет настроить мультипле�
-  69:Core/Src/init.c ****     регистры: SYSCFG. Объединение нулевой линии (нулевые по
-  70:Core/Src/init.c ****     EXTI1 - первая линия и т.д.
-  71:Core/Src/init.c ****     Мы подключаем кнопку на PC13, на уроке PC12. Настраиваем 
-  72:Core/Src/init.c ****     SYSCFG разделили на 2 области, 16 битов старш другому, 16 б
-  73:Core/Src/init.c ****     Там разделение на 4 линии. Во второй от 4 до 7, в третье
-  74:Core/Src/init.c ****     Мы будем брать PC12, следовательно значение для PC12.
-  75:Core/Src/init.c ****     APB2ENR (записали 1 для тактирвоания)
-  76:Core/Src/init.c ****     */
-  77:Core/Src/init.c ****     SET_BIT(SYSCFG->EXTICR[3], SYSCFG_EXTICR4_EXTI13_PC);
- 294              		.loc 1 77 5 view .LVU71
- 295 000c A2F58032 		sub	r2, r2, #65536
- 296 0010 5369     		ldr	r3, [r2, #20]
- 297 0012 43F02003 		orr	r3, r3, #32
- 298 0016 5361     		str	r3, [r2, #20]
-  78:Core/Src/init.c ****     /*то что на 13pc, будет выходить на контроллер прерыван
-  79:Core/Src/init.c **** 
-  80:Core/Src/init.c ****     /*Пропишем сами регистры EXTI, 12.3*/
-  81:Core/Src/init.c ****     // Не хотим маскировать
-  82:Core/Src/init.c ****     SET_BIT(EXTI->IMR, EXTI_IMR_MR13);
- 299              		.loc 1 82 5 view .LVU72
- 300 0018 0F4B     		ldr	r3, .L15+4
- 301 001a 1A68     		ldr	r2, [r3]
- 302 001c 42F40052 		orr	r2, r2, #8192
- 303 0020 1A60     		str	r2, [r3]
-  83:Core/Src/init.c ****     // EMR пропускаем
-  84:Core/Src/init.c **** 
-  85:Core/Src/init.c ****     // Rising cl. rising trigger selection reg. по фронту, з. на RT 1
-  86:Core/Src/init.c ****     SET_BIT(EXTI->RTSR, EXTI_RTSR_TR13);
- 304              		.loc 1 86 5 view .LVU73
- 305 0022 9A68     		ldr	r2, [r3, #8]
- 306 0024 42F40052 		orr	r2, r2, #8192
- 307 0028 9A60     		str	r2, [r3, #8]
-  87:Core/Src/init.c **** 
-  88:Core/Src/init.c ****     // Теперь спад.
-  89:Core/Src/init.c ****     CLEAR_BIT(EXTI->FTSR, EXTI_FTSR_TR13);
- 308              		.loc 1 89 5 view .LVU74
- 309 002a DA68     		ldr	r2, [r3, #12]
- 310 002c 22F40052 		bic	r2, r2, #8192
- 311 0030 DA60     		str	r2, [r3, #12]
-  90:Core/Src/init.c **** 
-  91:Core/Src/init.c ****     //Нужно настроить NVIC
-  92:Core/Src/init.c ****     //см. programming manual 4.3, 
-  93:Core/Src/init.c ****     NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(),0,0));
- 312              		.loc 1 93 5 view .LVU75
- 313              	.LBB8:
- 314              	.LBI8:
+  19:Core/Src/init.c ****     /*Пропишем сами регистры EXTI, 12.3*/
+  20:Core/Src/init.c ****     // Не хотим маскировать
+  21:Core/Src/init.c ****     SET_BIT(EXTI->IMR, EXTI_IMR_MR13);
+ 116              		.loc 1 21 5 view .LVU23
+ 117 0018 0F4B     		ldr	r3, .L7+4
+ 118 001a 1A68     		ldr	r2, [r3]
+ 119 001c 42F40052 		orr	r2, r2, #8192
+ 120 0020 1A60     		str	r2, [r3]
+  22:Core/Src/init.c ****     // EMR пропускаем
+  23:Core/Src/init.c **** 
+  24:Core/Src/init.c ****     // Rising cl. rising trigger selection reg. по фронту, з. на RT 1
+  25:Core/Src/init.c ****     SET_BIT(EXTI->RTSR, EXTI_RTSR_TR13);
+ 121              		.loc 1 25 5 view .LVU24
+ 122 0022 9A68     		ldr	r2, [r3, #8]
+ 123 0024 42F40052 		orr	r2, r2, #8192
+ 124 0028 9A60     		str	r2, [r3, #8]
+  26:Core/Src/init.c **** 
+  27:Core/Src/init.c ****     // Теперь спад.
+  28:Core/Src/init.c ****     CLEAR_BIT(EXTI->FTSR, EXTI_FTSR_TR13);
+ 125              		.loc 1 28 5 view .LVU25
+ 126 002a DA68     		ldr	r2, [r3, #12]
+ 127 002c 22F40052 		bic	r2, r2, #8192
+ 128 0030 DA60     		str	r2, [r3, #12]
+  29:Core/Src/init.c **** 
+  30:Core/Src/init.c ****     // Нужно настроить NVIC
+  31:Core/Src/init.c ****     // см. programming manual 4.3,
+  32:Core/Src/init.c ****     NVIC_SetPriority(EXTI15_10_IRQn, NVIC_EncodePriority(NVIC_GetPriorityGrouping(), 0, 0));
+ 129              		.loc 1 32 5 view .LVU26
+ 130              	.LBB8:
+ 131              	.LBI8:
 1676:CMSIS/Include/../include/core_cm4.h **** {
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 41
+ 132              		.loc 2 1676 26 view .LVU27
+ 133              	.LBB9:
+1678:CMSIS/Include/../include/core_cm4.h **** }
+ 134              		.loc 2 1678 3 view .LVU28
+1678:CMSIS/Include/../include/core_cm4.h **** }
+ 135              		.loc 2 1678 26 is_stmt 0 view .LVU29
+ 136 0032 0A4B     		ldr	r3, .L7+8
+ 137 0034 D868     		ldr	r0, [r3, #12]
+ 138              	.LBE9:
+ 139              	.LBE8:
+ 140              		.loc 1 32 5 discriminator 1 view .LVU30
+ 141 0036 0022     		movs	r2, #0
+ 142 0038 1146     		mov	r1, r2
+ 143 003a C0F30220 		ubfx	r0, r0, #8, #3
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 37
 
 
- 315              		.loc 2 1676 26 view .LVU76
- 316              	.LBB9:
-1678:CMSIS/Include/../include/core_cm4.h **** }
- 317              		.loc 2 1678 3 view .LVU77
-1678:CMSIS/Include/../include/core_cm4.h **** }
- 318              		.loc 2 1678 26 is_stmt 0 view .LVU78
- 319 0032 0A4B     		ldr	r3, .L15+8
- 320 0034 D868     		ldr	r0, [r3, #12]
- 321              	.LBE9:
- 322              	.LBE8:
- 323              		.loc 1 93 5 discriminator 1 view .LVU79
- 324 0036 0022     		movs	r2, #0
- 325 0038 1146     		mov	r1, r2
- 326 003a C0F30220 		ubfx	r0, r0, #8, #3
- 327 003e FFF7FEFF 		bl	NVIC_EncodePriority
- 328              	.LVL8:
- 329              	.LBB10:
- 330              	.LBI10:
+ 144 003e FFF7FEFF 		bl	NVIC_EncodePriority
+ 145              	.LVL8:
+ 146              	.LBB10:
+ 147              	.LBI10:
 1816:CMSIS/Include/../include/core_cm4.h **** {
- 331              		.loc 2 1816 22 is_stmt 1 view .LVU80
- 332              	.LBB11:
+ 148              		.loc 2 1816 22 is_stmt 1 view .LVU31
+ 149              	.LBB11:
 1818:CMSIS/Include/../include/core_cm4.h ****   {
- 333              		.loc 2 1818 3 view .LVU81
+ 150              		.loc 2 1818 3 view .LVU32
 1820:CMSIS/Include/../include/core_cm4.h ****   }
- 334              		.loc 2 1820 5 view .LVU82
+ 151              		.loc 2 1820 5 view .LVU33
 1820:CMSIS/Include/../include/core_cm4.h ****   }
- 335              		.loc 2 1820 48 is_stmt 0 view .LVU83
- 336 0042 0001     		lsls	r0, r0, #4
- 337              	.LVL9:
+ 152              		.loc 2 1820 48 is_stmt 0 view .LVU34
+ 153 0042 0001     		lsls	r0, r0, #4
+ 154              	.LVL9:
 1820:CMSIS/Include/../include/core_cm4.h ****   }
- 338              		.loc 2 1820 48 view .LVU84
- 339 0044 C0B2     		uxtb	r0, r0
+ 155              		.loc 2 1820 48 view .LVU35
+ 156 0044 C0B2     		uxtb	r0, r0
 1820:CMSIS/Include/../include/core_cm4.h ****   }
- 340              		.loc 2 1820 46 view .LVU85
- 341 0046 064B     		ldr	r3, .L15+12
- 342 0048 83F82803 		strb	r0, [r3, #808]
- 343              	.LVL10:
+ 157              		.loc 2 1820 46 view .LVU36
+ 158 0046 064B     		ldr	r3, .L7+12
+ 159 0048 83F82803 		strb	r0, [r3, #808]
+ 160              	.LVL10:
 1820:CMSIS/Include/../include/core_cm4.h ****   }
- 344              		.loc 2 1820 46 view .LVU86
- 345              	.LBE11:
- 346              	.LBE10:
-  94:Core/Src/init.c ****     NVIC_EnableIRQ(EXTI15_10_IRQn); //вкючаем по вектору. Все вектора в 
- 347              		.loc 1 94 5 is_stmt 1 view .LVU87
- 348              	.LBB12:
- 349              	.LBI12:
+ 161              		.loc 2 1820 46 view .LVU37
+ 162              	.LBE11:
+ 163              	.LBE10:
+  33:Core/Src/init.c ****     NVIC_EnableIRQ(EXTI15_10_IRQn); // вкючаем по вектору. Все вектора в
+ 164              		.loc 1 33 5 is_stmt 1 view .LVU38
+ 165              	.LBB12:
+ 166              	.LBI12:
 1688:CMSIS/Include/../include/core_cm4.h **** {
- 350              		.loc 2 1688 22 view .LVU88
- 351              	.LBB13:
+ 167              		.loc 2 1688 22 view .LVU39
+ 168              	.LBB13:
 1690:CMSIS/Include/../include/core_cm4.h ****   {
- 352              		.loc 2 1690 3 view .LVU89
+ 169              		.loc 2 1690 3 view .LVU40
 1692:CMSIS/Include/../include/core_cm4.h ****   }
- 353              		.loc 2 1692 5 view .LVU90
+ 170              		.loc 2 1692 5 view .LVU41
 1692:CMSIS/Include/../include/core_cm4.h ****   }
- 354              		.loc 2 1692 43 is_stmt 0 view .LVU91
- 355 004c 4FF48072 		mov	r2, #256
- 356 0050 5A60     		str	r2, [r3, #4]
- 357              	.LVL11:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 42
+ 171              		.loc 2 1692 43 is_stmt 0 view .LVU42
+ 172 004c 4FF48072 		mov	r2, #256
+ 173 0050 5A60     		str	r2, [r3, #4]
+ 174              	.LVL11:
+1692:CMSIS/Include/../include/core_cm4.h ****   }
+ 175              		.loc 2 1692 43 view .LVU43
+ 176              	.LBE13:
+ 177              	.LBE12:
+  34:Core/Src/init.c **** }
+ 178              		.loc 1 34 1 view .LVU44
+ 179 0052 08BD     		pop	{r3, pc}
+ 180              	.L8:
+ 181              		.align	2
+ 182              	.L7:
+ 183 0054 00380240 		.word	1073887232
+ 184 0058 003C0140 		.word	1073822720
+ 185 005c 00ED00E0 		.word	-536810240
+ 186 0060 00E100E0 		.word	-536813312
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 38
 
 
-1692:CMSIS/Include/../include/core_cm4.h ****   }
- 358              		.loc 2 1692 43 view .LVU92
- 359              	.LBE13:
- 360              	.LBE12:
-  95:Core/Src/init.c ****     
-  96:Core/Src/init.c ****     
+ 187              		.cfi_endproc
+ 188              	.LFE130:
+ 190              		.section	.text.UART3_GPIO_Init,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	UART3_GPIO_Init
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	UART3_GPIO_Init:
+ 198              	.LFB131:
+  35:Core/Src/init.c **** 
+  36:Core/Src/init.c **** void UART3_GPIO_Init(void)
+  37:Core/Src/init.c **** {
+ 199              		.loc 1 37 1 is_stmt 1 view -0
+ 200              		.cfi_startproc
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+  38:Core/Src/init.c ****     /* 1. Включаем тактирование порта D */
+  39:Core/Src/init.c ****     SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIODEN);
+ 204              		.loc 1 39 5 view .LVU46
+ 205 0000 0E4A     		ldr	r2, .L10
+ 206 0002 136B     		ldr	r3, [r2, #48]
+ 207 0004 43F00803 		orr	r3, r3, #8
+ 208 0008 1363     		str	r3, [r2, #48]
+  40:Core/Src/init.c ****     /* 2. Настраиваем PD8 и PD9 в режим альтернативной функци
+  41:Core/Src/init.c **** 
+  42:Core/Src/init.c ****     // MODER8[1:0] = 10 (AF)
+  43:Core/Src/init.c ****     // MODER9[1:0] = 10 (AF)
+  44:Core/Src/init.c ****     MODIFY_REG(GPIOD->MODER,
+ 209              		.loc 1 44 5 view .LVU47
+ 210 000a 0D4B     		ldr	r3, .L10+4
+ 211 000c 1A68     		ldr	r2, [r3]
+ 212 000e 22F47022 		bic	r2, r2, #983040
+ 213 0012 42F42022 		orr	r2, r2, #655360
+ 214 0016 1A60     		str	r2, [r3]
+  45:Core/Src/init.c ****                GPIO_MODER_MODER8 | GPIO_MODER_MODER9,
+  46:Core/Src/init.c ****                (GPIO_MODER_MODER8_1) | (GPIO_MODER_MODER9_1));
+  47:Core/Src/init.c **** 
+  48:Core/Src/init.c ****     /* 3. Скорость портов — высокая, чтобы фронты были пок
+  49:Core/Src/init.c ****     // OSPEED8[1:0] = 11 (Very High speed)
+  50:Core/Src/init.c ****     // OSPEED9[1:0] = 11
+  51:Core/Src/init.c ****     MODIFY_REG(GPIOD->OSPEEDR,
+ 215              		.loc 1 51 5 view .LVU48
+ 216 0018 9A68     		ldr	r2, [r3, #8]
+ 217 001a 42F47022 		orr	r2, r2, #983040
+ 218 001e 9A60     		str	r2, [r3, #8]
+  52:Core/Src/init.c ****                GPIO_OSPEEDR_OSPEED8 | GPIO_OSPEEDR_OSPEED9,
+  53:Core/Src/init.c ****                (GPIO_OSPEEDR_OSPEED8) | (GPIO_OSPEEDR_OSPEED9));
+  54:Core/Src/init.c **** 
+  55:Core/Src/init.c ****     /* 4. Подтяжки:
+  56:Core/Src/init.c ****      *    - TX (PD8) можно оставить без подтяжки (floating).
+  57:Core/Src/init.c ****      *    - RX (PD9) часто делают pull-up.
+  58:Core/Src/init.c ****      */
+  59:Core/Src/init.c ****     MODIFY_REG(GPIOD->PUPDR,
+ 219              		.loc 1 59 5 view .LVU49
+ 220 0020 DA68     		ldr	r2, [r3, #12]
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 39
+
+
+ 221 0022 22F47022 		bic	r2, r2, #983040
+ 222 0026 42F48022 		orr	r2, r2, #262144
+ 223 002a DA60     		str	r2, [r3, #12]
+  60:Core/Src/init.c ****                GPIO_PUPDR_PUPD8 | GPIO_PUPDR_PUPD9,
+  61:Core/Src/init.c ****                (0U << GPIO_PUPDR_PUPD8_Pos) | // PD8: no pull
+  62:Core/Src/init.c ****                    (GPIO_PUPDR_PUPD9_0));     // PD9: pull-up (01) pull-up, чтобы вход н�
+  63:Core/Src/init.c **** 
+  64:Core/Src/init.c ****     /* 5. Альтернативная функция AF7 для USART3 на PD8/PD9
+  65:Core/Src/init.c ****      *    PD8 -> AFRH[3:0]
+  66:Core/Src/init.c ****      *    PD9 -> AFRH[7:4]
+  67:Core/Src/init.c ****      *    AF7 = 0b0111
+  68:Core/Src/init.c ****      *
+  69:Core/Src/init.c ****      * AFR[0] — пины 0..7
+  70:Core/Src/init.c ****        AFR[1] — пины 8..15 //На каждый пин — 4 бита (AF0..AF15)
+  71:Core/Src/init.c ****      */
+  72:Core/Src/init.c ****     MODIFY_REG(GPIOD->AFR[1],
+ 224              		.loc 1 72 5 view .LVU50
+ 225 002c 5A6A     		ldr	r2, [r3, #36]
+ 226 002e 22F0FF02 		bic	r2, r2, #255
+ 227 0032 42F07702 		orr	r2, r2, #119
+ 228 0036 5A62     		str	r2, [r3, #36]
+  73:Core/Src/init.c ****                GPIO_AFRH_AFSEL8 | GPIO_AFRH_AFSEL9,
+  74:Core/Src/init.c ****                (7U << GPIO_AFRH_AFSEL8_Pos) |
+  75:Core/Src/init.c ****                    (7U << GPIO_AFRH_AFSEL9_Pos));
+  76:Core/Src/init.c **** }
+ 229              		.loc 1 76 1 is_stmt 0 view .LVU51
+ 230 0038 7047     		bx	lr
+ 231              	.L11:
+ 232 003a 00BF     		.align	2
+ 233              	.L10:
+ 234 003c 00380240 		.word	1073887232
+ 235 0040 000C0240 		.word	1073875968
+ 236              		.cfi_endproc
+ 237              	.LFE131:
+ 239              		.section	.text.UART3_Init,"ax",%progbits
+ 240              		.align	1
+ 241              		.global	UART3_Init
+ 242              		.syntax unified
+ 243              		.thumb
+ 244              		.thumb_func
+ 246              	UART3_Init:
+ 247              	.LFB132:
+  77:Core/Src/init.c **** 
+  78:Core/Src/init.c **** void UART3_Init(void)
+  79:Core/Src/init.c **** {
+ 248              		.loc 1 79 1 is_stmt 1 view -0
+ 249              		.cfi_startproc
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252 0000 08B5     		push	{r3, lr}
+ 253              	.LCFI2:
+ 254              		.cfi_def_cfa_offset 8
+ 255              		.cfi_offset 3, -8
+ 256              		.cfi_offset 14, -4
+  80:Core/Src/init.c ****     /* 1. Включаем тактирование USART3 на шине APB1 */
+  81:Core/Src/init.c ****     SET_BIT(RCC->APB1ENR, RCC_APB1ENR_USART3EN); // 1 — USART3 получает тактиров�
+ 257              		.loc 1 81 5 view .LVU53
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 40
+
+
+ 258 0002 164A     		ldr	r2, .L14
+ 259 0004 136C     		ldr	r3, [r2, #64]
+ 260 0006 43F48023 		orr	r3, r3, #262144
+ 261 000a 1364     		str	r3, [r2, #64]
+  82:Core/Src/init.c **** 
+  83:Core/Src/init.c ****     /* 2. Настраиваем пины PD8/PD9 под AF7 USART3 */
+  84:Core/Src/init.c ****     UART3_GPIO_Init();
+ 262              		.loc 1 84 5 view .LVU54
+ 263 000c FFF7FEFF 		bl	UART3_GPIO_Init
+ 264              	.LVL12:
+  85:Core/Src/init.c **** 
+  86:Core/Src/init.c ****     /* 3. Перед конфигурированием — выключаем USART3 (UE = 0) */
+  87:Core/Src/init.c ****     CLEAR_BIT(USART3->CR1, USART_CR1_UE); // USART vkl/vikl
+ 265              		.loc 1 87 5 view .LVU55
+ 266 0010 134B     		ldr	r3, .L14+4
+ 267 0012 DA68     		ldr	r2, [r3, #12]
+ 268 0014 22F40052 		bic	r2, r2, #8192
+ 269 0018 DA60     		str	r2, [r3, #12]
+  88:Core/Src/init.c **** 
+  89:Core/Src/init.c ****     /* 4. Настройка формата кадра:
+  90:Core/Src/init.c ****      *    - 8 бит данных: M = 0
+  91:Core/Src/init.c ****      *    - без чётности: PCE = 0
+  92:Core/Src/init.c ****      *    - 1 стоп-бит: STOP[1:0] = 00
+  93:Core/Src/init.c ****      */
+  94:Core/Src/init.c ****     CLEAR_BIT(USART3->CR1, USART_CR1_M);         // 8 data bits
+ 270              		.loc 1 94 5 view .LVU56
+ 271 001a DA68     		ldr	r2, [r3, #12]
+ 272 001c 22F48052 		bic	r2, r2, #4096
+ 273 0020 DA60     		str	r2, [r3, #12]
+  95:Core/Src/init.c ****     CLEAR_BIT(USART3->CR1, USART_CR1_PCE);       // no parity //бит-чётности не исп
+ 274              		.loc 1 95 5 view .LVU57
+ 275 0022 DA68     		ldr	r2, [r3, #12]
+ 276 0024 22F48062 		bic	r2, r2, #1024
+ 277 0028 DA60     		str	r2, [r3, #12]
+  96:Core/Src/init.c ****     MODIFY_REG(USART3->CR2, USART_CR2_STOP, 0U); // 1 stop bit итого схема 8N1 (8 data, n
+ 278              		.loc 1 96 5 view .LVU58
+ 279 002a 1A69     		ldr	r2, [r3, #16]
+ 280 002c 22F44052 		bic	r2, r2, #12288
+ 281 0030 1A61     		str	r2, [r3, #16]
   97:Core/Src/init.c **** 
-  98:Core/Src/init.c **** 
-  99:Core/Src/init.c **** }...
- 361              		.loc 1 99 1 view .LVU93
- 362 0052 08BD     		pop	{r3, pc}
- 363              	.L16:
- 364              		.align	2
- 365              	.L15:
- 366 0054 00380240 		.word	1073887232
- 367 0058 003C0140 		.word	1073822720
- 368 005c 00ED00E0 		.word	-536810240
- 369 0060 00E100E0 		.word	-536813312
- 370              		.cfi_endproc
- 371              	.LFE131:
- 373              		.text
- 374              	.Letext0:
- 375              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
- 376              		.file 4 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
- 377              		.file 5 "Core/Src/../Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
- 378              		.file 6 "CMSIS/Devices/STM32F4xx/Inc/stm32f4xx.h"
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccRagyoA.s 			page 43
+  98:Core/Src/init.c ****     /* 5. Oversampling = 16 (OVER8 = 0, по умолчанию и так 0) */
+  99:Core/Src/init.c ****     CLEAR_BIT(USART3->CR1, USART_CR1_OVER8);
+ 282              		.loc 1 99 5 view .LVU59
+ 283 0032 DA68     		ldr	r2, [r3, #12]
+ 284 0034 22F40042 		bic	r2, r2, #32768
+ 285 0038 DA60     		str	r2, [r3, #12]
+ 100:Core/Src/init.c **** 
+ 101:Core/Src/init.c ****     /* 6. Скорость: 115200 при PCLK1 = 42 МГц -> BRR = 0x016D */
+ 102:Core/Src/init.c ****     WRITE_REG(USART3->BRR, 0x016D);
+ 286              		.loc 1 102 5 view .LVU60
+ 287 003a 40F26D12 		movw	r2, #365
+ 288 003e 9A60     		str	r2, [r3, #8]
+ 103:Core/Src/init.c **** 
+ 104:Core/Src/init.c ****     /* 7. Включаем передатчик и приёмник */
+ 105:Core/Src/init.c ****     SET_BIT(USART3->CR1, USART_CR1_TE); // Transmitter enable
+ 289              		.loc 1 105 5 view .LVU61
+ 290 0040 DA68     		ldr	r2, [r3, #12]
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 41
+
+
+ 291 0042 42F00802 		orr	r2, r2, #8
+ 292 0046 DA60     		str	r2, [r3, #12]
+ 106:Core/Src/init.c ****     SET_BIT(USART3->CR1, USART_CR1_RE); // Receiver enable
+ 293              		.loc 1 106 5 view .LVU62
+ 294 0048 DA68     		ldr	r2, [r3, #12]
+ 295 004a 42F00402 		orr	r2, r2, #4
+ 296 004e DA60     		str	r2, [r3, #12]
+ 107:Core/Src/init.c **** 
+ 108:Core/Src/init.c ****     /* 8. Включаем USART3 (UE = 1) */
+ 109:Core/Src/init.c ****     SET_BIT(USART3->CR1, USART_CR1_UE);
+ 297              		.loc 1 109 5 view .LVU63
+ 298 0050 DA68     		ldr	r2, [r3, #12]
+ 299 0052 42F40052 		orr	r2, r2, #8192
+ 300 0056 DA60     		str	r2, [r3, #12]
+ 110:Core/Src/init.c **** }
+ 301              		.loc 1 110 1 is_stmt 0 view .LVU64
+ 302 0058 08BD     		pop	{r3, pc}
+ 303              	.L15:
+ 304 005a 00BF     		.align	2
+ 305              	.L14:
+ 306 005c 00380240 		.word	1073887232
+ 307 0060 00480040 		.word	1073760256
+ 308              		.cfi_endproc
+ 309              	.LFE132:
+ 311              		.section	.text.UART3_SendChar,"ax",%progbits
+ 312              		.align	1
+ 313              		.global	UART3_SendChar
+ 314              		.syntax unified
+ 315              		.thumb
+ 316              		.thumb_func
+ 318              	UART3_SendChar:
+ 319              	.LFB133:
+ 111:Core/Src/init.c **** 
+ 112:Core/Src/init.c **** void UART3_SendChar(char c)
+ 113:Core/Src/init.c **** {
+ 320              		.loc 1 113 1 is_stmt 1 view -0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324              		@ link register save eliminated.
+ 325              	.LVL13:
+ 326              	.L17:
+ 114:Core/Src/init.c ****     // Ждём, пока буфер передачи освободится (TXE = 1)
+ 115:Core/Src/init.c ****     while ((READ_BIT(USART3->SR, USART_SR_TXE) == 0U))
+ 116:Core/Src/init.c ****     {
+ 117:Core/Src/init.c ****         // wait
+ 118:Core/Src/init.c ****     }
+ 327              		.loc 1 118 5 view .LVU66
+ 115:Core/Src/init.c ****     {
+ 328              		.loc 1 115 48 discriminator 1 view .LVU67
+ 115:Core/Src/init.c ****     {
+ 329              		.loc 1 115 13 is_stmt 0 discriminator 1 view .LVU68
+ 330 0000 034B     		ldr	r3, .L18
+ 331 0002 1B68     		ldr	r3, [r3]
+ 115:Core/Src/init.c ****     {
+ 332              		.loc 1 115 48 discriminator 1 view .LVU69
+ 333 0004 13F0800F 		tst	r3, #128
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 42
+
+
+ 334 0008 FAD0     		beq	.L17
+ 119:Core/Src/init.c **** 
+ 120:Core/Src/init.c ****     // Пишем байт в регистр данных
+ 121:Core/Src/init.c ****     WRITE_REG(USART3->DR, (uint16_t)c);
+ 335              		.loc 1 121 5 is_stmt 1 view .LVU70
+ 336 000a 014B     		ldr	r3, .L18
+ 337 000c 5860     		str	r0, [r3, #4]
+ 122:Core/Src/init.c **** }
+ 338              		.loc 1 122 1 is_stmt 0 view .LVU71
+ 339 000e 7047     		bx	lr
+ 340              	.L19:
+ 341              		.align	2
+ 342              	.L18:
+ 343 0010 00480040 		.word	1073760256
+ 344              		.cfi_endproc
+ 345              	.LFE133:
+ 347              		.section	.text.UART3_SendString,"ax",%progbits
+ 348              		.align	1
+ 349              		.global	UART3_SendString
+ 350              		.syntax unified
+ 351              		.thumb
+ 352              		.thumb_func
+ 354              	UART3_SendString:
+ 355              	.LVL14:
+ 356              	.LFB134:
+ 123:Core/Src/init.c **** 
+ 124:Core/Src/init.c **** void UART3_SendString(const char *s)
+ 125:Core/Src/init.c **** {
+ 357              		.loc 1 125 1 is_stmt 1 view -0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		.loc 1 125 1 is_stmt 0 view .LVU73
+ 362 0000 10B5     		push	{r4, lr}
+ 363              	.LCFI3:
+ 364              		.cfi_def_cfa_offset 8
+ 365              		.cfi_offset 4, -8
+ 366              		.cfi_offset 14, -4
+ 367 0002 0446     		mov	r4, r0
+ 126:Core/Src/init.c ****     while (*s)
+ 368              		.loc 1 126 5 is_stmt 1 view .LVU74
+ 369              		.loc 1 126 11 is_stmt 0 view .LVU75
+ 370 0004 02E0     		b	.L21
+ 371              	.LVL15:
+ 372              	.L22:
+ 127:Core/Src/init.c ****     {
+ 128:Core/Src/init.c ****         UART3_SendChar(*s++);
+ 373              		.loc 1 128 9 is_stmt 1 view .LVU76
+ 374              		.loc 1 128 26 is_stmt 0 view .LVU77
+ 375 0006 0134     		adds	r4, r4, #1
+ 376              	.LVL16:
+ 377              		.loc 1 128 9 view .LVU78
+ 378 0008 FFF7FEFF 		bl	UART3_SendChar
+ 379              	.LVL17:
+ 380              	.L21:
+ 126:Core/Src/init.c ****     while (*s)
+ 381              		.loc 1 126 12 is_stmt 1 view .LVU79
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 43
+
+
+ 382 000c 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 383 000e 0028     		cmp	r0, #0
+ 384 0010 F9D1     		bne	.L22
+ 385              	.L23:
+ 129:Core/Src/init.c ****     }
+ 130:Core/Src/init.c **** 
+ 131:Core/Src/init.c ****     // Ждём завершения последней передачи (TC = 1)
+ 132:Core/Src/init.c ****     while ((READ_BIT(USART3->SR, USART_SR_TC) == 0U))
+ 133:Core/Src/init.c ****     {
+ 134:Core/Src/init.c ****         // wait
+ 135:Core/Src/init.c ****     }
+ 386              		.loc 1 135 5 view .LVU80
+ 132:Core/Src/init.c ****     {
+ 387              		.loc 1 132 47 discriminator 1 view .LVU81
+ 132:Core/Src/init.c ****     {
+ 388              		.loc 1 132 13 is_stmt 0 discriminator 1 view .LVU82
+ 389 0012 034B     		ldr	r3, .L25
+ 390 0014 1B68     		ldr	r3, [r3]
+ 132:Core/Src/init.c ****     {
+ 391              		.loc 1 132 47 discriminator 1 view .LVU83
+ 392 0016 13F0400F 		tst	r3, #64
+ 393 001a FAD0     		beq	.L23
+ 136:Core/Src/init.c **** }
+ 394              		.loc 1 136 1 view .LVU84
+ 395 001c 10BD     		pop	{r4, pc}
+ 396              	.LVL18:
+ 397              	.L26:
+ 398              		.loc 1 136 1 view .LVU85
+ 399 001e 00BF     		.align	2
+ 400              	.L25:
+ 401 0020 00480040 		.word	1073760256
+ 402              		.cfi_endproc
+ 403              	.LFE134:
+ 405              		.section	.text.UART3_ReceiveChar,"ax",%progbits
+ 406              		.align	1
+ 407              		.global	UART3_ReceiveChar
+ 408              		.syntax unified
+ 409              		.thumb
+ 410              		.thumb_func
+ 412              	UART3_ReceiveChar:
+ 413              	.LFB135:
+ 137:Core/Src/init.c **** 
+ 138:Core/Src/init.c **** char UART3_ReceiveChar(void)
+ 139:Core/Src/init.c **** {
+ 414              		.loc 1 139 1 is_stmt 1 view -0
+ 415              		.cfi_startproc
+ 416              		@ args = 0, pretend = 0, frame = 0
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418              		@ link register save eliminated.
+ 419              	.L28:
+ 140:Core/Src/init.c ****     // Ждём, пока придет байт (RXNE = 1)
+ 141:Core/Src/init.c ****     while ((READ_BIT(USART3->SR, USART_SR_RXNE) == 0U))
+ 142:Core/Src/init.c ****     {
+ 143:Core/Src/init.c ****         // wait
+ 144:Core/Src/init.c ****     }
+ 420              		.loc 1 144 5 view .LVU87
+ 141:Core/Src/init.c ****     {
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 44
+
+
+ 421              		.loc 1 141 49 discriminator 1 view .LVU88
+ 141:Core/Src/init.c ****     {
+ 422              		.loc 1 141 13 is_stmt 0 discriminator 1 view .LVU89
+ 423 0000 044B     		ldr	r3, .L29
+ 424 0002 1B68     		ldr	r3, [r3]
+ 141:Core/Src/init.c ****     {
+ 425              		.loc 1 141 49 discriminator 1 view .LVU90
+ 426 0004 13F0200F 		tst	r3, #32
+ 427 0008 FAD0     		beq	.L28
+ 145:Core/Src/init.c **** 
+ 146:Core/Src/init.c ****     // Читаем DR — важно маскировать до 8 бит
+ 147:Core/Src/init.c ****     return (char)(READ_REG(USART3->DR) & 0xFF);
+ 428              		.loc 1 147 5 is_stmt 1 view .LVU91
+ 429              		.loc 1 147 19 is_stmt 0 view .LVU92
+ 430 000a 024B     		ldr	r3, .L29
+ 431 000c 5868     		ldr	r0, [r3, #4]
+ 148:Core/Src/init.c **** }
+ 432              		.loc 1 148 1 view .LVU93
+ 433 000e C0B2     		uxtb	r0, r0
+ 434 0010 7047     		bx	lr
+ 435              	.L30:
+ 436 0012 00BF     		.align	2
+ 437              	.L29:
+ 438 0014 00480040 		.word	1073760256
+ 439              		.cfi_endproc
+ 440              	.LFE135:
+ 442              		.section	.text.PB7_Init,"ax",%progbits
+ 443              		.align	1
+ 444              		.global	PB7_Init
+ 445              		.syntax unified
+ 446              		.thumb
+ 447              		.thumb_func
+ 449              	PB7_Init:
+ 450              	.LFB136:
+ 149:Core/Src/init.c **** 
+ 150:Core/Src/init.c **** void PB7_Init(void)
+ 151:Core/Src/init.c **** {
+ 451              		.loc 1 151 1 is_stmt 1 view -0
+ 452              		.cfi_startproc
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455              		@ link register save eliminated.
+ 152:Core/Src/init.c ****     /* 1. Включаем тактирование порта B */
+ 153:Core/Src/init.c ****     SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIOBEN);
+ 456              		.loc 1 153 5 view .LVU95
+ 457 0000 0E4A     		ldr	r2, .L32
+ 458 0002 136B     		ldr	r3, [r2, #48]
+ 459 0004 43F00203 		orr	r3, r3, #2
+ 460 0008 1363     		str	r3, [r2, #48]
+ 154:Core/Src/init.c **** 
+ 155:Core/Src/init.c ****     /* 2. Настраиваем PB7 как обычный выход (General Purpose Output) */
+ 156:Core/Src/init.c **** 
+ 157:Core/Src/init.c ****     // MODER7[1:0] = 01 (Output)
+ 158:Core/Src/init.c ****     MODIFY_REG(GPIOB->MODER,
+ 461              		.loc 1 158 5 view .LVU96
+ 462 000a 0D4B     		ldr	r3, .L32+4
+ 463 000c 1A68     		ldr	r2, [r3]
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 45
+
+
+ 464 000e 22F44042 		bic	r2, r2, #49152
+ 465 0012 42F48042 		orr	r2, r2, #16384
+ 466 0016 1A60     		str	r2, [r3]
+ 159:Core/Src/init.c ****                GPIO_MODER_MODER7,
+ 160:Core/Src/init.c ****                GPIO_MODER_MODER7_0); // 01b
+ 161:Core/Src/init.c **** 
+ 162:Core/Src/init.c ****     // Тип выхода: Push-pull (OT7 = 0)
+ 163:Core/Src/init.c ****     CLEAR_BIT(GPIOB->OTYPER, GPIO_OTYPER_OT7);
+ 467              		.loc 1 163 5 view .LVU97
+ 468 0018 5A68     		ldr	r2, [r3, #4]
+ 469 001a 22F08002 		bic	r2, r2, #128
+ 470 001e 5A60     		str	r2, [r3, #4]
+ 164:Core/Src/init.c **** 
+ 165:Core/Src/init.c ****     // Скорость: medium (10) или high — не критично для светодио�
+ 166:Core/Src/init.c ****     MODIFY_REG(GPIOB->OSPEEDR,
+ 471              		.loc 1 166 5 view .LVU98
+ 472 0020 9A68     		ldr	r2, [r3, #8]
+ 473 0022 22F44042 		bic	r2, r2, #49152
+ 474 0026 42F48042 		orr	r2, r2, #16384
+ 475 002a 9A60     		str	r2, [r3, #8]
+ 167:Core/Src/init.c ****                GPIO_OSPEEDR_OSPEED7,
+ 168:Core/Src/init.c ****                GPIO_OSPEEDR_OSPEED7_0); // 01b - medium
+ 169:Core/Src/init.c **** 
+ 170:Core/Src/init.c ****     // Подтяжки: нет (PUPDR7 = 00)
+ 171:Core/Src/init.c ****     MODIFY_REG(GPIOB->PUPDR,
+ 476              		.loc 1 171 5 view .LVU99
+ 477 002c DA68     		ldr	r2, [r3, #12]
+ 478 002e 22F44042 		bic	r2, r2, #49152
+ 479 0032 DA60     		str	r2, [r3, #12]
+ 172:Core/Src/init.c ****                GPIO_PUPDR_PUPD7,
+ 173:Core/Src/init.c ****                0U << GPIO_PUPDR_PUPD7_Pos);
+ 174:Core/Src/init.c **** 
+ 175:Core/Src/init.c ****     /* 3. Погасим светодиод по умолчанию (предположим, что
+ 176:Core/Src/init.c ****     // Сброс бита через BSRR (нижние 16 бит - reset)
+ 177:Core/Src/init.c ****     GPIOB->BSRR = (uint32_t)(1U << (7 + 16)); // сбросить PB7
+ 480              		.loc 1 177 5 view .LVU100
+ 481              		.loc 1 177 17 is_stmt 0 view .LVU101
+ 482 0034 4FF40002 		mov	r2, #8388608
+ 483 0038 9A61     		str	r2, [r3, #24]
+ 178:Core/Src/init.c **** }
+ 484              		.loc 1 178 1 view .LVU102
+ 485 003a 7047     		bx	lr
+ 486              	.L33:
+ 487              		.align	2
+ 488              	.L32:
+ 489 003c 00380240 		.word	1073887232
+ 490 0040 00040240 		.word	1073873920
+ 491              		.cfi_endproc
+ 492              	.LFE136:
+ 494              		.text
+ 495              	.Letext0:
+ 496              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
+ 497              		.file 4 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
+ 498              		.file 5 "Core/Src/../Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccws98Yc.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 init.c
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:21     .text.NVIC_EncodePriority:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:26     .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:89     .text.RCC_INIT:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:95     .text.RCC_INIT:00000000 RCC_INIT
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:265    .text.RCC_INIT:00000114 $d
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:272    .text.ITR_Init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:278    .text.ITR_Init:00000000 ITR_Init
-C:\Users\user\AppData\Local\Temp\ccRagyoA.s:366    .text.ITR_Init:00000054 $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:21     .text.NVIC_EncodePriority:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:26     .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:89     .text.ITR_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:95     .text.ITR_Init:00000000 ITR_Init
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:183    .text.ITR_Init:00000054 $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:191    .text.UART3_GPIO_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:197    .text.UART3_GPIO_Init:00000000 UART3_GPIO_Init
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:234    .text.UART3_GPIO_Init:0000003c $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:240    .text.UART3_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:246    .text.UART3_Init:00000000 UART3_Init
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:306    .text.UART3_Init:0000005c $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:312    .text.UART3_SendChar:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:318    .text.UART3_SendChar:00000000 UART3_SendChar
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:343    .text.UART3_SendChar:00000010 $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:348    .text.UART3_SendString:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:354    .text.UART3_SendString:00000000 UART3_SendString
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:401    .text.UART3_SendString:00000020 $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:406    .text.UART3_ReceiveChar:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:412    .text.UART3_ReceiveChar:00000000 UART3_ReceiveChar
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:438    .text.UART3_ReceiveChar:00000014 $d
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:443    .text.PB7_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:449    .text.PB7_Init:00000000 PB7_Init
+C:\Users\user\AppData\Local\Temp\ccws98Yc.s:489    .text.PB7_Init:0000003c $d
 
 NO UNDEFINED SYMBOLS

@@ -121,7 +121,9 @@ C_SOURCES =  \
 $(SYS) \
 Core/Src/main.c \
 Core/Src/init.c \
-Core/Src/Interrupt.c
+Core/Src/Interrupt.c \
+Core/Src/motor.c \
+Core/Src/clock.c \
 
 # ASM sources
 ASM_SOURCES =  \

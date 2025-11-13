@@ -6,6 +6,5 @@ void EXTI15_10_IRQHandler()
     // 1 чтобы сбросит в 0
     SET_BIT(EXTI->PR, EXTI_PR_PR13);
 
-    btnCount++;
-    flag = !flag;
+
 }
