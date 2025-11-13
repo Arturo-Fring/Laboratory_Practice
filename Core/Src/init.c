@@ -27,7 +27,7 @@ void Clock_Init_HSE_PLL_168MHz(void)
     }
 
     /* 3. Настраиваем FLASH: кеши + 5 тактов ожидания (для 168 МГц)
-          (это безопасно сделать до переключения на быстрый такт) */
+           */
 
     /* Сбрасываем LATENCY и включаем кэши/предвыборку, если нужно */
     MODIFY_REG(FLASH->ACR,
@@ -55,11 +55,11 @@ void Clock_Init_HSE_PLL_168MHz(void)
            PLLM = 8, PLLN = 336, PLLP = 2, PLLQ = 7 */
 
     WRITE_REG(RCC->PLLCFGR,
-              (8U << RCC_PLLCFGR_PLLM_Pos) |       // PLLM = 8
-                  (336U << RCC_PLLCFGR_PLLN_Pos) | // PLLN = 336
-                  (0U << RCC_PLLCFGR_PLLP_Pos) |   // PLLP = 2 (код 00)
-                  RCC_PLLCFGR_PLLSRC_HSE |         // источник PLL = HSE
-                  (7U << RCC_PLLCFGR_PLLQ_Pos));   // PLLQ = 7 (~48 МГц)
+              (8U << RCC_PLLCFGR_PLLM_Pos) |      // PLLM = 8
+                  (336 << RCC_PLLCFGR_PLLN_Pos) | // PLLN = 336
+                  (0U << RCC_PLLCFGR_PLLP_Pos) |  // PLLP = 2 (код 00)
+                  RCC_PLLCFGR_PLLSRC_HSE |        // источник PLL = HSE
+                  (7U << RCC_PLLCFGR_PLLQ_Pos));  // PLLQ = 7 (~48 МГц)
 
     /* 6. Включаем PLL и ждём готовности */
     SET_BIT(RCC->CR, RCC_CR_PLLON);
@@ -385,13 +385,14 @@ void MCO_init(void)
     CLEAR_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
     SET_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
     CLEAR_BIT(GPIOC->PUPDR, GPIO_PUPDR_PUPD9_Msk);
+
     CLEAR_BIT(GPIOC->AFR[1], 0xFU << ((9U - 8U) * 4U)); // (9-8)*4 = 4, поле для PC9
-    /* Сначала очищаем поля MCO2 и MCO2PRE */
+    /* Сначала очищаем поля MCO2 и MCO2PRE */ //там 0000
 
     CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2 | RCC_CFGR_MCO2PRE);
-    /* Источник MCO2 = PLLCLK (MCO2[1:0] = 11b) */
+    /* Источник MCO2 = PLLCLK (MCO2 = 11b) */
     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2_0 | RCC_CFGR_MCO2_1);
-    /* Предделитель MCO2PRE = /5 → 111b: ставим все три бита */
+    /* Предделитель MCO2PRE = /5 → 111b: ставлю все три бита */
     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_0 |
                            RCC_CFGR_MCO2PRE_1 |
                            RCC_CFGR_MCO2PRE_2);

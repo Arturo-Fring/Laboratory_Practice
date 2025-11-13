@@ -45,6 +45,8 @@ volatile uint8_t blink_led_is_on = 0U; // 0 = выкл, 1 = горит
 #define LED_INDEX_NONE 255U
 volatile uint8_t current_led_index = LED_INDEX_NONE; // 0..5
 
+extern volatile uint8_t seconds = 0;
+
 void Button1_Task(void)
 {
     if (button1_pressed_flag == 0U)
@@ -141,13 +143,13 @@ void Button2_Task(void)
 
 void Blink_Task(void)
 {
-    // Если режим не "мигание" — ничего не делаем
+    // Если режим не "мигание" ничего не делаем
     if (led_mode != LED_MODE_BLINK)
     {
         return;
     }
 
-    // Если ещё не выбрали активный светодиод — тоже ничего не делаем
+    // Если ещё не выбрали активный светодиод тоже ничего не делаем
     if (current_led_index == LED_INDEX_NONE)
     {
         return;
@@ -186,7 +188,7 @@ int main(void)
     LED_AllOff();
 
     SET_BIT(EXTI->PR, (1U << 0) | (1U << 5));
-
+    MCO_init();
     while (1)
     {
         Button1_Task(); // переключение активного светодиода
@@ -194,3 +196,9 @@ int main(void)
         Blink_Task();   // мигаем в нужном режиме
     }
 }
+
+/*
+
+
+
+*/

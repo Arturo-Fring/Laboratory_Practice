@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   27:CMSIS/Include/../include/core_cm4.h **** #elif defined (__clang__)
   28:CMSIS/Include/../include/core_cm4.h ****   #pragma clang system_header   /* treat file as system include file */
   29:CMSIS/Include/../include/core_cm4.h **** #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 2
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 2
 
 
   30:CMSIS/Include/../include/core_cm4.h **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   84:CMSIS/Include/../include/core_cm4.h ****   #else
   85:CMSIS/Include/../include/core_cm4.h ****     #define __FPU_USED         0U
   86:CMSIS/Include/../include/core_cm4.h ****   #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 3
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 3
 
 
   87:CMSIS/Include/../include/core_cm4.h **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  141:CMSIS/Include/../include/core_cm4.h ****       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
  142:CMSIS/Include/../include/core_cm4.h ****       #define __FPU_USED       0U
  143:CMSIS/Include/../include/core_cm4.h ****     #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 4
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 4
 
 
  144:CMSIS/Include/../include/core_cm4.h ****   #else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  198:CMSIS/Include/../include/core_cm4.h ****     #define __NVIC_PRIO_BITS          3U
  199:CMSIS/Include/../include/core_cm4.h ****     #warning "__NVIC_PRIO_BITS not defined in device header file; using default!"
  200:CMSIS/Include/../include/core_cm4.h ****   #endif
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 5
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 5
 
 
  201:CMSIS/Include/../include/core_cm4.h **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  255:CMSIS/Include/../include/core_cm4.h **** 
  256:CMSIS/Include/../include/core_cm4.h **** /**
  257:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Application Program Status Register (APSR).
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 6
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 6
 
 
  258:CMSIS/Include/../include/core_cm4.h ****  */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  312:CMSIS/Include/../include/core_cm4.h **** 
  313:CMSIS/Include/../include/core_cm4.h **** /**
  314:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 7
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 7
 
 
  315:CMSIS/Include/../include/core_cm4.h ****  */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  369:CMSIS/Include/../include/core_cm4.h ****   \brief  Union type to access the Control Registers (CONTROL).
  370:CMSIS/Include/../include/core_cm4.h ****  */
  371:CMSIS/Include/../include/core_cm4.h **** typedef union
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 8
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 8
 
 
  372:CMSIS/Include/../include/core_cm4.h **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  426:CMSIS/Include/../include/core_cm4.h **** 
  427:CMSIS/Include/../include/core_cm4.h **** /*@} end of group CMSIS_NVIC */
  428:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 9
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 9
 
 
  429:CMSIS/Include/../include/core_cm4.h **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  483:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
  484:CMSIS/Include/../include/core_cm4.h **** 
  485:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Pos             28U                                            /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 10
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 10
 
 
  486:CMSIS/Include/../include/core_cm4.h **** #define SCB_ICSR_PENDSVSET_Msk             (1UL << SCB_ICSR_PENDSVSET_Pos)                /*!< SCB 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  540:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
  541:CMSIS/Include/../include/core_cm4.h **** 
  542:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Pos               2U                                            /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 11
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 11
 
 
  543:CMSIS/Include/../include/core_cm4.h **** #define SCB_SCR_SLEEPDEEP_Msk              (1UL << SCB_SCR_SLEEPDEEP_Pos)                 /*!< SCB 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  597:CMSIS/Include/../include/core_cm4.h **** 
  598:CMSIS/Include/../include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Pos             7U                                            /*!< SCB 
  599:CMSIS/Include/../include/core_cm4.h **** #define SCB_SHCSR_SVCALLACT_Msk            (1UL << SCB_SHCSR_SVCALLACT_Pos)               /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 12
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 12
 
 
  600:CMSIS/Include/../include/core_cm4.h **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  654:CMSIS/Include/../include/core_cm4.h **** 
  655:CMSIS/Include/../include/core_cm4.h **** #define SCB_CFSR_PRECISERR_Pos            (SCB_CFSR_BUSFAULTSR_Pos + 1U)                  /*!< SCB 
  656:CMSIS/Include/../include/core_cm4.h **** #define SCB_CFSR_PRECISERR_Msk            (1UL << SCB_CFSR_PRECISERR_Pos)                 /*!< SCB 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 13
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 13
 
 
  657:CMSIS/Include/../include/core_cm4.h **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  711:CMSIS/Include/../include/core_cm4.h ****   \defgroup CMSIS_SCnSCB System Controls not in SCB (SCnSCB)
  712:CMSIS/Include/../include/core_cm4.h ****   \brief    Type definitions for the System Control and ID Register not in the SCB
  713:CMSIS/Include/../include/core_cm4.h ****   @{
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 14
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 14
 
 
  714:CMSIS/Include/../include/core_cm4.h ****  */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  768:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysT
  769:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysT
  770:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 15
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 15
 
 
  771:CMSIS/Include/../include/core_cm4.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysT
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  825:CMSIS/Include/../include/core_cm4.h ****         uint32_t RESERVED3[29U];
  826:CMSIS/Include/../include/core_cm4.h ****   __OM  uint32_t IWR;                    /*!< Offset: 0xEF8 ( /W)  ITM Integration Write Register *
  827:CMSIS/Include/../include/core_cm4.h ****   __IM  uint32_t IRR;                    /*!< Offset: 0xEFC (R/ )  ITM Integration Read Register */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 16
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 16
 
 
  828:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t IMCR;                   /*!< Offset: 0xF00 (R/W)  ITM Integration Mode Control Reg
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  882:CMSIS/Include/../include/core_cm4.h **** 
  883:CMSIS/Include/../include/core_cm4.h **** /* ITM Integration Read Register Definitions */
  884:CMSIS/Include/../include/core_cm4.h **** #define ITM_IRR_ATREADYM_Pos                0U                                            /*!< ITM 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 17
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 17
 
 
  885:CMSIS/Include/../include/core_cm4.h **** #define ITM_IRR_ATREADYM_Msk               (1UL /*<< ITM_IRR_ATREADYM_Pos*/)              /*!< ITM 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  939:CMSIS/Include/../include/core_cm4.h **** } DWT_Type;
  940:CMSIS/Include/../include/core_cm4.h **** 
  941:CMSIS/Include/../include/core_cm4.h **** /* DWT Control Register Definitions */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 18
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 18
 
 
  942:CMSIS/Include/../include/core_cm4.h **** #define DWT_CTRL_NUMCOMP_Pos               28U                                         /*!< DWT CTR
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  996:CMSIS/Include/../include/core_cm4.h **** /* DWT CPI Count Register Definitions */
  997:CMSIS/Include/../include/core_cm4.h **** #define DWT_CPICNT_CPICNT_Pos               0U                                         /*!< DWT CPI
  998:CMSIS/Include/../include/core_cm4.h **** #define DWT_CPICNT_CPICNT_Msk              (0xFFUL /*<< DWT_CPICNT_CPICNT_Pos*/)       /*!< DWT CPI
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 19
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 19
 
 
  999:CMSIS/Include/../include/core_cm4.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1053:CMSIS/Include/../include/core_cm4.h ****   \defgroup CMSIS_TPI     Trace Port Interface (TPI)
 1054:CMSIS/Include/../include/core_cm4.h ****   \brief    Type definitions for the Trace Port Interface (TPI)
 1055:CMSIS/Include/../include/core_cm4.h ****   @{
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 20
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 20
 
 
 1056:CMSIS/Include/../include/core_cm4.h ****  */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1110:CMSIS/Include/../include/core_cm4.h **** /* TPI Formatter and Flush Control Register Definitions */
 1111:CMSIS/Include/../include/core_cm4.h **** #define TPI_FFCR_TrigIn_Pos                 8U                                         /*!< TPI FFC
 1112:CMSIS/Include/../include/core_cm4.h **** #define TPI_FFCR_TrigIn_Msk                (0x1UL << TPI_FFCR_TrigIn_Pos)              /*!< TPI FFC
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 21
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 21
 
 
 1113:CMSIS/Include/../include/core_cm4.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1167:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM1_Msk                 (0xFFUL << TPI_FIFO1_ITM1_Pos)              /*!< TPI FIF
 1168:CMSIS/Include/../include/core_cm4.h **** 
 1169:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM0_Pos                  0U                                         /*!< TPI FIF
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 22
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 22
 
 
 1170:CMSIS/Include/../include/core_cm4.h **** #define TPI_FIFO1_ITM0_Msk                 (0xFFUL /*<< TPI_FIFO1_ITM0_Pos*/)          /*!< TPI FIF
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1224:CMSIS/Include/../include/core_cm4.h **** {
 1225:CMSIS/Include/../include/core_cm4.h ****   __IM  uint32_t TYPE;                   /*!< Offset: 0x000 (R/ )  MPU Type Register */
 1226:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t CTRL;                   /*!< Offset: 0x004 (R/W)  MPU Control Register */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 23
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 23
 
 
 1227:CMSIS/Include/../include/core_cm4.h ****   __IOM uint32_t RNR;                    /*!< Offset: 0x008 (R/W)  MPU Region RNRber Register */
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1281:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_AP_Pos                    24U                                            /*!< MPU 
 1282:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_AP_Msk                    (0x7UL << MPU_RASR_AP_Pos)                     /*!< MPU 
 1283:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 24
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 24
 
 
 1284:CMSIS/Include/../include/core_cm4.h **** #define MPU_RASR_TEX_Pos                   19U                                            /*!< MPU 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1338:CMSIS/Include/../include/core_cm4.h **** 
 1339:CMSIS/Include/../include/core_cm4.h **** #define FPU_FPCCR_BFRDY_Pos                 6U                                            /*!< FPCC
 1340:CMSIS/Include/../include/core_cm4.h **** #define FPU_FPCCR_BFRDY_Msk                (1UL << FPU_FPCCR_BFRDY_Pos)                   /*!< FPCC
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 25
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 25
 
 
 1341:CMSIS/Include/../include/core_cm4.h **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1395:CMSIS/Include/../include/core_cm4.h **** 
 1396:CMSIS/Include/../include/core_cm4.h **** #define FPU_MVFR0_A_SIMD_registers_Pos      0U                                            /*!< MVFR
 1397:CMSIS/Include/../include/core_cm4.h **** #define FPU_MVFR0_A_SIMD_registers_Msk     (0xFUL /*<< FPU_MVFR0_A_SIMD_registers_Pos*/)  /*!< MVFR
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 26
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 26
 
 
 1398:CMSIS/Include/../include/core_cm4.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1452:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_S_REGRDY_Pos       16U                                            /*!< Core
 1453:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_S_REGRDY_Msk       (1UL << CoreDebug_DHCSR_S_REGRDY_Pos)          /*!< Core
 1454:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 27
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 27
 
 
 1455:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DHCSR_C_SNAPSTALL_Pos     5U                                            /*!< Core
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1509:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_NOCPERR_Msk     (1UL << CoreDebug_DEMCR_VC_NOCPERR_Pos)        /*!< Core
 1510:CMSIS/Include/../include/core_cm4.h **** 
 1511:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_MMERR_Pos        4U                                            /*!< Core
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 28
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 28
 
 
 1512:CMSIS/Include/../include/core_cm4.h **** #define CoreDebug_DEMCR_VC_MMERR_Msk       (1UL << CoreDebug_DEMCR_VC_MMERR_Pos)          /*!< Core
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1566:CMSIS/Include/../include/core_cm4.h **** #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struc
 1567:CMSIS/Include/../include/core_cm4.h **** #define ITM                 ((ITM_Type       *)     ITM_BASE      )   /*!< ITM configuration struct
 1568:CMSIS/Include/../include/core_cm4.h **** #define DWT                 ((DWT_Type       *)     DWT_BASE      )   /*!< DWT configuration struct
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 29
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 29
 
 
 1569:CMSIS/Include/../include/core_cm4.h **** #define TPI                 ((TPI_Type       *)     TPI_BASE      )   /*!< TPI configuration struct
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1623:CMSIS/Include/../include/core_cm4.h ****   #define NVIC_SystemReset            __NVIC_SystemReset
 1624:CMSIS/Include/../include/core_cm4.h **** #endif /* CMSIS_NVIC_VIRTUAL */
 1625:CMSIS/Include/../include/core_cm4.h **** 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 30
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 30
 
 
 1626:CMSIS/Include/../include/core_cm4.h **** #ifdef CMSIS_VECTAB_VIRTUAL
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1680:CMSIS/Include/../include/core_cm4.h **** 
 1681:CMSIS/Include/../include/core_cm4.h **** 
 1682:CMSIS/Include/../include/core_cm4.h **** /**
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 31
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 31
 
 
 1683:CMSIS/Include/../include/core_cm4.h ****   \brief   Enable Interrupt
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1737:CMSIS/Include/../include/core_cm4.h ****   \details Reads the NVIC pending register and returns the pending bit for the specified device spe
 1738:CMSIS/Include/../include/core_cm4.h ****   \param [in]      IRQn  Device specific interrupt number.
 1739:CMSIS/Include/../include/core_cm4.h ****   \return             0  Interrupt status is not pending.
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 32
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 32
 
 
 1740:CMSIS/Include/../include/core_cm4.h ****   \return             1  Interrupt status is pending.
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1794:CMSIS/Include/../include/core_cm4.h **** __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
 1795:CMSIS/Include/../include/core_cm4.h **** {
 1796:CMSIS/Include/../include/core_cm4.h ****   if ((int32_t)(IRQn) >= 0)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 33
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 33
 
 
 1797:CMSIS/Include/../include/core_cm4.h ****   {
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
 1851:CMSIS/Include/../include/core_cm4.h **** 
 1852:CMSIS/Include/../include/core_cm4.h **** /**
 1853:CMSIS/Include/../include/core_cm4.h ****   \brief   Encode Priority
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 34
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 34
 
 
 1854:CMSIS/Include/../include/core_cm4.h ****   \details Encodes the priority for an interrupt with the given priority group,
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   64              		.loc 2 1873 30 is_stmt 0 view .LVU14
   65 001c 4FF0FF3E 		mov	lr, #-1
   66 0020 0EFA0CF0 		lsl	r0, lr, ip
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 35
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 35
 
 
   67              	.LVL4:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   18:Core/Src/init.c ****           (для частот до 168 МГц) */
   19:Core/Src/init.c ****     SET_BIT(RCC->APB1ENR, RCC_APB1ENR_PWREN);
  102              		.loc 1 19 5 view .LVU21
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 36
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 36
 
 
  103 0000 234B     		ldr	r3, .L9
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   42:Core/Src/init.c **** 
   43:Core/Src/init.c ****        - AHB (HCLK)  = SYSCLK / 1  = 168 МГц  (максимум)
   44:Core/Src/init.c ****        - APB1 (PCLK1)= HCLK  / 4   = 42  МГц  (максимум для APB1)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 37
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 37
 
 
   45:Core/Src/init.c ****        - APB2 (PCLK2)= HCLK  / 2   = 84  МГц  (максимум для APB2)
@@ -2184,11 +2184,11 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  139              		.loc 1 57 5 view .LVU31
  140 0048 144B     		ldr	r3, .L9+12
  141 004a 5360     		str	r3, [r2, #4]
-  58:Core/Src/init.c ****               (8U << RCC_PLLCFGR_PLLM_Pos) |       // PLLM = 8
-  59:Core/Src/init.c ****                   (336U << RCC_PLLCFGR_PLLN_Pos) | // PLLN = 336
-  60:Core/Src/init.c ****                   (0U << RCC_PLLCFGR_PLLP_Pos) |   // PLLP = 2 (код 00)
-  61:Core/Src/init.c ****                   RCC_PLLCFGR_PLLSRC_HSE |         // источник PLL = HSE
-  62:Core/Src/init.c ****                   (7U << RCC_PLLCFGR_PLLQ_Pos));   // PLLQ = 7 (~48 МГц)
+  58:Core/Src/init.c ****               (8U << RCC_PLLCFGR_PLLM_Pos) |      // PLLM = 8
+  59:Core/Src/init.c ****                   (250 << RCC_PLLCFGR_PLLN_Pos) | // PLLN = 336
+  60:Core/Src/init.c ****                   (0U << RCC_PLLCFGR_PLLP_Pos) |  // PLLP = 2 (код 00)
+  61:Core/Src/init.c ****                   RCC_PLLCFGR_PLLSRC_HSE |        // источник PLL = HSE
+  62:Core/Src/init.c ****                   (7U << RCC_PLLCFGR_PLLQ_Pos));  // PLLQ = 7 (~48 МГц)
   63:Core/Src/init.c **** 
   64:Core/Src/init.c ****     /* 6. Включаем PLL и ждём готовности */
   65:Core/Src/init.c ****     SET_BIT(RCC->CR, RCC_CR_PLLON);
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
   72:Core/Src/init.c ****     MODIFY_REG(RCC->CFGR, RCC_CFGR_SW, RCC_CFGR_SW_PLL);
  156              		.loc 1 72 5 is_stmt 1 view .LVU38
  157 005e 0C4A     		ldr	r2, .L9
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 38
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 38
 
 
  158 0060 9368     		ldr	r3, [r2, #8]
@@ -2269,7 +2269,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  189 0090 00380240 		.word	1073887232
  190 0094 00700040 		.word	1073770496
  191 0098 003C0240 		.word	1073888256
- 192 009c 08544007 		.word	121656328
+ 192 009c 883E4007 		.word	121650824
  193 00a0 00000000 		.word	SystemCoreClock
  194              		.cfi_endproc
  195              	.LFE130:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  199              		.global	Clock_Init_HSI_PLL_168MHz
  200              		.syntax unified
  201              		.thumb
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 39
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 39
 
 
  202              		.thumb_func
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  101:Core/Src/init.c ****     {
  102:Core/Src/init.c ****         /* ждём стабилизации HSI */
  103:Core/Src/init.c ****     }
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 40
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 40
 
 
  240              		.loc 1 103 5 view .LVU56
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  273              		.loc 1 118 5 view .LVU69
  115:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) != 0U)
  274              		.loc 1 115 45 discriminator 1 view .LVU70
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 41
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 41
 
 
  115:Core/Src/init.c ****     while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) != 0U)
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  147:Core/Src/init.c ****          PLLQ = 7
  148:Core/Src/init.c ****          PLLSRC = 0 (HSI)
  149:Core/Src/init.c ****     */
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 42
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 42
 
 
  150:Core/Src/init.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  331              		.loc 1 171 5 view .LVU85
  332 00d4 1A68     		ldr	r2, [r3]
  333 00d6 42F08072 		orr	r2, r2, #16777216
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 43
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 43
 
 
  334 00da 1A60     		str	r2, [r3]
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  366              		.loc 1 187 21 is_stmt 0 view .LVU99
  367 0104 034B     		ldr	r3, .L17+8
  368 0106 044A     		ldr	r2, .L17+12
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 44
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 44
 
 
  369 0108 1A60     		str	r2, [r3]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  409              		.loc 1 203 5 view .LVU106
  410 0014 1A69     		ldr	r2, [r3, #16]
  411 0016 22F00702 		bic	r2, r2, #7
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 45
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 45
 
 
  412 001a 1A61     		str	r2, [r3, #16]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  223:Core/Src/init.c ****     Там разделение на 4 линии. Во второй от 4 до 7, в третье
  224:Core/Src/init.c ****     Мы будем брать PC12, следовательно значение для PC12.
  225:Core/Src/init.c ****     APB2ENR (записали 1 для тактирвоания)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 46
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 46
 
 
  226:Core/Src/init.c ****     */
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  482 003e FFF7FEFF 		bl	NVIC_EncodePriority
  483              	.LVL9:
  484              	.LBB18:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 47
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 47
 
 
  485              	.LBI18:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  525              		.cfi_endproc
  526              	.LFE133:
  528              		.section	.text.Buttons_GPIO_Init,"ax",%progbits
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 48
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 48
 
 
  529              		.align	1
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  571 003a DA60     		str	r2, [r3, #12]
  259:Core/Src/init.c **** }
  572              		.loc 1 259 1 is_stmt 0 view .LVU142
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 49
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 49
 
 
  573 003c 7047     		bx	lr
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  279:Core/Src/init.c ****     /* здесь 0000 = PA5 */
  280:Core/Src/init.c **** 
  281:Core/Src/init.c ****     /* 3. Настройка срабатывания по фронтам
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 50
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 50
 
 
  282:Core/Src/init.c ****      *  Кнопка 1 (PA0):
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  308:Core/Src/init.c ****     /* 5. NVIC: включаем прерывания и задаём приоритет */
  309:Core/Src/init.c ****     NVIC_SetPriority(EXTI0_IRQn, 5); // Кнопка 1
  638              		.loc 1 309 5 view .LVU154
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 51
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 51
 
 
  639              	.LVL13:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  676 0060 6022     		movs	r2, #96
  677 0062 83F81723 		strb	r2, [r3, #791]
  678              	.LVL16:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 52
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 52
 
 
 1820:CMSIS/Include/../include/core_cm4.h ****   }
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  321:Core/Src/init.c ****     1. PD1
  322:Core/Src/init.c ****     2. PD2
  323:Core/Src/init.c ****     3. PD3
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 53
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 53
 
 
  324:Core/Src/init.c ****     4. PD4
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  757 0046 42F02002 		orr	r2, r2, #32
  758 004a 9A60     		str	r2, [r3, #8]
  342:Core/Src/init.c ****     CLEAR_BIT(GPIOD->PUPDR, GPIO_PUPDR_PUPD2_Msk);
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 54
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 54
 
 
  759              		.loc 1 342 5 view .LVU189
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  799              		.loc 1 356 5 view .LVU199
  800 009c DA68     		ldr	r2, [r3, #12]
  801 009e 22F44072 		bic	r2, r2, #768
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 55
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 55
 
 
  802 00a2 DA60     		str	r2, [r3, #12]
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  842 00f2 DA60     		str	r2, [r3, #12]
  371:Core/Src/init.c ****     SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR7);
  843              		.loc 1 371 5 view .LVU210
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 56
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 56
 
 
  844 00f4 9A69     		ldr	r2, [r3, #24]
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  888 0022 5960     		str	r1, [r3, #4]
  384:Core/Src/init.c ****     /* OSPEEDR: 11b = very high speed */
  385:Core/Src/init.c ****     CLEAR_BIT(GPIOC->OSPEEDR, GPIO_OSPEEDR_OSPEED9_Msk);
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 57
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 57
 
 
  889              		.loc 1 385 5 view .LVU217
@@ -3375,34 +3375,35 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  898 0034 D968     		ldr	r1, [r3, #12]
  899 0036 21F44021 		bic	r1, r1, #786432
  900 003a D960     		str	r1, [r3, #12]
- 388:Core/Src/init.c ****     CLEAR_BIT(GPIOC->AFR[1], 0xFU << ((9U - 8U) * 4U)); // (9-8)*4 = 4, поле для PC9
- 901              		.loc 1 388 5 view .LVU220
+ 388:Core/Src/init.c **** 
+ 389:Core/Src/init.c ****     CLEAR_BIT(GPIOC->AFR[1], 0xFU << ((9U - 8U) * 4U)); // (9-8)*4 = 4, поле для PC9
+ 901              		.loc 1 389 5 view .LVU220
  902 003c 596A     		ldr	r1, [r3, #36]
  903 003e 21F0F001 		bic	r1, r1, #240
  904 0042 5962     		str	r1, [r3, #36]
- 389:Core/Src/init.c ****     /* Сначала очищаем поля MCO2 и MCO2PRE */
- 390:Core/Src/init.c **** 
- 391:Core/Src/init.c ****     CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2 | RCC_CFGR_MCO2PRE);
- 905              		.loc 1 391 5 view .LVU221
+ 390:Core/Src/init.c ****     /* Сначала очищаем поля MCO2 и MCO2PRE */
+ 391:Core/Src/init.c **** 
+ 392:Core/Src/init.c ****     CLEAR_BIT(RCC->CFGR, RCC_CFGR_MCO2 | RCC_CFGR_MCO2PRE);
+ 905              		.loc 1 392 5 view .LVU221
  906 0044 9368     		ldr	r3, [r2, #8]
  907 0046 23F07843 		bic	r3, r3, #-134217728
  908 004a 9360     		str	r3, [r2, #8]
- 392:Core/Src/init.c ****     /* Источник MCO2 = PLLCLK (MCO2[1:0] = 11b) */
- 393:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2_0 | RCC_CFGR_MCO2_1);
- 909              		.loc 1 393 5 view .LVU222
+ 393:Core/Src/init.c ****     /* Источник MCO2 = PLLCLK (MCO2[1:0] = 11b) */
+ 394:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2_0 | RCC_CFGR_MCO2_1);
+ 909              		.loc 1 394 5 view .LVU222
  910 004c 9368     		ldr	r3, [r2, #8]
  911 004e 43F04043 		orr	r3, r3, #-1073741824
  912 0052 9360     		str	r3, [r2, #8]
- 394:Core/Src/init.c ****     /* Предделитель MCO2PRE = /5 → 111b: ставим все три бита */
- 395:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_0 |
- 913              		.loc 1 395 5 view .LVU223
+ 395:Core/Src/init.c ****     /* Предделитель MCO2PRE = /5 → 111b: ставим все три бита */
+ 396:Core/Src/init.c ****     SET_BIT(RCC->CFGR, RCC_CFGR_MCO2PRE_0 |
+ 913              		.loc 1 396 5 view .LVU223
  914 0054 9368     		ldr	r3, [r2, #8]
  915 0056 43F06053 		orr	r3, r3, #939524096
  916 005a 9360     		str	r3, [r2, #8]
- 396:Core/Src/init.c ****                            RCC_CFGR_MCO2PRE_1 |
- 397:Core/Src/init.c ****                            RCC_CFGR_MCO2PRE_2);
- 398:Core/Src/init.c **** }
- 917              		.loc 1 398 1 is_stmt 0 view .LVU224
+ 397:Core/Src/init.c ****                            RCC_CFGR_MCO2PRE_1 |
+ 398:Core/Src/init.c ****                            RCC_CFGR_MCO2PRE_2);
+ 399:Core/Src/init.c **** }
+ 917              		.loc 1 399 1 is_stmt 0 view .LVU224
  918 005c 7047     		bx	lr
  919              	.L37:
  920 005e 00BF     		.align	2
@@ -3417,34 +3418,34 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  930              		.syntax unified
  931              		.thumb
  932              		.thumb_func
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 58
+
+
  934              	LED_AllOff:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 58
-
-
  935              	.LFB138:
- 399:Core/Src/init.c **** 
- 400:Core/Src/init.c **** // Выключить все 6 светодиодов
- 401:Core/Src/init.c **** void LED_AllOff(void)
- 402:Core/Src/init.c **** {
- 936              		.loc 1 402 1 is_stmt 1 view -0
+ 400:Core/Src/init.c **** 
+ 401:Core/Src/init.c **** // Выключить все 6 светодиодов
+ 402:Core/Src/init.c **** void LED_AllOff(void)
+ 403:Core/Src/init.c **** {
+ 936              		.loc 1 403 1 is_stmt 1 view -0
  937              		.cfi_startproc
  938              		@ args = 0, pretend = 0, frame = 0
  939              		@ frame_needed = 0, uses_anonymous_args = 0
  940              		@ link register save eliminated.
- 403:Core/Src/init.c ****     SET_BIT(GPIOD->BSRR,
- 941              		.loc 1 403 5 view .LVU226
+ 404:Core/Src/init.c ****     SET_BIT(GPIOD->BSRR,
+ 941              		.loc 1 404 5 view .LVU226
  942 0000 024A     		ldr	r2, .L39
  943 0002 9369     		ldr	r3, [r2, #24]
  944 0004 43F45E03 		orr	r3, r3, #14548992
  945 0008 9361     		str	r3, [r2, #24]
- 404:Core/Src/init.c ****             GPIO_BSRR_BR1 |
- 405:Core/Src/init.c ****                 GPIO_BSRR_BR2 |
- 406:Core/Src/init.c ****                 GPIO_BSRR_BR3 |
- 407:Core/Src/init.c ****                 GPIO_BSRR_BR4 |
- 408:Core/Src/init.c ****                 GPIO_BSRR_BR6 |
- 409:Core/Src/init.c ****                 GPIO_BSRR_BR7);
- 410:Core/Src/init.c **** }
- 946              		.loc 1 410 1 is_stmt 0 view .LVU227
+ 405:Core/Src/init.c ****             GPIO_BSRR_BR1 |
+ 406:Core/Src/init.c ****                 GPIO_BSRR_BR2 |
+ 407:Core/Src/init.c ****                 GPIO_BSRR_BR3 |
+ 408:Core/Src/init.c ****                 GPIO_BSRR_BR4 |
+ 409:Core/Src/init.c ****                 GPIO_BSRR_BR6 |
+ 410:Core/Src/init.c ****                 GPIO_BSRR_BR7);
+ 411:Core/Src/init.c **** }
+ 946              		.loc 1 411 1 is_stmt 0 view .LVU227
  947 000a 7047     		bx	lr
  948              	.L40:
  949              		.align	2
@@ -3461,105 +3462,105 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  962              	LED_On_Index:
  963              	.LVL18:
  964              	.LFB139:
- 411:Core/Src/init.c **** // Включить нужный светодиод (остальные остаются как б�
- 412:Core/Src/init.c **** void LED_On_Index(uint8_t index)
- 413:Core/Src/init.c **** {
- 965              		.loc 1 413 1 is_stmt 1 view -0
+ 412:Core/Src/init.c **** // Включить нужный светодиод (остальные остаются как б�
+ 413:Core/Src/init.c **** void LED_On_Index(uint8_t index)
+ 414:Core/Src/init.c **** {
+ 965              		.loc 1 414 1 is_stmt 1 view -0
  966              		.cfi_startproc
  967              		@ args = 0, pretend = 0, frame = 0
  968              		@ frame_needed = 0, uses_anonymous_args = 0
  969              		@ link register save eliminated.
- 414:Core/Src/init.c ****     switch (index)
- 970              		.loc 1 414 5 view .LVU229
+ 415:Core/Src/init.c ****     switch (index)
+ 970              		.loc 1 415 5 view .LVU229
  971 0000 0528     		cmp	r0, #5
  972 0002 27D8     		bhi	.L41
  973 0004 DFE800F0 		tbb	[pc, r0]
  974              	.L44:
  975 0008 03       		.byte	(.L49-.L44)/2
  976 0009 09       		.byte	(.L48-.L44)/2
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 59
+
+
  977 000a 0F       		.byte	(.L47-.L44)/2
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 59
-
-
  978 000b 15       		.byte	(.L46-.L44)/2
  979 000c 1B       		.byte	(.L45-.L44)/2
  980 000d 21       		.byte	(.L43-.L44)/2
  981              		.p2align 1
  982              	.L49:
- 415:Core/Src/init.c ****     {
- 416:Core/Src/init.c ****     case 0:
- 417:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS1);
- 983              		.loc 1 417 9 view .LVU230
+ 416:Core/Src/init.c ****     {
+ 417:Core/Src/init.c ****     case 0:
+ 418:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS1);
+ 983              		.loc 1 418 9 view .LVU230
  984 000e 124A     		ldr	r2, .L51
  985 0010 9369     		ldr	r3, [r2, #24]
  986 0012 43F00203 		orr	r3, r3, #2
  987 0016 9361     		str	r3, [r2, #24]
- 418:Core/Src/init.c ****         break;
- 988              		.loc 1 418 9 view .LVU231
+ 419:Core/Src/init.c ****         break;
+ 988              		.loc 1 419 9 view .LVU231
  989 0018 7047     		bx	lr
  990              	.L48:
- 419:Core/Src/init.c ****     case 1:
- 420:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS2);
- 991              		.loc 1 420 9 view .LVU232
+ 420:Core/Src/init.c ****     case 1:
+ 421:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS2);
+ 991              		.loc 1 421 9 view .LVU232
  992 001a 0F4A     		ldr	r2, .L51
  993 001c 9369     		ldr	r3, [r2, #24]
  994 001e 43F00403 		orr	r3, r3, #4
  995 0022 9361     		str	r3, [r2, #24]
- 421:Core/Src/init.c ****         break;
- 996              		.loc 1 421 9 view .LVU233
+ 422:Core/Src/init.c ****         break;
+ 996              		.loc 1 422 9 view .LVU233
  997 0024 7047     		bx	lr
  998              	.L47:
- 422:Core/Src/init.c ****     case 2:
- 423:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS3);
- 999              		.loc 1 423 9 view .LVU234
+ 423:Core/Src/init.c ****     case 2:
+ 424:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS3);
+ 999              		.loc 1 424 9 view .LVU234
  1000 0026 0C4A     		ldr	r2, .L51
  1001 0028 9369     		ldr	r3, [r2, #24]
  1002 002a 43F00803 		orr	r3, r3, #8
  1003 002e 9361     		str	r3, [r2, #24]
- 424:Core/Src/init.c ****         break;
- 1004              		.loc 1 424 9 view .LVU235
+ 425:Core/Src/init.c ****         break;
+ 1004              		.loc 1 425 9 view .LVU235
  1005 0030 7047     		bx	lr
  1006              	.L46:
- 425:Core/Src/init.c ****     case 3:
- 426:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS4);
- 1007              		.loc 1 426 9 view .LVU236
+ 426:Core/Src/init.c ****     case 3:
+ 427:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS4);
+ 1007              		.loc 1 427 9 view .LVU236
  1008 0032 094A     		ldr	r2, .L51
  1009 0034 9369     		ldr	r3, [r2, #24]
  1010 0036 43F01003 		orr	r3, r3, #16
  1011 003a 9361     		str	r3, [r2, #24]
- 427:Core/Src/init.c ****         break;
- 1012              		.loc 1 427 9 view .LVU237
+ 428:Core/Src/init.c ****         break;
+ 1012              		.loc 1 428 9 view .LVU237
  1013 003c 7047     		bx	lr
  1014              	.L45:
- 428:Core/Src/init.c ****     case 4:
- 429:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS6);
- 1015              		.loc 1 429 9 view .LVU238
+ 429:Core/Src/init.c ****     case 4:
+ 430:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS6);
+ 1015              		.loc 1 430 9 view .LVU238
  1016 003e 064A     		ldr	r2, .L51
  1017 0040 9369     		ldr	r3, [r2, #24]
  1018 0042 43F04003 		orr	r3, r3, #64
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 60
+
+
  1019 0046 9361     		str	r3, [r2, #24]
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 60
-
-
- 430:Core/Src/init.c ****         break;
- 1020              		.loc 1 430 9 view .LVU239
+ 431:Core/Src/init.c ****         break;
+ 1020              		.loc 1 431 9 view .LVU239
  1021 0048 7047     		bx	lr
  1022              	.L43:
- 431:Core/Src/init.c ****     case 5:
- 432:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS7);
- 1023              		.loc 1 432 9 view .LVU240
+ 432:Core/Src/init.c ****     case 5:
+ 433:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BS7);
+ 1023              		.loc 1 433 9 view .LVU240
  1024 004a 034A     		ldr	r2, .L51
  1025 004c 9369     		ldr	r3, [r2, #24]
  1026 004e 43F08003 		orr	r3, r3, #128
  1027 0052 9361     		str	r3, [r2, #24]
- 433:Core/Src/init.c ****         break;
- 1028              		.loc 1 433 9 view .LVU241
+ 434:Core/Src/init.c ****         break;
+ 1028              		.loc 1 434 9 view .LVU241
  1029              	.L41:
- 434:Core/Src/init.c ****     default:
- 435:Core/Src/init.c ****         break;
- 436:Core/Src/init.c ****     }
- 437:Core/Src/init.c **** }
- 1030              		.loc 1 437 1 is_stmt 0 view .LVU242
+ 435:Core/Src/init.c ****     default:
+ 436:Core/Src/init.c ****         break;
+ 437:Core/Src/init.c ****     }
+ 438:Core/Src/init.c **** }
+ 1030              		.loc 1 438 1 is_stmt 0 view .LVU242
  1031 0054 7047     		bx	lr
  1032              	.L52:
  1033 0056 00BF     		.align	2
@@ -3576,16 +3577,16 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  1046              	LED_Off_Index:
  1047              	.LVL19:
  1048              	.LFB140:
- 438:Core/Src/init.c **** // Выключить конкретный светодиод по индексу
- 439:Core/Src/init.c **** void LED_Off_Index(uint8_t index)
- 440:Core/Src/init.c **** {
- 1049              		.loc 1 440 1 is_stmt 1 view -0
+ 439:Core/Src/init.c **** // Выключить конкретный светодиод по индексу
+ 440:Core/Src/init.c **** void LED_Off_Index(uint8_t index)
+ 441:Core/Src/init.c **** {
+ 1049              		.loc 1 441 1 is_stmt 1 view -0
  1050              		.cfi_startproc
  1051              		@ args = 0, pretend = 0, frame = 0
  1052              		@ frame_needed = 0, uses_anonymous_args = 0
  1053              		@ link register save eliminated.
- 441:Core/Src/init.c ****     switch (index)
- 1054              		.loc 1 441 5 view .LVU244
+ 442:Core/Src/init.c ****     switch (index)
+ 1054              		.loc 1 442 5 view .LVU244
  1055 0000 0528     		cmp	r0, #5
  1056 0002 27D8     		bhi	.L53
  1057 0004 DFE800F0 		tbb	[pc, r0]
@@ -3597,84 +3598,84 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  1063 000c 1B       		.byte	(.L57-.L56)/2
  1064 000d 21       		.byte	(.L55-.L56)/2
  1065              		.p2align 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 61
+
+
  1066              	.L61:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 61
-
-
- 442:Core/Src/init.c ****     {
- 443:Core/Src/init.c ****     case 0:
- 444:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR1);
- 1067              		.loc 1 444 9 view .LVU245
+ 443:Core/Src/init.c ****     {
+ 444:Core/Src/init.c ****     case 0:
+ 445:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR1);
+ 1067              		.loc 1 445 9 view .LVU245
  1068 000e 124A     		ldr	r2, .L63
  1069 0010 9369     		ldr	r3, [r2, #24]
  1070 0012 43F40033 		orr	r3, r3, #131072
  1071 0016 9361     		str	r3, [r2, #24]
- 445:Core/Src/init.c ****         break;
- 1072              		.loc 1 445 9 view .LVU246
+ 446:Core/Src/init.c ****         break;
+ 1072              		.loc 1 446 9 view .LVU246
  1073 0018 7047     		bx	lr
  1074              	.L60:
- 446:Core/Src/init.c ****     case 1:
- 447:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR2);
- 1075              		.loc 1 447 9 view .LVU247
+ 447:Core/Src/init.c ****     case 1:
+ 448:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR2);
+ 1075              		.loc 1 448 9 view .LVU247
  1076 001a 0F4A     		ldr	r2, .L63
  1077 001c 9369     		ldr	r3, [r2, #24]
  1078 001e 43F48023 		orr	r3, r3, #262144
  1079 0022 9361     		str	r3, [r2, #24]
- 448:Core/Src/init.c ****         break;
- 1080              		.loc 1 448 9 view .LVU248
+ 449:Core/Src/init.c ****         break;
+ 1080              		.loc 1 449 9 view .LVU248
  1081 0024 7047     		bx	lr
  1082              	.L59:
- 449:Core/Src/init.c ****     case 2:
- 450:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR3);
- 1083              		.loc 1 450 9 view .LVU249
+ 450:Core/Src/init.c ****     case 2:
+ 451:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR3);
+ 1083              		.loc 1 451 9 view .LVU249
  1084 0026 0C4A     		ldr	r2, .L63
  1085 0028 9369     		ldr	r3, [r2, #24]
  1086 002a 43F40023 		orr	r3, r3, #524288
  1087 002e 9361     		str	r3, [r2, #24]
- 451:Core/Src/init.c ****         break;
- 1088              		.loc 1 451 9 view .LVU250
+ 452:Core/Src/init.c ****         break;
+ 1088              		.loc 1 452 9 view .LVU250
  1089 0030 7047     		bx	lr
  1090              	.L58:
- 452:Core/Src/init.c ****     case 3:
- 453:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR4);
- 1091              		.loc 1 453 9 view .LVU251
+ 453:Core/Src/init.c ****     case 3:
+ 454:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR4);
+ 1091              		.loc 1 454 9 view .LVU251
  1092 0032 094A     		ldr	r2, .L63
  1093 0034 9369     		ldr	r3, [r2, #24]
  1094 0036 43F48013 		orr	r3, r3, #1048576
  1095 003a 9361     		str	r3, [r2, #24]
- 454:Core/Src/init.c ****         break;
- 1096              		.loc 1 454 9 view .LVU252
+ 455:Core/Src/init.c ****         break;
+ 1096              		.loc 1 455 9 view .LVU252
  1097 003c 7047     		bx	lr
  1098              	.L57:
- 455:Core/Src/init.c ****     case 4:
- 456:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR6);
- 1099              		.loc 1 456 9 view .LVU253
+ 456:Core/Src/init.c ****     case 4:
+ 457:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR6);
+ 1099              		.loc 1 457 9 view .LVU253
  1100 003e 064A     		ldr	r2, .L63
  1101 0040 9369     		ldr	r3, [r2, #24]
  1102 0042 43F48003 		orr	r3, r3, #4194304
  1103 0046 9361     		str	r3, [r2, #24]
- 457:Core/Src/init.c ****         break;
- 1104              		.loc 1 457 9 view .LVU254
+ 458:Core/Src/init.c ****         break;
+ 1104              		.loc 1 458 9 view .LVU254
  1105 0048 7047     		bx	lr
  1106              	.L55:
- 458:Core/Src/init.c ****     case 5:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 62
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 62
 
 
- 459:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR7);
- 1107              		.loc 1 459 9 view .LVU255
+ 459:Core/Src/init.c ****     case 5:
+ 460:Core/Src/init.c ****         SET_BIT(GPIOD->BSRR, GPIO_BSRR_BR7);
+ 1107              		.loc 1 460 9 view .LVU255
  1108 004a 034A     		ldr	r2, .L63
  1109 004c 9369     		ldr	r3, [r2, #24]
  1110 004e 43F40003 		orr	r3, r3, #8388608
  1111 0052 9361     		str	r3, [r2, #24]
- 460:Core/Src/init.c ****         break;
- 1112              		.loc 1 460 9 view .LVU256
+ 461:Core/Src/init.c ****         break;
+ 1112              		.loc 1 461 9 view .LVU256
  1113              	.L53:
- 461:Core/Src/init.c ****     default:
- 462:Core/Src/init.c ****         break;
- 463:Core/Src/init.c ****     }
- 464:Core/Src/init.c **** }
- 1114              		.loc 1 464 1 is_stmt 0 view .LVU257
+ 462:Core/Src/init.c ****     default:
+ 463:Core/Src/init.c ****         break;
+ 464:Core/Src/init.c ****     }
+ 465:Core/Src/init.c **** }
+ 1114              		.loc 1 465 1 is_stmt 0 view .LVU257
  1115 0054 7047     		bx	lr
  1116              	.L64:
  1117 0056 00BF     		.align	2
@@ -3691,36 +3692,36 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  1130              	LED_SetActive:
  1131              	.LVL20:
  1132              	.LFB141:
- 465:Core/Src/init.c **** // Включаем только один активный светодиод, остальные �
- 466:Core/Src/init.c **** void LED_SetActive(uint8_t index)
- 467:Core/Src/init.c **** {
- 1133              		.loc 1 467 1 is_stmt 1 view -0
+ 466:Core/Src/init.c **** // Включаем только один активный светодиод, остальные �
+ 467:Core/Src/init.c **** void LED_SetActive(uint8_t index)
+ 468:Core/Src/init.c **** {
+ 1133              		.loc 1 468 1 is_stmt 1 view -0
  1134              		.cfi_startproc
  1135              		@ args = 0, pretend = 0, frame = 0
  1136              		@ frame_needed = 0, uses_anonymous_args = 0
- 1137              		.loc 1 467 1 is_stmt 0 view .LVU259
+ 1137              		.loc 1 468 1 is_stmt 0 view .LVU259
  1138 0000 10B5     		push	{r4, lr}
  1139              	.LCFI2:
  1140              		.cfi_def_cfa_offset 8
  1141              		.cfi_offset 4, -8
  1142              		.cfi_offset 14, -4
  1143 0002 0446     		mov	r4, r0
- 468:Core/Src/init.c ****     LED_AllOff();
- 1144              		.loc 1 468 5 is_stmt 1 view .LVU260
+ 469:Core/Src/init.c ****     LED_AllOff();
+ 1144              		.loc 1 469 5 is_stmt 1 view .LVU260
  1145 0004 FFF7FEFF 		bl	LED_AllOff
  1146              	.LVL21:
- 469:Core/Src/init.c ****     LED_On_Index(index);
- 1147              		.loc 1 469 5 view .LVU261
+ 470:Core/Src/init.c ****     LED_On_Index(index);
+ 1147              		.loc 1 470 5 view .LVU261
  1148 0008 2046     		mov	r0, r4
  1149 000a FFF7FEFF 		bl	LED_On_Index
  1150              	.LVL22:
- 470:Core/Src/init.c **** }
- 1151              		.loc 1 470 1 is_stmt 0 view .LVU262
+ 471:Core/Src/init.c **** }
+ 1151              		.loc 1 471 1 is_stmt 0 view .LVU262
  1152 000e 10BD     		pop	{r4, pc}
- 1153              		.loc 1 470 1 view .LVU263
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 63
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 63
 
 
+ 1153              		.loc 1 471 1 view .LVU263
  1154              		.cfi_endproc
  1155              	.LFE141:
  1157              		.text
@@ -3729,52 +3730,52 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 1
  1160              		.file 4 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
  1161              		.file 5 "Core/Src/../Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
  1162              		.file 6 "CMSIS/Devices/STM32F4xx/Inc/system_stm32f4xx.h"
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccziXM3v.s 			page 64
+ARM GAS  C:\Users\user\AppData\Local\Temp\cc0LGn5v.s 			page 64
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 init.c
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:21     .text.NVIC_EncodePriority:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:26     .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:89     .text.Clock_Init_HSE_PLL_168MHz:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:95     .text.Clock_Init_HSE_PLL_168MHz:00000000 Clock_Init_HSE_PLL_168MHz
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:189    .text.Clock_Init_HSE_PLL_168MHz:00000090 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:198    .text.Clock_Init_HSI_PLL_168MHz:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:204    .text.Clock_Init_HSI_PLL_168MHz:00000000 Clock_Init_HSI_PLL_168MHz
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:375    .text.Clock_Init_HSI_PLL_168MHz:0000010c $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:383    .text.SysTick_Init_1ms:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:389    .text.SysTick_Init_1ms:00000000 SysTick_Init_1ms
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:422    .text.SysTick_Init_1ms:00000028 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:427    .text.ITR_Init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:433    .text.ITR_Init:00000000 ITR_Init
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:521    .text.ITR_Init:00000054 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:529    .text.Buttons_GPIO_Init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:535    .text.Buttons_GPIO_Init:00000000 Buttons_GPIO_Init
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:577    .text.Buttons_GPIO_Init:00000040 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:583    .text.Buttons_EXTI_Init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:589    .text.Buttons_EXTI_Init:00000000 Buttons_EXTI_Init
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:701    .text.Buttons_EXTI_Init:00000070 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:708    .text.LEDs_GPIO_Init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:714    .text.LEDs_GPIO_Init:00000000 LEDs_GPIO_Init
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:852    .text.LEDs_GPIO_Init:00000100 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:858    .text.MCO_init:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:864    .text.MCO_init:00000000 MCO_init
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:922    .text.MCO_init:00000060 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:928    .text.LED_AllOff:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:934    .text.LED_AllOff:00000000 LED_AllOff
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:951    .text.LED_AllOff:0000000c $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:956    .text.LED_On_Index:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:962    .text.LED_On_Index:00000000 LED_On_Index
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:975    .text.LED_On_Index:00000008 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:981    .text.LED_On_Index:0000000e $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1035   .text.LED_On_Index:00000058 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1040   .text.LED_Off_Index:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1046   .text.LED_Off_Index:00000000 LED_Off_Index
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1059   .text.LED_Off_Index:00000008 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1065   .text.LED_Off_Index:0000000e $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1119   .text.LED_Off_Index:00000058 $d
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1124   .text.LED_SetActive:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccziXM3v.s:1130   .text.LED_SetActive:00000000 LED_SetActive
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:21     .text.NVIC_EncodePriority:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:26     .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:89     .text.Clock_Init_HSE_PLL_168MHz:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:95     .text.Clock_Init_HSE_PLL_168MHz:00000000 Clock_Init_HSE_PLL_168MHz
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:189    .text.Clock_Init_HSE_PLL_168MHz:00000090 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:198    .text.Clock_Init_HSI_PLL_168MHz:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:204    .text.Clock_Init_HSI_PLL_168MHz:00000000 Clock_Init_HSI_PLL_168MHz
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:375    .text.Clock_Init_HSI_PLL_168MHz:0000010c $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:383    .text.SysTick_Init_1ms:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:389    .text.SysTick_Init_1ms:00000000 SysTick_Init_1ms
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:422    .text.SysTick_Init_1ms:00000028 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:427    .text.ITR_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:433    .text.ITR_Init:00000000 ITR_Init
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:521    .text.ITR_Init:00000054 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:529    .text.Buttons_GPIO_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:535    .text.Buttons_GPIO_Init:00000000 Buttons_GPIO_Init
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:577    .text.Buttons_GPIO_Init:00000040 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:583    .text.Buttons_EXTI_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:589    .text.Buttons_EXTI_Init:00000000 Buttons_EXTI_Init
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:701    .text.Buttons_EXTI_Init:00000070 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:708    .text.LEDs_GPIO_Init:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:714    .text.LEDs_GPIO_Init:00000000 LEDs_GPIO_Init
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:852    .text.LEDs_GPIO_Init:00000100 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:858    .text.MCO_init:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:864    .text.MCO_init:00000000 MCO_init
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:922    .text.MCO_init:00000060 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:928    .text.LED_AllOff:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:934    .text.LED_AllOff:00000000 LED_AllOff
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:951    .text.LED_AllOff:0000000c $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:956    .text.LED_On_Index:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:962    .text.LED_On_Index:00000000 LED_On_Index
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:975    .text.LED_On_Index:00000008 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:981    .text.LED_On_Index:0000000e $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1035   .text.LED_On_Index:00000058 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1040   .text.LED_Off_Index:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1046   .text.LED_Off_Index:00000000 LED_Off_Index
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1059   .text.LED_Off_Index:00000008 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1065   .text.LED_Off_Index:0000000e $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1119   .text.LED_Off_Index:00000058 $d
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1124   .text.LED_SetActive:00000000 $t
+C:\Users\user\AppData\Local\Temp\cc0LGn5v.s:1130   .text.LED_SetActive:00000000 LED_SetActive
 
 UNDEFINED SYMBOLS
 SystemCoreClock

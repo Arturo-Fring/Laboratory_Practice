@@ -1,16 +1,26 @@
 #include "Interrupt.h"
 
 extern volatile uint32_t system_time_ms;
+extern volatile uint32_t seconds;
+
 extern volatile uint8_t button1_pressed_flag;
 extern volatile uint32_t button1_last_irq_time_ms;
 extern volatile uint8_t button2_press_event_flag;
 extern volatile uint8_t button2_release_event_flag;
 extern volatile uint32_t button2_last_irq_time_ms;
 
-// Обработчик таймера
+volatile uint16_t tectonics = 0;
+// volatile uint8_t seconds = 0;
+//  Обработчик таймера
 void SysTick_Handler(void)
 {
     system_time_ms++;
+    tectonics++;
+    if (tectonics >= 1000)
+    {
+        seconds += 1;
+        tectonics = 0;
+    }
 }
 
 // Обработчик кнопки PA0
@@ -21,7 +31,7 @@ void EXTI0_IRQHandler(void)
     {
         uint32_t now = system_time_ms;
 
-        /* Антидребезг: игнорируем срабатывания чаще, чем BTN_DEBOUNCE_MS */
+        /* Антидребезг BTN_DEBOUNCE_MS */
         if ((now - button1_last_irq_time_ms) >= BTN_DEBOUNCE_MS)
         {
             button1_last_irq_time_ms = now;
