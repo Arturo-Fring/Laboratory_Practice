@@ -14,6 +14,7 @@ static void delay_ms(volatile uint32_t ms)
     }
 }
 
+
 static inline void PB7_On(void)
 {
     // Установить PB7 в 1: пишем в нижние 16 бит BSRR

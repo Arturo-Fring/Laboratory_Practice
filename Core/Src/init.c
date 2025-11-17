@@ -82,7 +82,7 @@ void UART3_Init(void)
 
     /* 2. Настраиваем пины PD8/PD9 под AF7 USART3 */
     UART3_GPIO_Init();
-
+    
     /* 3. Перед конфигурированием — выключаем USART3 (UE = 0) */
     CLEAR_BIT(USART3->CR1, USART_CR1_UE); // USART vkl/vikl
 
