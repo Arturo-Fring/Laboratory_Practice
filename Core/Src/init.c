@@ -14,8 +14,7 @@ PLLQ = 7 -> 336/7 = 48 MHz --
 #include "stm32f4xx.h"
 void Clock_Init_HSE_PLL_168MHz(void)
 {
-    /* 1. Включаем тактирование блока питания PWR и ставим Scale 1
-          (для частот до 168 МГц) */
+    /* 1. Включаем тактирование блока питания PWR и ставим Scale 1 (для частот до 168 МГц) */
     SET_BIT(RCC->APB1ENR, RCC_APB1ENR_PWREN);
     SET_BIT(PWR->CR, PWR_CR_VOS); // VOS = 11b → Scale 1
 
@@ -25,26 +24,18 @@ void Clock_Init_HSE_PLL_168MHz(void)
     {
         /* ждём, пока HSE не стабилизируется */
     }
-
-    /* 3. Настраиваем FLASH: кеши + 5 тактов ожидания (для 168 МГц)
-           */
-
+    /* 3. Настраиваем FLASH: кеши + 5 тактов ожидания (для 168 МГц)*/
     /* Сбрасываем LATENCY и включаем кэши/предвыборку, если нужно */
     MODIFY_REG(FLASH->ACR,
                FLASH_ACR_LATENCY,
                FLASH_ACR_LATENCY_5WS); // 5 wait states
-
     /* Можно дополнительно включить prefetch / I-cache / D-cache (по желанию):
-       SET_BIT(FLASH->ACR, FLASH_ACR_PRFTEN | FLASH_ACR_ICEN | FLASH_ACR_DCEN);
-    */
-
+       SET_BIT(FLASH->ACR, FLASH_ACR_PRFTEN | FLASH_ACR_ICEN | FLASH_ACR_DCEN); */
     /* 4. Настраиваем делители шин: AHB, APB1, APB2
-
        - AHB (HCLK)  = SYSCLK / 1  = 168 МГц  (максимум)
        - APB1 (PCLK1)= HCLK  / 4   = 42  МГц  (максимум для APB1)
        - APB2 (PCLK2)= HCLK  / 2   = 84  МГц  (максимум для APB2)
     */
-
     MODIFY_REG(RCC->CFGR,
                RCC_CFGR_HPRE | RCC_CFGR_PPRE1 | RCC_CFGR_PPRE2,
                RCC_CFGR_HPRE_DIV1 |      // AHB = /1
@@ -53,7 +44,6 @@ void Clock_Init_HSE_PLL_168MHz(void)
 
     /* 5. Настраиваем PLL под 168 МГц от HSE = 8 МГц:
            PLLM = 8, PLLN = 336, PLLP = 2, PLLQ = 7 */
-
     WRITE_REG(RCC->PLLCFGR,
               (8U << RCC_PLLCFGR_PLLM_Pos) |      // PLLM = 8
                   (336 << RCC_PLLCFGR_PLLN_Pos) | // PLLN = 336
@@ -67,20 +57,19 @@ void Clock_Init_HSE_PLL_168MHz(void)
     {
         /* ждём, пока PLL не поднимется */
     }
-
     /* 7. Переключаем системное тактирование на PLL */
     MODIFY_REG(RCC->CFGR, RCC_CFGR_SW, RCC_CFGR_SW_PLL);
     while (READ_BIT(RCC->CFGR, RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL)
     {
         /* ждём, пока в статусе не появится "PLL как SYSCLK" */
     }
-
     /* 8. (Опционально) Выключить HSI, чтобы не жрать лишний ток */
     CLEAR_BIT(RCC->CR, RCC_CR_HSION);
-
     /* 9. Обновляем глобальную переменную SystemCoreClock */
     SystemCoreClock = 168000000U;
 }
+
+
 void Clock_Init_HSI_PLL_168MHz(void)
 {
     /* 1. Включаем тактирование PWR и ставим режим питания Scale1 (нужен для 168 МГц) */
@@ -173,7 +162,6 @@ void Clock_Init_HSI_PLL_168MHz(void)
     {
         /* ждём готовности PLL */
     }
-
     /* 10. Переключаем SYSCLK на PLL */
     CLEAR_BIT(RCC->CFGR, RCC_CFGR_SW);   // очистить поле SW
     SET_BIT(RCC->CFGR, RCC_CFGR_SW_PLL); // выбрать PLL как SYSCLK
@@ -186,15 +174,18 @@ void Clock_Init_HSI_PLL_168MHz(void)
     /* 11. Обновляем переменную SystemCoreClock для дальнейших расчётов (SysTick и т.п.) */
     SystemCoreClock = 168000000U;
 }
+
+
+
+
+
 void SysTick_Init_1ms(void)
 {
     /* Останавливаем SysTick на время настройки */
     CLEAR_BIT(SysTick->CTRL, SysTick_CTRL_ENABLE_Msk);
-
     /* Счётчик перезагрузки:
        частота / 1000 - 1  → период 1 мс */
     uint32_t reload = 168000000U / 1000U - 1U;
-
     // CLEAR_REG(SysTick->)
     WRITE_REG(SysTick->LOAD, reload); // значение перезагрузки
     WRITE_REG(SysTick->VAL, 0U);      // сбрасываем текущий счётчик
@@ -264,20 +255,17 @@ void Buttons_EXTI_Init(void)
      *    Он связывает линии EXTI с конкретными портами (PA, PB, ...).
      */
     SET_BIT(RCC->APB2ENR, RCC_APB2ENR_SYSCFGEN);
-
     /* 2. Привязываем линии EXTI к ножкам порта A
      *  EXTI0  → PA0 (кнопка 1)
      *  EXTI5  → PA5 (кнопка 2)
      *  Для порта A код источника = 0000, поэтому достаточно очистить эти биты.
      */
-
     /* EXTI0: EXTICR[0], биты EXTI0[3:0] */
     CLEAR_BIT(SYSCFG->EXTICR[0], SYSCFG_EXTICR1_EXTI0);
     /* здесь 0000 = PA0, ничего больше ставить не нужно */
     /* EXTI5: EXTICR[1], биты EXTI5[3:0] */
     CLEAR_BIT(SYSCFG->EXTICR[1], SYSCFG_EXTICR2_EXTI5);
     /* здесь 0000 = PA5 */
-
     /* 3. Настройка срабатывания по фронтам
      *  Кнопка 1 (PA0):
      *      вход на pull-up, в покое = 1
@@ -287,7 +275,6 @@ void Buttons_EXTI_Init(void)
      *      — нужно различать короткое и длинное нажатие
      *      — значит, нужно знать:когда НАЖАЛИ  (спад 1→0) когда ОТПУСТИЛИ (фронт 0→1)
      */
-
     /* Настройка тригеров */
     CLEAR_BIT(EXTI->RTSR, EXTI_RTSR_TR0 | EXTI_RTSR_TR5);
     CLEAR_BIT(EXTI->FTSR, EXTI_FTSR_TR0 | EXTI_FTSR_TR5);
@@ -305,7 +292,7 @@ void Buttons_EXTI_Init(void)
     /* 5. Очищаем флаги (запись 1 очищает флаг) */
     WRITE_REG(EXTI->PR, EXTI_PR_PR0 | EXTI_PR_PR5);
 
-    /* 5. NVIC: включаем прерывания и задаём приоритет */
+    /* 6. NVIC: включаем прерывания и задаём приоритет */
     NVIC_SetPriority(EXTI0_IRQn, 5); // Кнопка 1
     NVIC_EnableIRQ(EXTI0_IRQn);
 
@@ -397,17 +384,11 @@ void MCO_init(void)
                            RCC_CFGR_MCO2PRE_1 |
                            RCC_CFGR_MCO2PRE_2);
 }
-
 // Выключить все 6 светодиодов
 void LED_AllOff(void)
 {
     SET_BIT(GPIOD->BSRR,
-            GPIO_BSRR_BR1 |
-                GPIO_BSRR_BR2 |
-                GPIO_BSRR_BR3 |
-                GPIO_BSRR_BR4 |
-                GPIO_BSRR_BR6 |
-                GPIO_BSRR_BR7);
+            GPIO_BSRR_BR1 |GPIO_BSRR_BR2 | GPIO_BSRR_BR3 |GPIO_BSRR_BR4 |GPIO_BSRR_BR6 |GPIO_BSRR_BR7);
 }
 // Включить нужный светодиод (остальные остаются как были)
 void LED_On_Index(uint8_t index)

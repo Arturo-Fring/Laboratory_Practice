@@ -2,7 +2,6 @@
 
 extern volatile uint32_t system_time_ms;
 extern volatile uint32_t seconds;
-
 extern volatile uint8_t button1_pressed_flag;
 extern volatile uint32_t button1_last_irq_time_ms;
 extern volatile uint8_t button2_press_event_flag;
@@ -74,7 +73,6 @@ void EXTI9_5_IRQHandler(void)
                 button2_release_event_flag = 1U;
             }
         }
-
         /* Сбрасываем флаг прерывания по линии 5 */
         SET_BIT(EXTI->PR, EXTI_PR_PR5);
     }
