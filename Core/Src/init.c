@@ -151,7 +151,7 @@ void SysTick_Init_1ms(void)
                   SysTick_CTRL_ENABLE_Msk);
 }
 
-/* ===== Clock Init (как в условии) ===== */
+/* ===== Clock Init (как в предыдущих лабаъ) ===== */
 
 void Clock_Init_HSE_PLL_168MHz(void)
 {

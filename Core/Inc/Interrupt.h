@@ -17,4 +17,6 @@ extern volatile uint8_t g_speedIndex;
 /* Флаг: гирлянда запущена (0 - стоит, 1 - работает) */
 extern volatile uint8_t g_running;
 
+extern volatile uint32_t g_debugCounter;
+
 #endif

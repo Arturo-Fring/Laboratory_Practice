@@ -3,19 +3,19 @@
 
 int main(void)
 {
-    /* 1. Тактирование на 168 МГц */
+    /* Тактирование на 168 МГц */
     Clock_Init_HSE_PLL_168MHz();
 
-    /* 2. SysTick 1 мс для времени и антидребезга */
+    /* SysTick 1 мс для антидребезга */
     SysTick_Init_1ms();
 
-    /* 3. GPIO (LED + кнопка) + EXTI0 */
+    /* GPIO + EXTI0 */
     GPIO_EXTI_Init();
 
-    /* 4. TIM2 (ещё НЕ запущен) */
+    /* TIM2 (ещё не запущен) */
     TIM2_Init();
 
-    /* 5. По умолчанию всё выключено, гирлянда не крутится */
+    /* По умолчанию всё выключено, гирлянда не крутится */
     LEDs_AllOff();
     g_running = 0U;
     g_currentLed = 0U;
@@ -23,6 +23,7 @@ int main(void)
 
     while (1)
     {
+        g_currentLed;
         /* Спим до прерывания (TIM2 / EXTI / SysTick) */
         __WFI();
     }

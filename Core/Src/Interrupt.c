@@ -6,6 +6,8 @@ volatile uint8_t g_currentLed = 0U; // 0..3
 volatile uint8_t g_speedIndex = 0U; // 0..3
 volatile uint8_t g_running = 0U;    // 0 - не запущено, 1 - запущено
 
+volatile uint32_t g_debugCounter = 0;
+
 /* Для антидребезга */
 static volatile uint8_t g_btnDebounceActive = 0U;
 static volatile uint32_t g_btnDebounceDeadline = 0U; // время (мс), когда надо проверить кнопку
@@ -69,6 +71,7 @@ void TIM2_IRQHandler(void)
         {
             /* Гасим все светодиоды */
             LEDs_AllOff();
+            g_debugCounter++; // <<<< ВОТ ЭТА ПЕРЕМЕННАЯ ДЛЯ MCUViewer
 
             /* Следующий светодиод по кругу 0..3 */
             g_currentLed = (g_currentLed + 1U) & 0x03U;

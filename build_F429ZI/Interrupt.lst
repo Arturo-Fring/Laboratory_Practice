@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -36,170 +36,172 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 1
    6:Core/Src/Interrupt.c **** volatile uint8_t g_speedIndex = 0U; // 0..3
    7:Core/Src/Interrupt.c **** volatile uint8_t g_running = 0U;    // 0 - не запущено, 1 - запущено
    8:Core/Src/Interrupt.c **** 
-   9:Core/Src/Interrupt.c **** /* Для антидребезга */
-  10:Core/Src/Interrupt.c **** static volatile uint8_t g_btnDebounceActive = 0U;
-  11:Core/Src/Interrupt.c **** static volatile uint32_t g_btnDebounceDeadline = 0U; // время (мс), когда надо пр
-  12:Core/Src/Interrupt.c **** 
-  13:Core/Src/Interrupt.c **** /* ===== SysTick: таймер 1 мс ===== */
-  14:Core/Src/Interrupt.c **** void SysTick_Handler(void)
-  15:Core/Src/Interrupt.c **** {
-  29              		.loc 1 15 1 view -0
+   9:Core/Src/Interrupt.c **** volatile uint32_t g_debugCounter = 0;
+  10:Core/Src/Interrupt.c **** 
+  11:Core/Src/Interrupt.c **** /* Для антидребезга */
+  12:Core/Src/Interrupt.c **** static volatile uint8_t g_btnDebounceActive = 0U;
+  13:Core/Src/Interrupt.c **** static volatile uint32_t g_btnDebounceDeadline = 0U; // время (мс), когда надо пр
+  14:Core/Src/Interrupt.c **** 
+  15:Core/Src/Interrupt.c **** /* ===== SysTick: таймер 1 мс ===== */
+  16:Core/Src/Interrupt.c **** void SysTick_Handler(void)
+  17:Core/Src/Interrupt.c **** {
+  29              		.loc 1 17 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  16:Core/Src/Interrupt.c ****     g_msTicks++;
-  33              		.loc 1 16 5 view .LVU1
-  34              		.loc 1 16 14 is_stmt 0 view .LVU2
+  18:Core/Src/Interrupt.c ****     g_msTicks++;
+  33              		.loc 1 18 5 view .LVU1
+  34              		.loc 1 18 14 is_stmt 0 view .LVU2
   35 0000 234A     		ldr	r2, .L10
   36 0002 1368     		ldr	r3, [r2]
   37 0004 0133     		adds	r3, r3, #1
   38 0006 1360     		str	r3, [r2]
-  17:Core/Src/Interrupt.c **** 
-  18:Core/Src/Interrupt.c ****     /* Обработка антидребезга кнопки */
-  19:Core/Src/Interrupt.c ****     if (g_btnDebounceActive)
-  39              		.loc 1 19 5 is_stmt 1 view .LVU3
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 2
+  19:Core/Src/Interrupt.c **** 
+  20:Core/Src/Interrupt.c ****     /* Обработка антидребезга кнопки */
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 2
 
 
-  40              		.loc 1 19 9 is_stmt 0 view .LVU4
+  21:Core/Src/Interrupt.c ****     if (g_btnDebounceActive)
+  39              		.loc 1 21 5 is_stmt 1 view .LVU3
+  40              		.loc 1 21 9 is_stmt 0 view .LVU4
   41 0008 224B     		ldr	r3, .L10+4
   42 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  43              		.loc 1 19 8 view .LVU5
+  43              		.loc 1 21 8 view .LVU5
   44 000c 002B     		cmp	r3, #0
   45 000e 3DD0     		beq	.L6
-  20:Core/Src/Interrupt.c ****     {
-  21:Core/Src/Interrupt.c ****         /* Используем арифметику со знаком для корректной 
-  22:Core/Src/Interrupt.c ****         if ((int32_t)(g_msTicks - g_btnDebounceDeadline) >= 0)
-  46              		.loc 1 22 9 is_stmt 1 view .LVU6
-  47              		.loc 1 22 33 is_stmt 0 view .LVU7
+  22:Core/Src/Interrupt.c ****     {
+  23:Core/Src/Interrupt.c ****         /* Используем арифметику со знаком для корректной 
+  24:Core/Src/Interrupt.c ****         if ((int32_t)(g_msTicks - g_btnDebounceDeadline) >= 0)
+  46              		.loc 1 24 9 is_stmt 1 view .LVU6
+  47              		.loc 1 24 33 is_stmt 0 view .LVU7
   48 0010 1368     		ldr	r3, [r2]
   49 0012 214A     		ldr	r2, .L10+8
   50 0014 1268     		ldr	r2, [r2]
   51 0016 9B1A     		subs	r3, r3, r2
-  52              		.loc 1 22 12 view .LVU8
+  52              		.loc 1 24 12 view .LVU8
   53 0018 002B     		cmp	r3, #0
   54 001a 37DB     		blt	.L6
-  23:Core/Src/Interrupt.c ****         {
-  24:Core/Src/Interrupt.c ****             g_btnDebounceActive = 0U;
-  55              		.loc 1 24 13 is_stmt 1 view .LVU9
-  56              		.loc 1 24 33 is_stmt 0 view .LVU10
+  25:Core/Src/Interrupt.c ****         {
+  26:Core/Src/Interrupt.c ****             g_btnDebounceActive = 0U;
+  55              		.loc 1 26 13 is_stmt 1 view .LVU9
+  56              		.loc 1 26 33 is_stmt 0 view .LVU10
   57 001c 1D4B     		ldr	r3, .L10+4
   58 001e 0022     		movs	r2, #0
   59 0020 1A70     		strb	r2, [r3]
-  25:Core/Src/Interrupt.c **** 
-  26:Core/Src/Interrupt.c ****             /* Читаем состояние PA0 ещё раз:
-  27:Core/Src/Interrupt.c ****                pull-up => "0" означает "кнопка всё ещё нажата" */
-  28:Core/Src/Interrupt.c ****             if ((GPIOA->IDR & GPIO_IDR_ID0) == 0U)
-  60              		.loc 1 28 13 is_stmt 1 view .LVU11
-  61              		.loc 1 28 23 is_stmt 0 view .LVU12
+  27:Core/Src/Interrupt.c **** 
+  28:Core/Src/Interrupt.c ****             /* Читаем состояние PA0 ещё раз:
+  29:Core/Src/Interrupt.c ****                pull-up => "0" означает "кнопка всё ещё нажата" */
+  30:Core/Src/Interrupt.c ****             if ((GPIOA->IDR & GPIO_IDR_ID0) == 0U)
+  60              		.loc 1 30 13 is_stmt 1 view .LVU11
+  61              		.loc 1 30 23 is_stmt 0 view .LVU12
   62 0022 1E4B     		ldr	r3, .L10+12
   63 0024 1B69     		ldr	r3, [r3, #16]
-  64              		.loc 1 28 16 view .LVU13
+  64              		.loc 1 30 16 view .LVU13
   65 0026 13F0010F 		tst	r3, #1
   66 002a 29D1     		bne	.L7
-  15:Core/Src/Interrupt.c ****     g_msTicks++;
-  67              		.loc 1 15 1 view .LVU14
+  17:Core/Src/Interrupt.c ****     g_msTicks++;
+  67              		.loc 1 17 1 view .LVU14
   68 002c 10B5     		push	{r4, lr}
   69              	.LCFI0:
   70              		.cfi_def_cfa_offset 8
   71              		.cfi_offset 4, -8
   72              		.cfi_offset 14, -4
-  29:Core/Src/Interrupt.c ****             {
-  30:Core/Src/Interrupt.c ****                 /* Подтверждённое нажатие */
-  31:Core/Src/Interrupt.c **** 
-  32:Core/Src/Interrupt.c ****                 if (g_running == 0U)
-  73              		.loc 1 32 17 is_stmt 1 view .LVU15
-  74              		.loc 1 32 31 is_stmt 0 view .LVU16
+  31:Core/Src/Interrupt.c ****             {
+  32:Core/Src/Interrupt.c ****                 /* Подтверждённое нажатие */
+  33:Core/Src/Interrupt.c **** 
+  34:Core/Src/Interrupt.c ****                 if (g_running == 0U)
+  73              		.loc 1 34 17 is_stmt 1 view .LVU15
+  74              		.loc 1 34 31 is_stmt 0 view .LVU16
   75 002e 1C4B     		ldr	r3, .L10+16
   76 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  77              		.loc 1 32 20 view .LVU17
+  77              		.loc 1 34 20 view .LVU17
   78 0032 DBB9     		cbnz	r3, .L4
-  33:Core/Src/Interrupt.c ****                 {
-  34:Core/Src/Interrupt.c ****                     /* Первый запуск гирлянды */
-  35:Core/Src/Interrupt.c ****                     g_running = 1U;
-  79              		.loc 1 35 21 is_stmt 1 view .LVU18
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 3
+  35:Core/Src/Interrupt.c ****                 {
+  36:Core/Src/Interrupt.c ****                     /* Первый запуск гирлянды */
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 3
 
 
-  80              		.loc 1 35 31 is_stmt 0 view .LVU19
+  37:Core/Src/Interrupt.c ****                     g_running = 1U;
+  79              		.loc 1 37 21 is_stmt 1 view .LVU18
+  80              		.loc 1 37 31 is_stmt 0 view .LVU19
   81 0034 1A4B     		ldr	r3, .L10+16
   82 0036 0122     		movs	r2, #1
   83 0038 1A70     		strb	r2, [r3]
-  36:Core/Src/Interrupt.c ****                     g_currentLed = 0U;
-  84              		.loc 1 36 21 is_stmt 1 view .LVU20
-  85              		.loc 1 36 34 is_stmt 0 view .LVU21
+  38:Core/Src/Interrupt.c ****                     g_currentLed = 0U;
+  84              		.loc 1 38 21 is_stmt 1 view .LVU20
+  85              		.loc 1 38 34 is_stmt 0 view .LVU21
   86 003a 1A4C     		ldr	r4, .L10+20
   87 003c 0022     		movs	r2, #0
   88 003e 2270     		strb	r2, [r4]
-  37:Core/Src/Interrupt.c ****                     g_speedIndex = 0U;
-  89              		.loc 1 37 21 is_stmt 1 view .LVU22
-  90              		.loc 1 37 34 is_stmt 0 view .LVU23
+  39:Core/Src/Interrupt.c ****                     g_speedIndex = 0U;
+  89              		.loc 1 39 21 is_stmt 1 view .LVU22
+  90              		.loc 1 39 34 is_stmt 0 view .LVU23
   91 0040 194B     		ldr	r3, .L10+24
   92 0042 1A70     		strb	r2, [r3]
-  38:Core/Src/Interrupt.c **** 
-  39:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
-  93              		.loc 1 39 21 is_stmt 1 view .LVU24
+  40:Core/Src/Interrupt.c **** 
+  41:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+  93              		.loc 1 41 21 is_stmt 1 view .LVU24
   94 0044 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
   95 0046 FFF7FEFF 		bl	TIM2_UpdateFrequency
   96              	.LVL0:
-  40:Core/Src/Interrupt.c ****                     LEDs_AllOff();
-  97              		.loc 1 40 21 view .LVU25
+  42:Core/Src/Interrupt.c ****                     LEDs_AllOff();
+  97              		.loc 1 42 21 view .LVU25
   98 004a FFF7FEFF 		bl	LEDs_AllOff
   99              	.LVL1:
-  41:Core/Src/Interrupt.c ****                     LED_OnIndex(g_currentLed);
- 100              		.loc 1 41 21 view .LVU26
+  43:Core/Src/Interrupt.c ****                     LED_OnIndex(g_currentLed);
+ 100              		.loc 1 43 21 view .LVU26
  101 004e 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
  102 0050 FFF7FEFF 		bl	LED_OnIndex
  103              	.LVL2:
-  42:Core/Src/Interrupt.c **** 
-  43:Core/Src/Interrupt.c ****                     /* Запускаем TIM2 */
-  44:Core/Src/Interrupt.c ****                     SET_BIT(TIM2->CR1, TIM_CR1_CEN);
- 104              		.loc 1 44 21 view .LVU27
+  44:Core/Src/Interrupt.c **** 
+  45:Core/Src/Interrupt.c ****                     /* Запускаем TIM2 */
+  46:Core/Src/Interrupt.c ****                     SET_BIT(TIM2->CR1, TIM_CR1_CEN);
+ 104              		.loc 1 46 21 view .LVU27
  105 0054 4FF08042 		mov	r2, #1073741824
  106 0058 1368     		ldr	r3, [r2]
  107 005a 43F00103 		orr	r3, r3, #1
  108 005e 1360     		str	r3, [r2]
  109              	.L3:
-  45:Core/Src/Interrupt.c ****                 }
-  46:Core/Src/Interrupt.c ****                 else
-  47:Core/Src/Interrupt.c ****                 {
-  48:Core/Src/Interrupt.c ****                     /* Гирлянда уже работает: переключаем скоро�
-  49:Core/Src/Interrupt.c ****                     g_speedIndex = (g_speedIndex + 1U) & 0x03U;
-  50:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
-  51:Core/Src/Interrupt.c ****                 }
-  52:Core/Src/Interrupt.c ****             }
-  53:Core/Src/Interrupt.c **** 
-  54:Core/Src/Interrupt.c ****             /* После завершения дебаунса снова разрешаем EXTI0
-  55:Core/Src/Interrupt.c ****             SET_BIT(EXTI->IMR, EXTI_IMR_MR0);
- 110              		.loc 1 55 13 view .LVU28
+  47:Core/Src/Interrupt.c ****                 }
+  48:Core/Src/Interrupt.c ****                 else
+  49:Core/Src/Interrupt.c ****                 {
+  50:Core/Src/Interrupt.c ****                     /* Гирлянда уже работает: переключаем скоро�
+  51:Core/Src/Interrupt.c ****                     g_speedIndex = (g_speedIndex + 1U) & 0x03U;
+  52:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+  53:Core/Src/Interrupt.c ****                 }
+  54:Core/Src/Interrupt.c ****             }
+  55:Core/Src/Interrupt.c **** 
+  56:Core/Src/Interrupt.c ****             /* После завершения дебаунса снова разрешаем EXTI0
+  57:Core/Src/Interrupt.c ****             SET_BIT(EXTI->IMR, EXTI_IMR_MR0);
+ 110              		.loc 1 57 13 view .LVU28
  111 0060 124A     		ldr	r2, .L10+28
  112 0062 1368     		ldr	r3, [r2]
  113 0064 43F00103 		orr	r3, r3, #1
  114 0068 1360     		str	r3, [r2]
-  56:Core/Src/Interrupt.c ****         }
-  57:Core/Src/Interrupt.c ****     }
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 4
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 4
 
 
-  58:Core/Src/Interrupt.c **** }
- 115              		.loc 1 58 1 is_stmt 0 view .LVU29
+  58:Core/Src/Interrupt.c ****         }
+  59:Core/Src/Interrupt.c ****     }
+  60:Core/Src/Interrupt.c **** }
+ 115              		.loc 1 60 1 is_stmt 0 view .LVU29
  116 006a 10BD     		pop	{r4, pc}
  117              	.L4:
-  49:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
- 118              		.loc 1 49 21 is_stmt 1 view .LVU30
-  49:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
- 119              		.loc 1 49 50 is_stmt 0 view .LVU31
+  51:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+ 118              		.loc 1 51 21 is_stmt 1 view .LVU30
+  51:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+ 119              		.loc 1 51 50 is_stmt 0 view .LVU31
  120 006c 0E4A     		ldr	r2, .L10+24
  121 006e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  122 0070 0133     		adds	r3, r3, #1
-  49:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
- 123              		.loc 1 49 56 view .LVU32
+  51:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+ 123              		.loc 1 51 56 view .LVU32
  124 0072 03F00303 		and	r3, r3, #3
-  49:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
- 125              		.loc 1 49 34 view .LVU33
+  51:Core/Src/Interrupt.c ****                     TIM2_UpdateFrequency(g_speedIndex);
+ 125              		.loc 1 51 34 view .LVU33
  126 0076 1370     		strb	r3, [r2]
-  50:Core/Src/Interrupt.c ****                 }
- 127              		.loc 1 50 21 is_stmt 1 view .LVU34
+  52:Core/Src/Interrupt.c ****                 }
+ 127              		.loc 1 52 21 is_stmt 1 view .LVU34
  128 0078 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
  129 007a FFF7FEFF 		bl	TIM2_UpdateFrequency
  130              	.LVL3:
@@ -209,8 +211,8 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 1
  134              		.cfi_def_cfa_offset 0
  135              		.cfi_restore 4
  136              		.cfi_restore 14
-  55:Core/Src/Interrupt.c ****         }
- 137              		.loc 1 55 13 view .LVU35
+  57:Core/Src/Interrupt.c ****         }
+ 137              		.loc 1 57 13 view .LVU35
  138 0080 0A4A     		ldr	r2, .L10+28
  139 0082 1368     		ldr	r3, [r2]
  140 0084 43F00103 		orr	r3, r3, #1
@@ -236,17 +238,17 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 1
  161              		.global	TIM2_IRQHandler
  162              		.syntax unified
  163              		.thumb
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 5
+
+
  164              		.thumb_func
  166              	TIM2_IRQHandler:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 5
-
-
  167              	.LFB131:
-  59:Core/Src/Interrupt.c **** 
-  60:Core/Src/Interrupt.c **** /* ===== TIM2: бегущие огни ===== */
-  61:Core/Src/Interrupt.c **** void TIM2_IRQHandler(void)
-  62:Core/Src/Interrupt.c **** {
- 168              		.loc 1 62 1 view -0
+  61:Core/Src/Interrupt.c **** 
+  62:Core/Src/Interrupt.c **** /* ===== TIM2: бегущие огни ===== */
+  63:Core/Src/Interrupt.c **** void TIM2_IRQHandler(void)
+  64:Core/Src/Interrupt.c **** {
+ 168              		.loc 1 64 1 view -0
  169              		.cfi_startproc
  170              		@ args = 0, pretend = 0, frame = 0
  171              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -255,222 +257,239 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 1
  174              		.cfi_def_cfa_offset 8
  175              		.cfi_offset 3, -8
  176              		.cfi_offset 14, -4
-  63:Core/Src/Interrupt.c ****     if (READ_BIT(TIM2->SR, TIM_SR_UIF))
- 177              		.loc 1 63 5 view .LVU37
- 178              		.loc 1 63 9 is_stmt 0 view .LVU38
+  65:Core/Src/Interrupt.c ****     if (READ_BIT(TIM2->SR, TIM_SR_UIF))
+ 177              		.loc 1 65 5 view .LVU37
+ 178              		.loc 1 65 9 is_stmt 0 view .LVU38
  179 0002 4FF08043 		mov	r3, #1073741824
  180 0006 1B69     		ldr	r3, [r3, #16]
- 181              		.loc 1 63 8 view .LVU39
+ 181              		.loc 1 65 8 view .LVU39
  182 0008 13F0010F 		tst	r3, #1
  183 000c 08D0     		beq	.L12
-  64:Core/Src/Interrupt.c ****     {
-  65:Core/Src/Interrupt.c ****         /* Сброс флага обновления */
-  66:Core/Src/Interrupt.c ****         CLEAR_BIT(TIM2->SR, TIM_SR_UIF);
- 184              		.loc 1 66 9 is_stmt 1 view .LVU40
+  66:Core/Src/Interrupt.c ****     {
+  67:Core/Src/Interrupt.c ****         /* Сброс флага обновления */
+  68:Core/Src/Interrupt.c ****         CLEAR_BIT(TIM2->SR, TIM_SR_UIF);
+ 184              		.loc 1 68 9 is_stmt 1 view .LVU40
  185 000e 4FF08042 		mov	r2, #1073741824
  186 0012 1369     		ldr	r3, [r2, #16]
  187 0014 23F00103 		bic	r3, r3, #1
  188 0018 1361     		str	r3, [r2, #16]
-  67:Core/Src/Interrupt.c **** 
-  68:Core/Src/Interrupt.c ****         if (g_running)
- 189              		.loc 1 68 9 view .LVU41
- 190              		.loc 1 68 13 is_stmt 0 view .LVU42
- 191 001a 084B     		ldr	r3, .L16
+  69:Core/Src/Interrupt.c **** 
+  70:Core/Src/Interrupt.c ****         if (g_running)
+ 189              		.loc 1 70 9 view .LVU41
+ 190              		.loc 1 70 13 is_stmt 0 view .LVU42
+ 191 001a 0A4B     		ldr	r3, .L16
  192 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 193              		.loc 1 68 12 view .LVU43
+ 193              		.loc 1 70 12 view .LVU43
  194 001e 03B9     		cbnz	r3, .L15
  195              	.L12:
-  69:Core/Src/Interrupt.c ****         {
-  70:Core/Src/Interrupt.c ****             /* Гасим все светодиоды */
-  71:Core/Src/Interrupt.c ****             LEDs_AllOff();
-  72:Core/Src/Interrupt.c **** 
-  73:Core/Src/Interrupt.c ****             /* Следующий светодиод по кругу 0..3 */
-  74:Core/Src/Interrupt.c ****             g_currentLed = (g_currentLed + 1U) & 0x03U;
+  71:Core/Src/Interrupt.c ****         {
+  72:Core/Src/Interrupt.c ****             /* Гасим все светодиоды */
+  73:Core/Src/Interrupt.c ****             LEDs_AllOff();
+  74:Core/Src/Interrupt.c ****             g_debugCounter++; // <<<< ВОТ ЭТА ПЕРЕМЕННАЯ ДЛЯ MCUViewer
   75:Core/Src/Interrupt.c **** 
-  76:Core/Src/Interrupt.c ****             /* Включаем нужный */
-  77:Core/Src/Interrupt.c ****             LED_OnIndex(g_currentLed);
-  78:Core/Src/Interrupt.c ****         }
-  79:Core/Src/Interrupt.c ****     }
-  80:Core/Src/Interrupt.c **** }
- 196              		.loc 1 80 1 view .LVU44
+  76:Core/Src/Interrupt.c ****             /* Следующий светодиод по кругу 0..3 */
+  77:Core/Src/Interrupt.c ****             g_currentLed = (g_currentLed + 1U) & 0x03U;
+  78:Core/Src/Interrupt.c **** 
+  79:Core/Src/Interrupt.c ****             /* Включаем нужный */
+  80:Core/Src/Interrupt.c ****             LED_OnIndex(g_currentLed);
+  81:Core/Src/Interrupt.c ****         }
+  82:Core/Src/Interrupt.c ****     }
+  83:Core/Src/Interrupt.c **** }
+ 196              		.loc 1 83 1 view .LVU44
  197 0020 08BD     		pop	{r3, pc}
  198              	.L15:
-  71:Core/Src/Interrupt.c **** 
- 199              		.loc 1 71 13 is_stmt 1 view .LVU45
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 6
+
+
+  73:Core/Src/Interrupt.c ****             g_debugCounter++; // <<<< ВОТ ЭТА ПЕРЕМЕННАЯ ДЛЯ MCUViewer
+ 199              		.loc 1 73 13 is_stmt 1 view .LVU45
  200 0022 FFF7FEFF 		bl	LEDs_AllOff
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 6
-
-
  201              	.LVL4:
   74:Core/Src/Interrupt.c **** 
  202              		.loc 1 74 13 view .LVU46
   74:Core/Src/Interrupt.c **** 
- 203              		.loc 1 74 42 is_stmt 0 view .LVU47
- 204 0026 064A     		ldr	r2, .L16+4
- 205 0028 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 203              		.loc 1 74 27 is_stmt 0 view .LVU47
+ 204 0026 084A     		ldr	r2, .L16+4
+ 205 0028 1368     		ldr	r3, [r2]
  206 002a 0133     		adds	r3, r3, #1
-  74:Core/Src/Interrupt.c **** 
- 207              		.loc 1 74 48 view .LVU48
- 208 002c 03F00303 		and	r3, r3, #3
-  74:Core/Src/Interrupt.c **** 
- 209              		.loc 1 74 26 view .LVU49
- 210 0030 1370     		strb	r3, [r2]
-  77:Core/Src/Interrupt.c ****         }
- 211              		.loc 1 77 13 is_stmt 1 view .LVU50
- 212 0032 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
- 213 0034 FFF7FEFF 		bl	LED_OnIndex
- 214              	.LVL5:
- 215              		.loc 1 80 1 is_stmt 0 view .LVU51
- 216 0038 F2E7     		b	.L12
- 217              	.L17:
- 218 003a 00BF     		.align	2
- 219              	.L16:
- 220 003c 00000000 		.word	g_running
- 221 0040 00000000 		.word	g_currentLed
- 222              		.cfi_endproc
- 223              	.LFE131:
- 225              		.section	.text.EXTI0_IRQHandler,"ax",%progbits
- 226              		.align	1
- 227              		.global	EXTI0_IRQHandler
- 228              		.syntax unified
- 229              		.thumb
- 230              		.thumb_func
- 232              	EXTI0_IRQHandler:
- 233              	.LFB132:
-  81:Core/Src/Interrupt.c **** 
-  82:Core/Src/Interrupt.c **** /* ===== EXTI0: кнопка PA0, запуск антидребезга ===== */
-  83:Core/Src/Interrupt.c **** void EXTI0_IRQHandler(void)
-  84:Core/Src/Interrupt.c **** {
- 234              		.loc 1 84 1 is_stmt 1 view -0
- 235              		.cfi_startproc
- 236              		@ args = 0, pretend = 0, frame = 0
- 237              		@ frame_needed = 0, uses_anonymous_args = 0
- 238              		@ link register save eliminated.
-  85:Core/Src/Interrupt.c ****     if (READ_BIT(EXTI->PR, EXTI_PR_PR0))
- 239              		.loc 1 85 5 view .LVU53
- 240              		.loc 1 85 9 is_stmt 0 view .LVU54
- 241 0000 0B4B     		ldr	r3, .L20
- 242 0002 5B69     		ldr	r3, [r3, #20]
- 243              		.loc 1 85 8 view .LVU55
- 244 0004 13F0010F 		tst	r3, #1
- 245 0008 11D0     		beq	.L18
-  86:Core/Src/Interrupt.c ****     {
-  87:Core/Src/Interrupt.c ****         /* Сброс флага прерывания */
-  88:Core/Src/Interrupt.c ****         WRITE_REG(EXTI->PR, EXTI_PR_PR0);
- 246              		.loc 1 88 9 is_stmt 1 view .LVU56
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 7
+ 207 002c 1360     		str	r3, [r2]
+  77:Core/Src/Interrupt.c **** 
+ 208              		.loc 1 77 13 is_stmt 1 view .LVU48
+  77:Core/Src/Interrupt.c **** 
+ 209              		.loc 1 77 42 is_stmt 0 view .LVU49
+ 210 002e 074A     		ldr	r2, .L16+8
+ 211 0030 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 212 0032 0133     		adds	r3, r3, #1
+  77:Core/Src/Interrupt.c **** 
+ 213              		.loc 1 77 48 view .LVU50
+ 214 0034 03F00303 		and	r3, r3, #3
+  77:Core/Src/Interrupt.c **** 
+ 215              		.loc 1 77 26 view .LVU51
+ 216 0038 1370     		strb	r3, [r2]
+  80:Core/Src/Interrupt.c ****         }
+ 217              		.loc 1 80 13 is_stmt 1 view .LVU52
+ 218 003a 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 219 003c FFF7FEFF 		bl	LED_OnIndex
+ 220              	.LVL5:
+ 221              		.loc 1 83 1 is_stmt 0 view .LVU53
+ 222 0040 EEE7     		b	.L12
+ 223              	.L17:
+ 224 0042 00BF     		.align	2
+ 225              	.L16:
+ 226 0044 00000000 		.word	g_running
+ 227 0048 00000000 		.word	g_debugCounter
+ 228 004c 00000000 		.word	g_currentLed
+ 229              		.cfi_endproc
+ 230              	.LFE131:
+ 232              		.section	.text.EXTI0_IRQHandler,"ax",%progbits
+ 233              		.align	1
+ 234              		.global	EXTI0_IRQHandler
+ 235              		.syntax unified
+ 236              		.thumb
+ 237              		.thumb_func
+ 239              	EXTI0_IRQHandler:
+ 240              	.LFB132:
+  84:Core/Src/Interrupt.c **** 
+  85:Core/Src/Interrupt.c **** /* ===== EXTI0: кнопка PA0, запуск антидребезга ===== */
+  86:Core/Src/Interrupt.c **** void EXTI0_IRQHandler(void)
+  87:Core/Src/Interrupt.c **** {
+ 241              		.loc 1 87 1 is_stmt 1 view -0
+ 242              		.cfi_startproc
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              		@ link register save eliminated.
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 7
 
 
- 247 000a 094B     		ldr	r3, .L20
- 248 000c 0122     		movs	r2, #1
- 249 000e 5A61     		str	r2, [r3, #20]
-  89:Core/Src/Interrupt.c **** 
-  90:Core/Src/Interrupt.c ****         /* Если уже идёт дебаунс - игнорируем новые фронты *
-  91:Core/Src/Interrupt.c ****         if (g_btnDebounceActive == 0U)
- 250              		.loc 1 91 9 view .LVU57
- 251              		.loc 1 91 33 is_stmt 0 view .LVU58
- 252 0010 084B     		ldr	r3, .L20+4
- 253 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 254              		.loc 1 91 12 view .LVU59
- 255 0014 5BB9     		cbnz	r3, .L18
-  92:Core/Src/Interrupt.c ****         {
-  93:Core/Src/Interrupt.c ****             g_btnDebounceActive = 1U;
- 256              		.loc 1 93 13 is_stmt 1 view .LVU60
- 257              		.loc 1 93 33 is_stmt 0 view .LVU61
- 258 0016 074B     		ldr	r3, .L20+4
- 259 0018 1A70     		strb	r2, [r3]
-  94:Core/Src/Interrupt.c ****             g_btnDebounceDeadline = g_msTicks + 20U; // 20 мс
- 260              		.loc 1 94 13 is_stmt 1 view .LVU62
- 261              		.loc 1 94 47 is_stmt 0 view .LVU63
- 262 001a 074B     		ldr	r3, .L20+8
- 263 001c 1B68     		ldr	r3, [r3]
- 264 001e 1433     		adds	r3, r3, #20
- 265              		.loc 1 94 35 view .LVU64
- 266 0020 064A     		ldr	r2, .L20+12
- 267 0022 1360     		str	r3, [r2]
-  95:Core/Src/Interrupt.c **** 
-  96:Core/Src/Interrupt.c ****             /* На время дебаунса запрещаем новые прерывания 
-  97:Core/Src/Interrupt.c ****             CLEAR_BIT(EXTI->IMR, EXTI_IMR_MR0);
- 268              		.loc 1 97 13 is_stmt 1 view .LVU65
- 269 0024 024A     		ldr	r2, .L20
- 270 0026 1368     		ldr	r3, [r2]
- 271 0028 23F00103 		bic	r3, r3, #1
- 272 002c 1360     		str	r3, [r2]
- 273              	.L18:
-  98:Core/Src/Interrupt.c ****         }
-  99:Core/Src/Interrupt.c ****     }
- 100:Core/Src/Interrupt.c **** }
- 274              		.loc 1 100 1 is_stmt 0 view .LVU66
- 275 002e 7047     		bx	lr
- 276              	.L21:
- 277              		.align	2
- 278              	.L20:
- 279 0030 003C0140 		.word	1073822720
- 280 0034 00000000 		.word	g_btnDebounceActive
- 281 0038 00000000 		.word	g_msTicks
- 282 003c 00000000 		.word	g_btnDebounceDeadline
- 283              		.cfi_endproc
- 284              	.LFE132:
- 286              		.section	.bss.g_btnDebounceDeadline,"aw",%nobits
- 287              		.align	2
- 290              	g_btnDebounceDeadline:
- 291 0000 00000000 		.space	4
- 292              		.section	.bss.g_btnDebounceActive,"aw",%nobits
- 295              	g_btnDebounceActive:
- 296 0000 00       		.space	1
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 8
+  88:Core/Src/Interrupt.c ****     if (READ_BIT(EXTI->PR, EXTI_PR_PR0))
+ 246              		.loc 1 88 5 view .LVU55
+ 247              		.loc 1 88 9 is_stmt 0 view .LVU56
+ 248 0000 0B4B     		ldr	r3, .L20
+ 249 0002 5B69     		ldr	r3, [r3, #20]
+ 250              		.loc 1 88 8 view .LVU57
+ 251 0004 13F0010F 		tst	r3, #1
+ 252 0008 11D0     		beq	.L18
+  89:Core/Src/Interrupt.c ****     {
+  90:Core/Src/Interrupt.c ****         /* Сброс флага прерывания */
+  91:Core/Src/Interrupt.c ****         WRITE_REG(EXTI->PR, EXTI_PR_PR0);
+ 253              		.loc 1 91 9 is_stmt 1 view .LVU58
+ 254 000a 094B     		ldr	r3, .L20
+ 255 000c 0122     		movs	r2, #1
+ 256 000e 5A61     		str	r2, [r3, #20]
+  92:Core/Src/Interrupt.c **** 
+  93:Core/Src/Interrupt.c ****         /* Если уже идёт дебаунс - игнорируем новые фронты *
+  94:Core/Src/Interrupt.c ****         if (g_btnDebounceActive == 0U)
+ 257              		.loc 1 94 9 view .LVU59
+ 258              		.loc 1 94 33 is_stmt 0 view .LVU60
+ 259 0010 084B     		ldr	r3, .L20+4
+ 260 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 261              		.loc 1 94 12 view .LVU61
+ 262 0014 5BB9     		cbnz	r3, .L18
+  95:Core/Src/Interrupt.c ****         {
+  96:Core/Src/Interrupt.c ****             g_btnDebounceActive = 1U;
+ 263              		.loc 1 96 13 is_stmt 1 view .LVU62
+ 264              		.loc 1 96 33 is_stmt 0 view .LVU63
+ 265 0016 074B     		ldr	r3, .L20+4
+ 266 0018 1A70     		strb	r2, [r3]
+  97:Core/Src/Interrupt.c ****             g_btnDebounceDeadline = g_msTicks + 20U; // 20 мс
+ 267              		.loc 1 97 13 is_stmt 1 view .LVU64
+ 268              		.loc 1 97 47 is_stmt 0 view .LVU65
+ 269 001a 074B     		ldr	r3, .L20+8
+ 270 001c 1B68     		ldr	r3, [r3]
+ 271 001e 1433     		adds	r3, r3, #20
+ 272              		.loc 1 97 35 view .LVU66
+ 273 0020 064A     		ldr	r2, .L20+12
+ 274 0022 1360     		str	r3, [r2]
+  98:Core/Src/Interrupt.c **** 
+  99:Core/Src/Interrupt.c ****             /* На время дебаунса запрещаем новые прерывания 
+ 100:Core/Src/Interrupt.c ****             CLEAR_BIT(EXTI->IMR, EXTI_IMR_MR0);
+ 275              		.loc 1 100 13 is_stmt 1 view .LVU67
+ 276 0024 024A     		ldr	r2, .L20
+ 277 0026 1368     		ldr	r3, [r2]
+ 278 0028 23F00103 		bic	r3, r3, #1
+ 279 002c 1360     		str	r3, [r2]
+ 280              	.L18:
+ 101:Core/Src/Interrupt.c ****         }
+ 102:Core/Src/Interrupt.c ****     }
+ 103:Core/Src/Interrupt.c **** }
+ 281              		.loc 1 103 1 is_stmt 0 view .LVU68
+ 282 002e 7047     		bx	lr
+ 283              	.L21:
+ 284              		.align	2
+ 285              	.L20:
+ 286 0030 003C0140 		.word	1073822720
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 8
 
 
- 297              		.global	g_running
- 298              		.section	.bss.g_running,"aw",%nobits
- 301              	g_running:
- 302 0000 00       		.space	1
- 303              		.global	g_speedIndex
- 304              		.section	.bss.g_speedIndex,"aw",%nobits
- 307              	g_speedIndex:
- 308 0000 00       		.space	1
- 309              		.global	g_currentLed
- 310              		.section	.bss.g_currentLed,"aw",%nobits
- 313              	g_currentLed:
- 314 0000 00       		.space	1
- 315              		.global	g_msTicks
- 316              		.section	.bss.g_msTicks,"aw",%nobits
- 317              		.align	2
- 320              	g_msTicks:
- 321 0000 00000000 		.space	4
- 322              		.text
- 323              	.Letext0:
- 324              		.file 2 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
- 325              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
- 326              		.file 4 "CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
- 327              		.file 5 "Core/Inc/Interrupt.h"
- 328              		.file 6 "Core/Inc/init.h"
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccBPjjPN.s 			page 9
+ 287 0034 00000000 		.word	g_btnDebounceActive
+ 288 0038 00000000 		.word	g_msTicks
+ 289 003c 00000000 		.word	g_btnDebounceDeadline
+ 290              		.cfi_endproc
+ 291              	.LFE132:
+ 293              		.section	.bss.g_btnDebounceDeadline,"aw",%nobits
+ 294              		.align	2
+ 297              	g_btnDebounceDeadline:
+ 298 0000 00000000 		.space	4
+ 299              		.section	.bss.g_btnDebounceActive,"aw",%nobits
+ 302              	g_btnDebounceActive:
+ 303 0000 00       		.space	1
+ 304              		.global	g_debugCounter
+ 305              		.section	.bss.g_debugCounter,"aw",%nobits
+ 306              		.align	2
+ 309              	g_debugCounter:
+ 310 0000 00000000 		.space	4
+ 311              		.global	g_running
+ 312              		.section	.bss.g_running,"aw",%nobits
+ 315              	g_running:
+ 316 0000 00       		.space	1
+ 317              		.global	g_speedIndex
+ 318              		.section	.bss.g_speedIndex,"aw",%nobits
+ 321              	g_speedIndex:
+ 322 0000 00       		.space	1
+ 323              		.global	g_currentLed
+ 324              		.section	.bss.g_currentLed,"aw",%nobits
+ 327              	g_currentLed:
+ 328 0000 00       		.space	1
+ 329              		.global	g_msTicks
+ 330              		.section	.bss.g_msTicks,"aw",%nobits
+ 331              		.align	2
+ 334              	g_msTicks:
+ 335 0000 00000000 		.space	4
+ 336              		.text
+ 337              	.Letext0:
+ 338              		.file 2 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
+ 339              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
+ 340              		.file 4 "CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
+ 341              		.file 5 "Core/Inc/Interrupt.h"
+ 342              		.file 6 "Core/Inc/init.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccvVCFR3.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 Interrupt.c
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:21     .text.SysTick_Handler:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:27     .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:148    .text.SysTick_Handler:00000090 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:320    .bss.g_msTicks:00000000 g_msTicks
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:295    .bss.g_btnDebounceActive:00000000 g_btnDebounceActive
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:290    .bss.g_btnDebounceDeadline:00000000 g_btnDebounceDeadline
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:301    .bss.g_running:00000000 g_running
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:313    .bss.g_currentLed:00000000 g_currentLed
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:307    .bss.g_speedIndex:00000000 g_speedIndex
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:160    .text.TIM2_IRQHandler:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:166    .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:220    .text.TIM2_IRQHandler:0000003c $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:226    .text.EXTI0_IRQHandler:00000000 $t
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:232    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:279    .text.EXTI0_IRQHandler:00000030 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:287    .bss.g_btnDebounceDeadline:00000000 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:296    .bss.g_btnDebounceActive:00000000 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:302    .bss.g_running:00000000 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:308    .bss.g_speedIndex:00000000 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:314    .bss.g_currentLed:00000000 $d
-C:\Users\user\AppData\Local\Temp\ccBPjjPN.s:317    .bss.g_msTicks:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:21     .text.SysTick_Handler:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:27     .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:148    .text.SysTick_Handler:00000090 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:334    .bss.g_msTicks:00000000 g_msTicks
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:302    .bss.g_btnDebounceActive:00000000 g_btnDebounceActive
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:297    .bss.g_btnDebounceDeadline:00000000 g_btnDebounceDeadline
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:315    .bss.g_running:00000000 g_running
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:327    .bss.g_currentLed:00000000 g_currentLed
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:321    .bss.g_speedIndex:00000000 g_speedIndex
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:160    .text.TIM2_IRQHandler:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:166    .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:226    .text.TIM2_IRQHandler:00000044 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:309    .bss.g_debugCounter:00000000 g_debugCounter
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:233    .text.EXTI0_IRQHandler:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:239    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:286    .text.EXTI0_IRQHandler:00000030 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:294    .bss.g_btnDebounceDeadline:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:303    .bss.g_btnDebounceActive:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:306    .bss.g_debugCounter:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:316    .bss.g_running:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:322    .bss.g_speedIndex:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:328    .bss.g_currentLed:00000000 $d
+C:\Users\user\AppData\Local\Temp\ccvVCFR3.s:331    .bss.g_msTicks:00000000 $d
 
 UNDEFINED SYMBOLS
 TIM2_UpdateFrequency
