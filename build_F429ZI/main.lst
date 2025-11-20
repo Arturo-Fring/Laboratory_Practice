@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\cccHg7Dq.s 			page 1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccacs2f1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -43,65 +43,103 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\cccHg7Dq.s 			page 1
   36              		.cfi_def_cfa_offset 8
   37              		.cfi_offset 3, -8
   38              		.cfi_offset 14, -4
-   6:Core/Src/main.c ****     Clock_Init_HSE_PLL_168MHz();
-  39              		.loc 1 6 5 view .LVU1
+   6:Core/Src/main.c ****     /* 1. Тактирование на 168 МГц */
+   7:Core/Src/main.c ****     Clock_Init_HSE_PLL_168MHz();
+  39              		.loc 1 7 5 view .LVU1
   40 0002 FFF7FEFF 		bl	Clock_Init_HSE_PLL_168MHz
   41              	.LVL0:
-   7:Core/Src/main.c ****     GPIO_EXTI_Init();
-  42              		.loc 1 7 5 view .LVU2
-  43 0006 FFF7FEFF 		bl	GPIO_EXTI_Init
+   8:Core/Src/main.c **** 
+   9:Core/Src/main.c ****     /* 2. SysTick 1 мс для времени и антидребезга */
+  10:Core/Src/main.c ****     SysTick_Init_1ms();
+  42              		.loc 1 10 5 view .LVU2
+  43 0006 FFF7FEFF 		bl	SysTick_Init_1ms
   44              	.LVL1:
-   8:Core/Src/main.c ****     TIM2_Init();
-  45              		.loc 1 8 5 view .LVU3
-  46 000a FFF7FEFF 		bl	TIM2_Init
+  11:Core/Src/main.c **** 
+  12:Core/Src/main.c ****     /* 3. GPIO (LED + кнопка) + EXTI0 */
+  13:Core/Src/main.c ****     GPIO_EXTI_Init();
+  45              		.loc 1 13 5 view .LVU3
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccacs2f1.s 			page 2
+
+
+  46 000a FFF7FEFF 		bl	GPIO_EXTI_Init
   47              	.LVL2:
-   9:Core/Src/main.c **** 
-  10:Core/Src/main.c ****     LEDs_AllOff();
-  48              		.loc 1 10 5 view .LVU4
-ARM GAS  C:\Users\user\AppData\Local\Temp\cccHg7Dq.s 			page 2
-
-
-  49 000e FFF7FEFF 		bl	LEDs_AllOff
+  14:Core/Src/main.c **** 
+  15:Core/Src/main.c ****     /* 4. TIM2 (ещё НЕ запущен) */
+  16:Core/Src/main.c ****     TIM2_Init();
+  48              		.loc 1 16 5 view .LVU4
+  49 000e FFF7FEFF 		bl	TIM2_Init
   50              	.LVL3:
-  11:Core/Src/main.c ****     LED_OnIndex(0);
-  51              		.loc 1 11 5 view .LVU5
-  52 0012 0020     		movs	r0, #0
-  53 0014 FFF7FEFF 		bl	LED_OnIndex
-  54              	.LVL4:
-  55              	.L2:
-  12:Core/Src/main.c **** 
-  13:Core/Src/main.c ****     while (1)
-  56              		.loc 1 13 5 view .LVU6
-  14:Core/Src/main.c ****     {
-  15:Core/Src/main.c ****         __WFI(); // сон до прерывания
-  57              		.loc 1 15 9 discriminator 1 view .LVU7
-  58              		.syntax unified
-  59              	@ 15 "Core/Src/main.c" 1
-  60 0018 30BF     		wfi
-  61              	@ 0 "" 2
-  13:Core/Src/main.c ****     {
-  62              		.loc 1 13 11 view .LVU8
-  63              		.thumb
-  64              		.syntax unified
-  65 001a FDE7     		b	.L2
-  66              		.cfi_endproc
-  67              	.LFE130:
-  69              		.text
-  70              	.Letext0:
-  71              		.file 2 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
-  72              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
-  73              		.file 4 "Core/Inc/init.h"
-ARM GAS  C:\Users\user\AppData\Local\Temp\cccHg7Dq.s 			page 3
+  17:Core/Src/main.c **** 
+  18:Core/Src/main.c ****     /* 5. По умолчанию всё выключено, гирлянда не крутится
+  19:Core/Src/main.c ****     LEDs_AllOff();
+  51              		.loc 1 19 5 view .LVU5
+  52 0012 FFF7FEFF 		bl	LEDs_AllOff
+  53              	.LVL4:
+  20:Core/Src/main.c ****     g_running = 0U;
+  54              		.loc 1 20 5 view .LVU6
+  55              		.loc 1 20 15 is_stmt 0 view .LVU7
+  56 0016 0023     		movs	r3, #0
+  57 0018 034A     		ldr	r2, .L4
+  58 001a 1370     		strb	r3, [r2]
+  21:Core/Src/main.c ****     g_currentLed = 0U;
+  59              		.loc 1 21 5 is_stmt 1 view .LVU8
+  60              		.loc 1 21 18 is_stmt 0 view .LVU9
+  61 001c 034A     		ldr	r2, .L4+4
+  62 001e 1370     		strb	r3, [r2]
+  22:Core/Src/main.c ****     g_speedIndex = 0U;
+  63              		.loc 1 22 5 is_stmt 1 view .LVU10
+  64              		.loc 1 22 18 is_stmt 0 view .LVU11
+  65 0020 034A     		ldr	r2, .L4+8
+  66 0022 1370     		strb	r3, [r2]
+  67              	.L2:
+  23:Core/Src/main.c **** 
+  24:Core/Src/main.c ****     while (1)
+  68              		.loc 1 24 5 is_stmt 1 view .LVU12
+  25:Core/Src/main.c ****     {
+  26:Core/Src/main.c ****         /* Спим до прерывания (TIM2 / EXTI / SysTick) */
+  27:Core/Src/main.c ****         __WFI();
+  69              		.loc 1 27 9 discriminator 1 view .LVU13
+  70              		.syntax unified
+  71              	@ 27 "Core/Src/main.c" 1
+  72 0024 30BF     		wfi
+  73              	@ 0 "" 2
+  24:Core/Src/main.c ****     {
+  74              		.loc 1 24 11 view .LVU14
+  75              		.thumb
+  76              		.syntax unified
+  77 0026 FDE7     		b	.L2
+  78              	.L5:
+  79              		.align	2
+  80              	.L4:
+  81 0028 00000000 		.word	g_running
+  82 002c 00000000 		.word	g_currentLed
+  83 0030 00000000 		.word	g_speedIndex
+  84              		.cfi_endproc
+  85              	.LFE130:
+  87              		.text
+  88              	.Letext0:
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccacs2f1.s 			page 3
+
+
+  89              		.file 2 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/mach
+  90              		.file 3 "C:/Users/user/Desktop/Tools/xpack-arm-none-eabi-gcc-13.2.1-1.1/arm-none-eabi/include/sys/
+  91              		.file 4 "Core/Inc/Interrupt.h"
+  92              		.file 5 "Core/Inc/init.h"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccacs2f1.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\user\AppData\Local\Temp\cccHg7Dq.s:21     .text.main:00000000 $t
-C:\Users\user\AppData\Local\Temp\cccHg7Dq.s:27     .text.main:00000000 main
+C:\Users\user\AppData\Local\Temp\ccacs2f1.s:21     .text.main:00000000 $t
+C:\Users\user\AppData\Local\Temp\ccacs2f1.s:27     .text.main:00000000 main
+C:\Users\user\AppData\Local\Temp\ccacs2f1.s:81     .text.main:00000028 $d
 
 UNDEFINED SYMBOLS
 Clock_Init_HSE_PLL_168MHz
+SysTick_Init_1ms
 GPIO_EXTI_Init
 TIM2_Init
 LEDs_AllOff
-LED_OnIndex
+g_running
+g_currentLed
+g_speedIndex

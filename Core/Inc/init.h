@@ -2,34 +2,26 @@
 #define INIT_H
 
 #include "stm32f4xx.h"
+#include <stdint.h>
 
-/* Светодиоды */
-#define LED1_PORT   GPIOF
-#define LED1_PIN    7
-#define LED2_PORT   GPIOF
-#define LED2_PIN    8
-#define LED3_PORT   GPIOF
-#define LED3_PIN    9
-#define LED4_PORT   GPIOG
-#define LED4_PIN    1
-
-/* Кнопка */
-#define BUTTON_PORT GPIOA
-#define BUTTON_PIN  0
-
-/* Глобальная частота SystemCoreClock задаётся в clock init */
+/* Тактирование: HSE + PLL = 168 МГц */
 void Clock_Init_HSE_PLL_168MHz(void);
 
-/* Инициализация GPIO LED + кнопка + EXTI */
+/* SysTick с периодом 1 мс */
+void SysTick_Init_1ms(void);
+
+/* Инициализация GPIO (PF7, PF8, PF9, PG1 + PA0) и EXTI0 */
 void GPIO_EXTI_Init(void);
 
-/* Инициализация TIM2 - без запуска */
+/* Инициализация TIM2 (обычный счётчик, прерывание по обновлению)
+   ВНИМАНИЕ: таймер на выходе ИНИЦИАЛИЗИРОВАН, НО НЕ ЗАПУЩЕН (CEN = 0). */
 void TIM2_Init(void);
 
-/* Обновление частоты таймера (переключение ARR) */
+/* Обновление частоты TIM2.
+   index: 0..3 -> 1 Гц, 5 Гц, 10 Гц, 20 Гц. */
 void TIM2_UpdateFrequency(uint8_t index);
 
-/* Светодиоды */
+/* Управление светодиодами */
 void LEDs_AllOff(void);
 void LED_OnIndex(uint8_t index);
 
